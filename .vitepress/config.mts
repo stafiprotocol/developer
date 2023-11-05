@@ -2,13 +2,15 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "StaFi Stack",
-  description: "StaFi Stack",
+  title: "StaFi LSD Stack",
+  description: "Just one click to deploy your LSD",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/image/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'ETH LSD', link: '/ethlsd' },
+      { text: 'EVM LSD', link: '/evmlsd' }
     ],
 
     sidebar: [
