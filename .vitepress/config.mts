@@ -40,12 +40,23 @@ function ethlsd(){
       collapsed: false,
       items: [
         {text: "Overview", link: "/ethlsd/architecture/overview"},
-        {text: "ERC20 LST", link: "/ethlsd/architecture/lsterc20"},
-        {text: "Staking Pool", link: "/ethlsd/architecture/stakingpool"},
-        {text: "Node Operator", link: "/ethlsd/architecture/node"},
-        {text: "Oracle", link: "/ethlsd/architecture/oracle"},
-        {text: "Withdraw", link: "/ethlsd/architecture/withdraw"},
-        {text: "Governance", link: "/ethlsd/architecture/governance"},
+        {text: "Contract Framework", link: "/ethlsd/architecture/contract"},
+        {text: "Router", link: "/ethlsd/architecture/router"},
+        {text: "Realy", link: "/ethlsd/architecture/realy"},
+        {text: "Front", link: "/ethlsd/architecture/front"},
+      ]
+    },
+    {
+      text: "Contract Framework",
+      collapsed: false,
+      items: [
+        {text: "Overview", link: "/ethlsd/contract/overview"},
+        {text: "ERC20 LST", link: "/ethlsd/contract/lsterc20"},
+        {text: "Staking Pool", link: "/ethlsd/contract/stakingpool"},
+        {text: "Node Operator", link: "/ethlsd/contract/node"},
+        {text: "Oracle", link: "/ethlsd/contract/oracle"},
+        {text: "Withdraw", link: "/ethlsd/contract/withdraw"},
+        {text: "Governance", link: "/ethlsd/contract/governance"},
       ]
     },
     {

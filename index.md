@@ -13,17 +13,17 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /evmlst/
+      link: /ethlsd/introduction/getstarted
     - theme: alt
       text: Contribute
       link: https://github.com/stafiprotocol/developer
 
 features:
   - title: ETH LSD
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Effortlessly generate your own ETH LSD on Ethereum and leverage integration with various third-party protocols to operate your staking pool for growth.
   - title: EVM LSD
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Effortlessly deploy your own LSD on EVM Layer1 by implementing the staking contract interface on a foundational development toolkit. Already supported on BSC, Polygon, and more, with no development required.
   - title: Cosmos LSD  
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: Leverage the cutting-edge development framework built on CosWasm to effortlessly configure and integrate your own LSD project within the Cosmos ecosystem, requiring just a few simple steps for deployment.
 ---
 
