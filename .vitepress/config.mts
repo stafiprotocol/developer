@@ -42,7 +42,7 @@ function ethlsd(){
         {text: "Overview", link: "/ethlsd/architecture/overview"},
         {text: "Contract Framework", link: "/ethlsd/architecture/contract"},
         {text: "Router", link: "/ethlsd/architecture/router"},
-        {text: "Realy", link: "/ethlsd/architecture/realy"},
+        {text: "Relay", link: "/ethlsd/architecture/relay"},
         {text: "Front", link: "/ethlsd/architecture/front"},
       ]
     },
