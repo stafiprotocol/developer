@@ -13,17 +13,17 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /markdown-examples
+      link: /evmlst/
     - theme: alt
       text: Contribute
       link: https://github.com/stafiprotocol/developer
 
 features:
-  - title: Overview
+  - title: ETH LSD
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Functionality
+  - title: EVM LSD
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: Cosmos LSD  
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
