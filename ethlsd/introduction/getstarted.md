@@ -1,2 +1,2 @@
-# ETH Stack
+# ETH Stack Getting Started
 

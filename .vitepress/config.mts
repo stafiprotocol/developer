@@ -15,6 +15,7 @@ export default defineConfig({
 
     sidebar: {
       "/ethlsd/": ethlsd(),
+      "/evmlsd/": evmlsd(),
     },
 
     socialLinks: [
@@ -42,7 +43,7 @@ function ethlsd(){
         {text: "Overview", link: "/ethlsd/architecture/overview"},
         {text: "Contract Framework", link: "/ethlsd/architecture/contract"},
         {text: "Router", link: "/ethlsd/architecture/router"},
-        {text: "Realy", link: "/ethlsd/architecture/realy"},
+        {text: "Relay", link: "/ethlsd/architecture/relay"},
         {text: "Front", link: "/ethlsd/architecture/front"},
       ]
     },
@@ -74,6 +75,48 @@ function ethlsd(){
       items: [
         {text: "Contract", link: "/ethlsd/security/contract"},
         {text: "Audit", link: "/ethlsd/security/audit"},
+
+      ]
+    }
+  ]
+}
+
+function evmlsd(){
+  return [
+    {
+      text: "Introduction",
+      collapsed: false,
+      items: [
+        {text: "Get Started", link: "/evmlsd/introduction/getstarted"},
+        {text: "Liquid Staking Token", link: "/evmlsd/introduction/lst"},
+      ]
+    },
+    {
+      text: "Architecture",
+      collapsed: false,
+      items: [
+        {text: "Overview", link: "/evmlsd/architecture/overview"},
+        {text: "Contract Framework", link: "/evmlsd/architecture/contract"},
+        {text: "Relay", link: "/evmlsd/architecture/relay"},
+        {text: "Front", link: "/evmlsd/architecture/front"},
+      ]
+    },
+    {
+      text: "Contract Framework",
+      collapsed: false,
+      items: [
+        {text: "Overview", link: "/evmlsd/contract/overview"},
+        {text: "ERC20 LST", link: "/evmlsd/contract/lsterc20"},
+        {text: "Staking Pool", link: "/evmlsd/contract/stakingpool"},
+        {text: "Withdraw", link: "/evmlsd/contract/withdraw"},
+      ]
+    },
+    {
+      text: "Security",
+      collapsed: false,
+      items: [
+        {text: "Contract", link: "/evmlsd/security/contract"},
+        {text: "Audit", link: "/evmlsd/security/audit"},
 
       ]
     }
