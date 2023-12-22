@@ -46,16 +46,15 @@ function ethlsd(){
       ]
     },
     {
-      text: "Contract Framework",
+      text: "Develope(ETH LST)",
       collapsed: false,
       items: [
-        {text: "Overview", link: "/ethlsd/contract/overview"},
-        {text: "ERC20 LST", link: "/ethlsd/contract/lsterc20"},
-        {text: "Staking Pool", link: "/ethlsd/contract/stakingpool"},
-        {text: "Node Operator", link: "/ethlsd/contract/node"},
-        {text: "Oracle", link: "/ethlsd/contract/oracle"},
-        {text: "Withdraw", link: "/ethlsd/contract/withdraw"},
-        {text: "Governance", link: "/ethlsd/contract/governance"},
+        {text: "Get Started", link: "/ethlsd/developethlsd/getstarted"},
+        {text: "Contract", link: "/ethlsd/developethlsd/contract"},
+        {text: "Relay", link: "/ethlsd/developethlsd/relay"},
+        {text: "Validator", link: "/ethlsd/developethlsd/validator"},
+        {text: "Enjecter", link: "/ethlsd/developethlsd/enjecter"},
+        {text: "Deploy", link: "/ethlsd/developethlsd/Deploy"},
       ]
     },
     {
@@ -78,9 +77,9 @@ function ethlsd(){
       text: "Concepts",
       collapsed: false,
       items: [
-        {text: "Introduction", link: "/ethlsd/security/introduction"},
-        {text: "Audit", link: "/ethlsd/security/audit"},
-
+        {text: "Ethereum Staking", link: "/ethlsd/concepts/ethstaking"},
+        {text: "LSD & LST", link: "/ethlsd/concepts/lstlsd"},
+        {text: "LLAAS", link: "/ethlsd/concepts/llaas"},
       ]
     }
   ]
