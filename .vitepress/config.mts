@@ -32,8 +32,6 @@ function ethlsd(){
       collapsed: false,
       items: [
         {text: "Get Started", link: "/ethlsd/introduction/getstarted"},
-        {text: "Ethereum Staking", link: "/ethlsd/introduction/ethstaking"},
-        {text: "Liquid Staking Token", link: "/ethlsd/introduction/lst"},
       ]
     },
     {
@@ -41,10 +39,10 @@ function ethlsd(){
       collapsed: false,
       items: [
         {text: "Overview", link: "/ethlsd/architecture/overview"},
-        {text: "Contract Framework", link: "/ethlsd/architecture/contract"},
-        {text: "Router", link: "/ethlsd/architecture/router"},
-        {text: "Relay", link: "/ethlsd/architecture/relay"},
-        {text: "Front", link: "/ethlsd/architecture/front"},
+        {text: "Design Principles", link: "/ethlsd/architecture/designprinciples"},
+        {text: "ETH LSD", link: "/ethlsd/architecture/ethlsd"},
+        {text: "EVM LSD", link: "/ethlsd/architecture/evmlsd"},
+        {text: "Cosmos LSD", link: "/ethlsd/architecture/cosmoslsd"},
       ]
     },
     {
@@ -61,19 +59,26 @@ function ethlsd(){
       ]
     },
     {
-      text: "Integration",
+      text: "DAO",
       collapsed: false,
       items: [
-        {text: "DVT", link: "/ethlsd/integration/dvt"},
-        {text: "Chainlink CCIP", link: "/ethlsd/integration/ccip"},
-        {text: "Bridge", link: "/ethlsd/integration/bridge"},
+        {text: "Introduction", link: "/ethlsd/dao/introduction"},
       ]
     },
     {
       text: "Security",
       collapsed: false,
       items: [
-        {text: "Contract", link: "/ethlsd/security/contract"},
+        {text: "Introduction", link: "/ethlsd/security/introduction"},
+        {text: "Audit", link: "/ethlsd/security/audit"},
+
+      ]
+    },
+    {
+      text: "Concepts",
+      collapsed: false,
+      items: [
+        {text: "Introduction", link: "/ethlsd/security/introduction"},
         {text: "Audit", link: "/ethlsd/security/audit"},
 
       ]

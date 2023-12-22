@@ -1,17 +1,35 @@
 # Overview
 
-## Staking Contracts Framework
+> Reminder: This Stack is updating accordingly in a timely manner.
+
+Listake LSD Stack is a package of Development Kits(DKs) that support the construction of LSD in Layer1s. The DKs consists of Application DK(ADK) and Chain DK(CDK), ADK is mainly built for launching a LST in the contract layer of a chain, and CDK is used to build a chain module that enables a chain to issue a LST natively. Both solutions include a backend and a frontend, the frontend is built for the interactions, the backend includes contracts and services.
+
+## Application Development Kit(ADK)
+
+The ADK module enables developers to launch a LST upon in the contract layer of a chain, it is contract based, now it can support to issue [ETH LST](https://www.notion.so/Listake-LSD-STACK-DOCS-b5828ad2c09f4dfbb3bfeb21285a1208?pvs=21), [EVM LST](https://www.notion.so/Listake-LSD-STACK-DOCS-b5828ad2c09f4dfbb3bfeb21285a1208?pvs=21) and [Cosmos LST](https://www.notion.so/Listake-LSD-STACK-DOCS-b5828ad2c09f4dfbb3bfeb21285a1208?pvs=21) and other VM LSTs in the chain. In the ecosystem, LSTs have more abundant interoperability and composability with the projects that also built upon the chain. These solutions are different based on the chain structure, developers can review details in the following parts.
+
+## Chain Development Kit(CDK)
+
+The CDK is a builtin module that enables a chain to release its own LST natively, it is chain based. The StaFi LSD pallet is one of an example and it is a builtin module of the Substrate framework, independent chain that bases on the Substrate can merge the pallet and release a LST in their blockchains.
+
+## Architecture
+
+In general, the architecture is vary and depends on the PoS mechanisms of the target chain, Listake keeps abstracting the mutual features to generalize the expression of ADK and CDK. Some abstracted features form module to facilitate the upgradability of the LSTs, the below should some key modules of the ADKs.
+
+> Not all the modules a good fit for all ADKs and CDKs, further details can reviewed in the specifics and note that Listake now more focuses on the development of ADKs, feel free to reach out and discuss your thought about CDKs.
+
+### Staking Contracts Framework
 
 The Staking Contracts Framework is a robust and efficient contract framework that facilitates the effortless creation and deployment of staking pool contracts. Leveraging this framework, developers can swiftly build and deploy staking pool contracts with minimal exertion and within a prompt timeline.
 
-## Router 
-
-Router is a comprehensive and decentralized validator management service that seamlessly integrates SSV, Obol, and other type node operator. This service empowers developers to effortlessly build and deploy a decentralized validator management system, simplifying and streamlining the validator management process.
-
-## Relay
+### Relay
 
 Relay is an oracle service that seamlessly synchronizes data from off-chain sources to on-chain, enabling developers to easily build applications for accuracy LST rates, validator status and other data synchronization use cases.
 
-## Front
+### Router
+
+Router is a comprehensive and decentralized validator management service that seamlessly integrates DVT(Distributed Validator Technology), such as SSV, Obol, and other technology that improve the decentralization of staking. This service empowers developers to effortlessly build and deploy a decentralized validator management system, simplifying and streamlining the validator management process.
+
+### Front
 
 Front is a module that enables page and component-level development, allowing for the direct generation of front-end pages for LSD Web or the embedding of components into corresponding pages.
