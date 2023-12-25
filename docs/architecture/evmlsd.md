@@ -1,5 +1,7 @@
 # EVM LSD
 
+![An image](/image/evmlsd_0.png)
+
 ## Smart contracts
 
 The core part of Stafi EVM LSD Stack is a set of smart contracts, which are divided into two parts: PlatformContract, a platform contract managed by Listake, and ProjectContracts, which belong to different projects. Platform contracts are common dependencies for all projects. Via platform contracts, developers or start-up projects can easily deploy and initialize their contract groups，distribute staking rewards.
@@ -25,19 +27,19 @@ StakeManager contract provides stake method for users to participate staking. Di
 
 Native token can be sent with method calling, so users can invoke *stake* method accompanied with the amount of token they’re willing to stake, and they will receive equivalent LsdToken in return.
 
-[image]()
+![An image](/image/evmlsd_1.png)
 
 ### Scenario 2: Staking token is an ERC-20 compatible token
 
 As staking token is an ERC-20 compatible token, users should approve StakeManager to spend their tokens, then they can stake it and receive equivalent LsdToken in return.
 
-[image]()
+![An image](/image/evmlsd_2.png)
 
 ## User Unstake Flow
 
 Any LsdToken holder is a valid user, and can unstake tokens. At first, users should approve StakeManager to spend their token, next call *StakeManager.unstake* method to burn their LsdToken, last get their rewards by calling withdraw method.
 
-[image]()
+![An image](/image/evmlsd_3.png)
 
 ## Balance Staking Pools
 
@@ -49,11 +51,11 @@ Due to the limitation of smart contract, it could not launch an execution. So Li
 
 Here is an example of how Polygon relay work, it does not have voter, as no data needed from Oracle:
 
-[image]()
+![An image](/image/evmlsd_4.png)
 
 As we know BNB chain is differ from Polygon, it requires data from Beacon chain. So we introduce voter role, to keep data correct. Voters submit their proposal through relay service.  below is BNB chain example:
 
-[image]()
+![An image](/image/evmlsd_5.png)
 
 ## Validator Selector
 
@@ -65,7 +67,7 @@ For security, StakeManager has been designed as a multi-sig contract, the propos
 
 ## Quick Duplicate
 
-[image]()
+![An image](/image/evmlsd_6.png)
 
 Listake EVM LSD provides mature LSD solutions including contracts, back-end services for popular blockchains like BSC, Polygon, *etc*.  However, for starting blockchain or layer 2 programs, Listake provides LSD API standards. The limited work developers should do is to wrap only one or two contracts or provide several blockchain RPC APIs according to Listake EVM LSD API Standards.
 

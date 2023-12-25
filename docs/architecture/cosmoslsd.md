@@ -2,6 +2,8 @@
 
 This module is mainly built for CosmosSDK based projects.
 
+![An image](/image/cosmoslsd_0.png)
+
 ## Neutron
 
 Neutron is a blockchain network that brings Smart Contracts into the Cosmos-family blockchains using CosmWasm. Neutron works with networks using the IBC protocol. Neutron security (block validation) is provided by the Cosmos Hub network using Interchain Security.
@@ -40,6 +42,8 @@ One solution is to implement an on-chain contract to run the validator's select 
 
 Considering that there are 180 bonded validators on Cosmos Hub, the on-chain query solution may consume a lot of gas, and an off-chain vote solution similar to EVM LSD Stack can be used.
 
+![An image](/image/cosmoslsd_1.png)
+
 **Select Strategy**
 
 According to the validator's slashes and commission fee, Voters select validators to bind the StakePool or update current validators.
@@ -75,16 +79,22 @@ StakeManger registers the interchain account as StakePool
 3. The StakeManager Contract calls the rATOM Contract for the rATOM corresponding to the user's mint
 4. In each era, the cross-chain transaction module will stake the user's ATOM received in the ICA account to the Cosmos Hub network (automatically triggered via off-chain services).
 
+![An image](/image/cosmoslsd_2.png)
+
 ### Unstake Flow
 
 1. The user calls the StakeManager contract unstake method.
 2. StakeManager burns off the corresponding amount of rATOM in the rATOM contract based on the current ATOM/rATOM rate.
 3. After the unbond period, users can withdraw their funds from Cosmos Hub using the "withdraw" method.
 
+![An image](/image/cosmoslsd_3.png)
+
 ### Withdraw Flow
 
 1. When the user unstake has elapsed for a period of time (Cosmos Hub defaults to 21 days), the user can withdraw the corresponding token.
 2. The user calls the withdraw method of the StakeManager contract. The contract retrieves the corresponding assets in Cosmos Hub through the ICA account and sends them directly to the user's account in Cosmos Hub.
+
+![An image](/image/cosmoslsd_4.png)
 
 ## LSM Integration
 
@@ -102,9 +112,13 @@ To let users be able to stake LSM share tokens in Listake Cosmos LSD Stack, List
 4. OwnerTransfer transfers owner tokenized share record to Listake Cosmos LSD PoolAccount so that StakeManager can withdraw the user’s delegation reward
 5. ShareTokenTransfer transfers the user’s share token to PoolAccount so that user can receive rATOM in return.
 
+![An image](/image/cosmoslsd_5.png)
+
 ## Quick Duplicate
 
 For any cosmos AppChain including Cosmos, you can directly deploy the Listake Cosmos LSD contract on Neutron, just modify the connect_id, because the connect_id determines a pair of source chain and target chain, and different projects only have different source chains and target chains.
+
+![An image](/image/cosmoslsd_6.png)
 
 But there are basic requirements for an ordinary app chain:
 
