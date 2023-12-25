@@ -31,6 +31,7 @@ function docs(){
       collapsed: false,
       items: [
         {text: "Get Started", link: "/docs/introduction/getstarted"},
+        {text: "New to LSD Stack", link: "/docs/introduction/newtostack"},
       ]
     },
     {
