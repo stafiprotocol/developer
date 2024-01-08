@@ -66,18 +66,18 @@ Config environment variables
 ```jsx
 $ npx hardhat run ./script/create_new_lsd_network.js --network goerli 
 ethers version: ethers/5.7.2
-network admin account address:   0xa9b8af5C53E6282fB469297091A33B08B5AC40B7
-voter1 address:  0x68146ebA486CE6F8D22731c8ECB4d013F34E7114
-voter2 address:  0x5b01439ab024Ba75B7B1f9c05aB55fa25e402809
-voter3 address:  0xC82754C11eA7f1a901D331aaBdDf6C968044CB38
-ContractLsdNetworkFactory address:       0xe2CF966b041904eFfb8Fe83E317CAF4dd27d8CBc
-LSDTokenAddress address:         0x549aF761C1c72f3cd2Be966e76B778339Bf746DD
-FeePoolAddress address:          0x55090210493C1C87b1a6a8DD90096bB81058f931
-NetworkBalancesAddress address:  0xbe8651b74908D4B0e288a5497E1aB3b133Cb5Ea8
-NetworkProposalAddress address:  0x5c99383b9975551bcee1040C2b2986F8E359202d
-NodeDepositAddress address:      0x16E2Ab23F8EF64d9115106F8C15C63fE515e0Aff
-UserDepositAddress address:      0xC3Af7Bf302Ef2A329919fBcaC4DB2C6d40B9322B
-NetworkWithdrawalAddress address:        0x9522B23F48C042520612d3ca803422957D6cDecB
+network admin account address:0xa9b8af5C53E6282fB469297091A33B08B5AC40B7
+voter1 address:0x68146ebA486CE6F8D22731c8ECB4d013F34E7114
+voter2 address:0x5b01439ab024Ba75B7B1f9c05aB55fa25e402809
+voter3 address:0xC82754C11eA7f1a901D331aaBdDf6C968044CB38
+ContractLsdNetworkFactory address:0xe2CF966b041904eFfb8Fe83E317CAF4dd27d8CBc
+LSDTokenAddress address:0x549aF761C1c72f3cd2Be966e76B778339Bf746DD
+FeePoolAddress address:0x55090210493C1C87b1a6a8DD90096bB81058f931
+NetworkBalancesAddress address:0xbe8651b74908D4B0e288a5497E1aB3b133Cb5Ea8
+NetworkProposalAddress address:0x5c99383b9975551bcee1040C2b2986F8E359202d
+NodeDepositAddress address:0x16E2Ab23F8EF64d9115106F8C15C63fE515e0Aff
+UserDepositAddress address:0xC3Af7Bf302Ef2A329919fBcaC4DB2C6d40B9322B
+NetworkWithdrawalAddress address:0x9522B23F48C042520612d3ca803422957D6cDecB
 ```
 
 ## Step 2: Installing Relay Service
@@ -123,7 +123,9 @@ Enter private key:
 >
 password for key:
 >
-INFO[0007] key imported                                  address=0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
+INFO[0007] 
+key imported address=0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 
+file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
 ```
 
 ### Config eth relay service
@@ -157,7 +159,11 @@ $ eth-lsd-relay start --config config.toml
 Enter password for key ./keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key:
 >
 
-INFO[2023-10-27T14:51:08+08:00] update balances epochs                        distributePriorityFeeDuEpochs=225 distributeWithdrawalsDuEpochs=225 merkleRootDuEpochs=225 submitBalancesDuEpochs=225
+INFO[2023-10-27T14:51:08+08:00] update balances epochs                        
+distributePriorityFeeDuEpochs=225 
+distributeWithdrawalsDuEpochs=225 
+merkleRootDuEpochs=225 
+submitBalancesDuEpochs=225
 INFO[2023-10-27T14:51:08+08:00] nodeCommission rate: 0.05, platformCommission rate: 0.05
 INFO[2023-10-27T14:51:12+08:00] start services...
 INFO[2023-10-27T14:51:12+08:00] start vote service
