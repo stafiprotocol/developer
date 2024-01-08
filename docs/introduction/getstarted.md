@@ -2,7 +2,7 @@
 
 ## What is it?
 
-Listake is a LSD(Liquid Staking Derivative) stack, developed and maintained by [61 LAB](https://61lab.io/#), mainly built for developers who want to create LSTs(Liquid Staking Token). With Listake, you can build a new LST by simply clicking, while gaining LST’s composability and programability. This stack will save your workload, your resource, your budget on development and maintenance, you can review the stack if you are seeking for a development framework to launch a new LST.
+Listake is a LSD(Liquid Staking Derivative) stack, developed and maintained by [61 LAB](https://61lab.io/#), mainly built for developers who want to create LSTs(Liquid Staking Token). With Listake, you can build a new LST by simply clicking, while gaining LST's composability and programability. This stack will save your workload, your resource, your budget on development and maintenance, you can review the stack if you are seeking for a development framework to launch a new LST.
 
 ## How it works?
 
@@ -10,7 +10,7 @@ The LSD Stack is developed by abstracting technology from the current solutions 
 
 The Stack is divided into 2 parts. The standard stack includes basic functions, e.g staking, unstaking and reward updating. The custom stack provide high level functions except for the basic, e.g interoperability and DeFi integration, it usually needs a further development accordingly. 
 
-The main target of this Stack is to achieve ‘staking and get a LST’ and ‘unstaking and get the native token back’, in a simple and easy way, together with possibility. Beside that, build something meaningful based on the LST Stack and make DeFi adopted massively in the future.
+The main target of this Stack is to achieve 'staking and get a LST' and 'unstaking and get the native token back', in a simple and easy way, together with possibility. Beside that, build something meaningful based on the LST Stack and make DeFi adopted massively in the future.
 
 ## Why we need it?
 
@@ -20,9 +20,9 @@ Moreover, LSD is more like a public infrastructure as it is growing, as a intere
 
 ## Who need it?
 
-This Stack’s vision is to build a fast deployed, easily used, technologically trended **LLAAS**(Liquid Staking as a Service) platform, the users will include but not limited to:
+This Stack's vision is to build a fast deployed, easily used, technologically trended **LLAAS**(Liquid Staking as a Service) platform, the users will include but not limited to:
 
-- Layer1 Team: project developers who want to build an ‘official‘ LSD protocol.
+- Layer1 Team: project developers who want to build an 'official' LSD protocol.
 - Community Builder: builders who want to build a community LSD protocol.
 - Startup: teams who want to create something innovative in the LSD industry.
 - Institution: institutions who want to create a LSD protocol with customize functions.

@@ -14,7 +14,7 @@ The CDK is a builtin module that enables a chain to release its own LST natively
 
 ## Architecture
 
-In general, the architecture is vary and depends on the PoS mechanisms of the target chain, Listake keeps abstracting the mutual features to generalize the expression of ADK and CDK. Some abstracted features form module to facilitate the upgradability of the LSTs, the below should some key modules of the ADKs.
+In general, the architecture is vary and depends on the PoS mechanisms of the target chain, Listake keeps abstracting the mutual features to generalize the expression of ADK and CDK. Some abstracted features form module to facilitate the upgradability of the LSTs, the below shows some key modules of the ADKs.
 
 > Not all the modules a good fit for all ADKs and CDKs, further details can reviewed in the specifics and note that Listake now more focuses on the development of ADKs, feel free to reach out and discuss your thought about CDKs.
 

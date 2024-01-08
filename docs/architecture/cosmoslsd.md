@@ -106,11 +106,11 @@ LSM represents an opinionated design for adding liquid staking to the Cosmos SDK
 
 To let users be able to stake LSM share tokens in Listake Cosmos LSD Stack, Listake Cosmos SDK will pack a series of messages in one transaction on the Cosmos Hub.
 
-1. RedeemToken this untokenize user’s share token to token.
+1. RedeemToken this untokenize user's share token to token.
 2. Redelegate to validator selected by Validator Selector
-3. TokenizeShare re-tokenizes user’s delegation
-4. OwnerTransfer transfers owner tokenized share record to Listake Cosmos LSD PoolAccount so that StakeManager can withdraw the user’s delegation reward
-5. ShareTokenTransfer transfers the user’s share token to PoolAccount so that user can receive rATOM in return.
+3. TokenizeShare re-tokenizes user's delegation
+4. OwnerTransfer transfers owner tokenized share record to Listake Cosmos LSD PoolAccount so that StakeManager can withdraw the user's delegation reward
+5. ShareTokenTransfer transfers the user's share token to PoolAccount so that user can receive rATOM in return.
 
 ![An image](/image/cosmoslsd_5.png)
 

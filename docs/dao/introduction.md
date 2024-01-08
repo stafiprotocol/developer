@@ -16,7 +16,7 @@ ETH LSD Stack DAO( a subDAO of the Listake DAO, or share the same members of the
 
 ## Timelock logic
 
-> One man’s meat is another man’s poison
+> One man's meat is another man's poison
 
 The Listake DAO empowers community members to participate the decision-making process through their voting power. In reality, it's challenging to find decisions that satisfy everyone's needs. We're thrilled to announce the implementation of Timelock logic into our system. This feature reduces the impact of the minorities. Rather than simply accepting a proposal, members who disagree now have options to act before the proposal takes effect.
 

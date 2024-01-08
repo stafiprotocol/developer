@@ -10,7 +10,7 @@ Core contracts:
 
 - LsdToken: an ERC-20 compatible derived token. Users receive this token when depositing target chain NST(abbr for Native Staking Token) to StakeManager and burn it when unstaking.
 - StakePool: do delegation stuff with selected validators
-- StakeManager: keep track of pools’ states, interact with users, other routine works
+- StakeManager: keep track of pools' states, interact with users, other routine works
 
 Core roles:
 
@@ -19,13 +19,13 @@ Core roles:
 
 ## User Stake Flow
 
-StakeManager contract provides stake method for users to participate staking. Different staking system has different ways to stake, such as BNB use native token as a staking token; MATIC use ERC-20 compatible token. We’ll explore them one by one. Here is the formula for calculating the amount of LsdToken they will get.
+StakeManager contract provides stake method for users to participate staking. Different staking system has different ways to stake, such as BNB use native token as a staking token; MATIC use ERC-20 compatible token. We'll explore them one by one. Here is the formula for calculating the amount of LsdToken they will get.
 
 `amountLsdToken = LsdTokenTotalSupply / TotalNetworkBalanceOfUsers * amountStakingToken`
 
 ### Scenario 1: Staking token is a Native Token
 
-Native token can be sent with method calling, so users can invoke *stake* method accompanied with the amount of token they’re willing to stake, and they will receive equivalent LsdToken in return.
+Native token can be sent with method calling, so users can invoke *stake* method accompanied with the amount of token they're willing to stake, and they will receive equivalent LsdToken in return.
 
 ![An image](/image/evmlsd_1.png)
 
@@ -43,11 +43,11 @@ Any LsdToken holder is a valid user, and can unstake tokens. At first, users sho
 
 ## Balance Staking Pools
 
-The default balancer is the project administrator, it is able to transfer to another account. The owner of StakeManager should create a new StakePool contract when one staking pool reaches its staking maximum threshold, and then balancer route users’ staking assets to different stake pools to keep the network in a health(well-balanced) status.
+The default balancer is the project administrator, it is able to transfer to another account. The owner of StakeManager should create a new StakePool contract when one staking pool reaches its staking maximum threshold, and then balancer route users' staking assets to different stake pools to keep the network in a health(well-balanced) status.
 
 ## Relay Service
 
-Due to the limitation of smart contract, it could not launch an execution. So Listake introduces Relay service, at a certain interval, it will trigger StakeManager to collect and calculate users’ staking reward, distribute it to the project and users. The reward information could come from the target chain staking contract or provided by off-chain, and voters are responsible to submit these on chain.
+Due to the limitation of smart contract, it could not launch an execution. So Listake introduces Relay service, at a certain interval, it will trigger StakeManager to collect and calculate users' staking reward, distribute it to the project and users. The reward information could come from the target chain staking contract or provided by off-chain, and voters are responsible to submit these on chain.
 
 Here is an example of how Polygon relay work, it does not have voter, as no data needed from Oracle:
 

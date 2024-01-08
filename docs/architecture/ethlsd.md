@@ -53,7 +53,7 @@ Unlike normal stakers which are required to put 32 ETH up for deposit to create 
 
 ### Trust Node
 
-Node providers don’t need to deposit any ETH and still can run a validator. All the required 32ETH deposit requirement is provided by user deposit pool.
+Node providers don't need to deposit any ETH and still can run a validator. All the required 32ETH deposit requirement is provided by user deposit pool.
 
 ![An image](/image/trustnode.png)
 
@@ -87,13 +87,13 @@ Voter will provide a validator slash detective mechanism to measure a validator 
 
 ### Withdrawal Credential Match Check
 
-There is another responsibility for voters to check node provider’s *withdrawal_credentials* to ensure ETH LSD stack will successfully receive the validators' rewards so that it can distribute.
+There is another responsibility for voters to check node provider's *withdrawal_credentials* to ensure ETH LSD stack will successfully receive the validators' rewards so that it can distribute.
 
 ### Manage Voters
 
-Considering voters’ significant role in the whole system, the correctness and availability of voters must be guaranteed by protocol design. So we introduced voter manager role to add and remove voters when it presents dishonesty.
+Considering voters' significant role in the whole system, the correctness and availability of voters must be guaranteed by protocol design. So we introduced voter manager role to add and remove voters when it presents dishonesty.
 
-After initialization of the system, there will be a group of voters designated as standby voters, their accounts are stored in NetworkProposal contract. In each contract method which requires offchain data(Oracle), we will get voters’ account from NetworkProposal and check whether the *msg.sender* is a voter or not. The data can be stored on chain requires 2/3 voters agreements. In the meantime, a minority of voters who submit fault data will be marked as suspicious. If they continue submitting fault data, they will be expelled.
+After initialization of the system, there will be a group of voters designated as standby voters, their accounts are stored in NetworkProposal contract. In each contract method which requires offchain data(Oracle), we will get voters' account from NetworkProposal and check whether the *msg.sender* is a voter or not. The data can be stored on chain requires 2/3 voters agreements. In the meantime, a minority of voters who submit fault data will be marked as suspicious. If they continue submitting fault data, they will be expelled.
 
 ![An image](/image/managevote.png)
 
@@ -105,11 +105,11 @@ This component is required for node providers to run with validators. Voters wil
 
 ## DV Adapter
 
-DV Adapter is a layer for Listake Stack to integrate with DVT(distributed validator technology). Thanks to DVT providers, developers don’t need to run their own validator clients. DV Adaptor can not only speed up deployment of LSD Stack but also simplify the complexity of the entire system. Currently the Stack supports SSV network, more will be supported in the future. Here we introduce the structure of SSV adapter.
+DV Adapter is a layer for Listake Stack to integrate with DVT(distributed validator technology). Thanks to DVT providers, developers don't need to run their own validator clients. DV Adaptor can not only speed up deployment of LSD Stack but also simplify the complexity of the entire system. Currently the Stack supports SSV network, more will be supported in the future. Here we introduce the structure of SSV adapter.
 
 There are four parts:
 
-- Keystore manager: create validators’ keystore, prepare deposit parameters and generate ssv key shares
+- Keystore manager: create validators' keystore, prepare deposit parameters and generate ssv key shares
 - Operator selector: monitor ssv network and choose most favorable operators according to the price, location, performance and status
 - Validator Register: register validator in SSV network with operators
 - Embedded ejector service
