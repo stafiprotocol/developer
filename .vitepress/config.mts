@@ -54,7 +54,7 @@ function docs(){
         {text: "Relay", link: "/docs/developethlsd/relay"},
         {text: "Validator", link: "/docs/developethlsd/validator"},
         {text: "Enjecter", link: "/docs/developethlsd/enjecter"},
-        {text: "Deploy", link: "/docs/developethlsd/Deploy"},
+        {text: "Deploy", link: "/docs/developethlsd/deploy"},
       ]
     },
     {
