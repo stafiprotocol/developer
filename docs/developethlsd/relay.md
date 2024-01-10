@@ -18,10 +18,8 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 | --- | --- | --- | --- |
 | eth1Endpoint | Execution RPC endpoint | https://eth-goerli.g.alchemy.com/v2/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX |  |
 | eth2Endpoint | Consensus (Beacon chain) RPC endpoint | https://beacon-lighthouse-goerli.stafi.io/ |  |
-| web3StorageApiToken | get web3 storage api token from https://web3.storage/ |  |  |
-| logFilePath | local directory path to store logs |  | ./logs |
+| storageApiToken | get an api token from https://nft.storage/ |  |  |
 | account | voter account addressMake sure you imported it before using |  |  |
-| keystorePath | local directory path to store accounts keystore files |  | ./keys |
 | gasLimit |  |  | 3000000 |
 | maxGasPrice |  |  | 60000000000 (in wei) |
 | batchRequestBlocksNumber | a number which limits concurrent requests on Beacon chain, due to the design of Beacon chain RPC |  | 32 |

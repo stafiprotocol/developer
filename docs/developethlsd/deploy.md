@@ -45,7 +45,7 @@ There are 2 account roles in a lsd network, you should prepare the following acc
 
 Clone the source code
 
-```
+```bash
 $ git clone https://github.com/stafiprotocol/eth-lsd-contracts.git
 $ cd eth-lsd-contracts
 $ yarn
@@ -86,14 +86,14 @@ NetworkWithdrawalAddress address:0x9522B23F48C042520612d3ca803422957D6cDecB
 
 Install `make`, `gcc` and `git`
 
-```
+```bash
 sudo apt update
 sudo apt install -y make gcc git
 ```
 
 Install `go` by following the [official docs](https://golang.org/doc/install). Remember to set your `$PATH` environment variable, for example:
 
-```
+```bash
 cd $HOME
 wget -O go1.20.3.linux-amd64.tar.gz https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz && rm go1.20.3.linux-amd64.tar.gz
@@ -106,44 +106,29 @@ go version
 
 ### Install relay service
 
-```
+```bash
 $ git clone https://github.com/stafiprotocol/eth-lsd-relay.git
 $ cd eth-lsd-relay
 $ make install
 ```
 
-### Import voter accounts
+### Create relay working directory and config file
 
-Let's import your 3 voter accounts so that it can be used by relay service
-
-```
-$ eth-lsd-relay import-account
-keystore path: ./keys
-Enter private key:
->
-password for key:
->
-INFO[0007] 
-key imported address=0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 
-file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
+```bash
+$ mkdir -p ~/eth-stack
+$ cp conf.template.toml ~/eth-stack/config.toml
 ```
 
 ### Config eth relay service
 
 Update config (config.toml) by your favorite editor according to [Relay Config](https://github.com/stafiprotocol/stack-docs/blob/main/eth/relay.md#config)
 
-```
-$ cp conf.template.toml config.toml
-
-Update config by your favorite editor, here is a simple example
-
+```toml
 eth1Endpoint = "http://127.0.0.1:8545"
 eth2Endpoint = "https://beacon-lighthouse-goerli.stafi.io"
-web3StorageApiToken = "000000000000000000000000000000000000.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.22222222222222222222222-333333--44444444444"
-logFilePath = "./log"
+storageApiToken = "000000000000000000000000000000000000.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.22222222222222222222222-333333--44444444444"
 account = "0x68146ebA486CE6F8D22731c8ECB4d013F34E7114"
 gasLimit = "3000000"
-keystorePath = "./keys"
 maxGasPrice = "60000000000"                            #wei
 batchRequestBlocksNumber = 32
 
@@ -152,10 +137,26 @@ lsdTokenAddress = "0x549aF761C1c72f3cd2Be966e76B778339Bf746DD"
 lsdFactoryAddress = "0xe2CF966b041904eFfb8Fe83E317CAF4dd27d8CBc"
 ```
 
+### Import voter accounts
+
+Let's import your 3 voter accounts so that it can be used by relay service
+
+```bash
+$ eth-lsd-relay import-account --base-path ~/eth-stack
+Enter private key:
+>
+password for key:
+>
+INFO[0007]
+key imported address=0x68146ebA486CE6F8D22731c8ECB4d013F34E7114
+file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
+```
+
+
 ### Start relay services
 
-```jsx
-$ eth-lsd-relay start --config config.toml
+```bash
+$ eth-lsd-relay start --base-path ~/eth-stack
 Enter password for key ./keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key:
 >
 

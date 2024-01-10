@@ -10,7 +10,7 @@ The LSD Stack is developed by abstracting technology from the current solutions 
 
 The Stack is divided into 2 parts. The standard stack includes basic functions, e.g staking, unstaking and reward updating. The custom stack provide high level functions except for the basic, e.g interoperability and DeFi integration, it usually needs a further development accordingly. 
 
-The main target of this Stack is to achieve 'staking and get a LST' and 'unstaking and get the native token back', in a simple and easy way, together with possibility. Beside that, build something meaningful based on the LST Stack and make DeFi adopted massively in the future.
+The main target of this Stack is to achieve *staking and getting a LST* and *unstaking and getting the deposited token back*, in a simple and easy way, together with possibility. Beside that, build something meaningful based on the LST Stack and make DeFi adopted massively in the future.
 
 ## Why we need it?
 
