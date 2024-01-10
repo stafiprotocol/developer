@@ -1,4 +1,4 @@
-# How to deploy ETH LSD stack on goerli
+# How to deploy ETH LSD stack on Holesky
 
 This guide provides a step-by-step script to deploy the ETH LSD stack, without knowing details about contracts and services. Read the documentation for comprehensive understandings of these components.
 
@@ -14,11 +14,11 @@ To create your own LSD network you have to obtain the LSDNetworkFactory address.
 | --- | --- |
 | LsdNetworkFactory | 0xLATEST_ADDRESS_ON_MAINNET |
 
-### Goerli testnet
+### Holesky testnet
 
 | Contract | Address |
 | --- | --- |
-| LsdNetworkFactory | 0xLATEST_ADDRESS_ON_TESTNET |
+| LsdNetworkFactory | 0xF9bB59107e293951205cDEEf8B482F48F35E5CC1 |
 
 ## Step 1: Deploying Contracts
 
@@ -31,7 +31,7 @@ There are 2 account roles in a LSD network, you should prepare the following acc
 - NetworkAdmin: only one account for creating and managing the network
 - Voter: at least 3 accounts recommended for voting changes from Oracle(Beacon chain) to the network on chain
 
-Navigate to https://goerli.etherscan.io/address/0xa7bA0478b449642C82020063531E3a10Eda17eeC
+Navigate to https://holesky.etherscan.io/address/0xF9bB59107e293951205cDEEf8B482F48F35E5CC1#writeProxyContract
 
 - Connect to your web3 wallet as a deployer
 - Submit transaction to create your own LSD network
@@ -56,7 +56,7 @@ Config environment variables
 
 | config | description | example value |
 | --- | --- | --- |
-| GOERLI_RPC_URL | execution RPC endpoint | https://eth-goerli.g.alchemy.com/v2/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX |
+| HOLESKY_RPC_URL | execution RPC endpoint | https://holesky.stafi.io |
 | NETWORK_ADMIN_PRIVATE_KEY | private key of admin account |  |
 | ACCOUNT_VOTER1 | address of voter |  |
 | ACCOUNT_VOTER2 | address of voter |  |
@@ -64,20 +64,20 @@ Config environment variables
 | LSD_NETWORK_FACTORY_ADDRESS | network factory address |  |
 
 ```jsx
-$ npx hardhat run ./script/create_new_lsd_network.js --network goerli 
+$  npx hardhat run ./script/create_new_lsd_network.js --network holesky  
 ethers version: ethers/5.7.2
-network admin account address:0xa9b8af5C53E6282fB469297091A33B08B5AC40B7
-voter1 address:0x68146ebA486CE6F8D22731c8ECB4d013F34E7114
-voter2 address:0x5b01439ab024Ba75B7B1f9c05aB55fa25e402809
-voter3 address:0xC82754C11eA7f1a901D331aaBdDf6C968044CB38
-ContractLsdNetworkFactory address:0xe2CF966b041904eFfb8Fe83E317CAF4dd27d8CBc
-LSDTokenAddress address:0x549aF761C1c72f3cd2Be966e76B778339Bf746DD
-FeePoolAddress address:0x55090210493C1C87b1a6a8DD90096bB81058f931
-NetworkBalancesAddress address:0xbe8651b74908D4B0e288a5497E1aB3b133Cb5Ea8
-NetworkProposalAddress address:0x5c99383b9975551bcee1040C2b2986F8E359202d
-NodeDepositAddress address:0x16E2Ab23F8EF64d9115106F8C15C63fE515e0Aff
-UserDepositAddress address:0xC3Af7Bf302Ef2A329919fBcaC4DB2C6d40B9322B
-NetworkWithdrawalAddress address:0x9522B23F48C042520612d3ca803422957D6cDecB
+network admin account address:   0xa9b8af5C53E6282fB469297091A33B08B5AC40B7
+voter1 address:  0x68146ebA486CE6F8D22731c8ECB4d013F34E7114
+voter2 address:  0x5b01439ab024Ba75B7B1f9c05aB55fa25e402809
+voter3 address:  0xC82754C11eA7f1a901D331aaBdDf6C968044CB38
+ContractLsdNetworkFactory address:       0x7EA9DE3d1885A8017E4327Af1d7Fe8926603ea91
+LSDTokenAddress address:         0xd27A163B08814eaa6F5ad7B0a06e2AFBcc8807d5
+FeePoolAddress address:          0xcaDDA21ab5d02556437D2210Eab97A14572F0EF4
+NetworkBalancesAddress address:  0xe46B1fbc0cebD9818AB806B58cfB6979e176Ef12
+NetworkProposalAddress address:  0x183fE0eDfB3bB42e96952dcA8180A1De64c19B76
+NodeDepositAddress address:      0x801e3284e79a3aDA251C33f4Fc78e4BA2C77A390
+UserDepositAddress address:      0x6E4Ca40069d3497dfd1E2fAB0862476002409cc9
+NetworkWithdrawAddress address:  0xF4536d886f722AB8894d3A7F830ec2Bd9d950aA4
 ```
 
 ## Step 2: Installing Relay Service
@@ -88,7 +88,7 @@ Install `make`, `gcc` and `git`
 
 ```bash
 sudo apt update
-sudo apt install -y make gcc git
+sudo apt install -y make gcc git build-essential
 ```
 
 Install `go` by following the [official docs](https://golang.org/doc/install). Remember to set your `$PATH` environment variable, for example:
@@ -125,7 +125,7 @@ Update config (config.toml) by your favorite editor according to [Relay Config]
 
 ```toml
 eth1Endpoint = "http://127.0.0.1:8545"
-eth2Endpoint = "https://beacon-lighthouse-goerli.stafi.io"
+eth2Endpoint = "https://holesky-beacon.stafi.io"
 storageApiToken = "000000000000000000000000000000000000.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.22222222222222222222222-333333--44444444444"
 account = "0x68146ebA486CE6F8D22731c8ECB4d013F34E7114"
 gasLimit = "3000000"

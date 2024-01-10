@@ -16,8 +16,8 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 
 | config | description | example value | recommended value |
 | --- | --- | --- | --- |
-| eth1Endpoint | Execution RPC endpoint | https://eth-goerli.g.alchemy.com/v2/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX |  |
-| eth2Endpoint | Consensus (Beacon chain) RPC endpoint | https://beacon-lighthouse-goerli.stafi.io/ |  |
+| eth1Endpoint | Execution RPC endpoint | http://127.0.0.1:8545 |  |
+| eth2Endpoint | Consensus (Beacon chain) RPC endpoint | https://holesky-beacon.stafi.io |  |
 | storageApiToken | get an api token from https://nft.storage/ |  |  |
 | account | voter account addressMake sure you imported it before using |  |  |
 | gasLimit |  |  | 3000000 |
@@ -38,7 +38,7 @@ Ejector service plays an important role in ETH LSD stack. Every validator should
     
 | config | description | example value |
 | --- | --- | --- |
-| consensus_endpoint | Execution RPC endpoint | https://eth-goerli.g.alchemy.com/v2/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX |
-| execution_endpoint | Consensus (Beacon chain) RPC endpoint | https://beacon-lighthouse-goerli.stafi.io/ |
+| consensus_endpoint | Execution RPC endpoint | http://127.0.0.1:8545  |
+| execution_endpoint | Consensus (Beacon chain) RPC endpoint | https://holesky-beacon.stafi.io |
 | keys_dir | keystore path created by https://github.com/ethereum/staking-deposit-cli | ./validator_keys |
 | withdraw_address | Contract address of NetworkWithdraw | 0x_NETWORK_WITHDRAW_CONTRACT_ADDR |

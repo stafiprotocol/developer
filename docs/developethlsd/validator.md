@@ -32,7 +32,7 @@ Install `make`, `gcc` and `git`
 
 ```
 sudo apt update
-sudo apt install -y make gcc git
+sudo apt install -y make gcc git build-essential
 ```
 
 Install `go` by following the [official docs](https://golang.org/doc/install). Remember to set your `$PATH` environment variable, for example:
@@ -60,8 +60,8 @@ $ make install
 
 | config | description | example value |
 | --- | --- | --- |
-| consensus_endpoint | Execution RPC endpoint | https://eth-goerli.g.alchemy.com/v2/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX |
-| execution_endpoint | Consensus (Beacon chain) RPC endpoint | https://beacon-lighthouse-goerli.stafi.io/ |
+| consensus_endpoint | Execution RPC endpoint | http://127.0.0.1:8545 |
+| execution_endpoint | Consensus (Beacon chain) RPC endpoint | https://holesky-beacon.stafi.io |
 | keys_dir | keystore path created by https://github.com/ethereum/staking-deposit-cli | ./validator_keys |
 | withdraw_address | Contract address of NetworkWithdraw | 0x_NETWORK_WITHDRAW_CONTRACT_ADDR |
 
@@ -83,7 +83,7 @@ Install `make`, `gcc` and `git`
 
 ```
 sudo apt update
-sudo apt install -y make gcc git
+sudo apt install -y make gcc git build-essential
 ```
 
 Install `go` by following the [official docs](https://golang.org/doc/install). Remember to set your `$PATH` environment variable, for example:
