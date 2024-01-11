@@ -2,7 +2,7 @@
 
 ## Run validator manually
 
-‼️**You MUST run ejector service, otherwise you may be slashed.**
+⚠️You MUST run ejector service, otherwise you may be slashed.
 
 ### Run validator by Prysm
 
