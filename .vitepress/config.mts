@@ -17,9 +17,13 @@ export default defineConfig({
       "/docs/": docs(),
     },
 
+    outline: {
+      level: 'deep',
+      label: 'Contents',
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/stafiprotocol/developer' }
-    ]
+    ],
   }
 })
 
@@ -53,7 +57,7 @@ function docs(){
         {text: "Contract", link: "/docs/developethlsd/contract"},
         {text: "Relay", link: "/docs/developethlsd/relay"},
         {text: "Validator", link: "/docs/developethlsd/validator"},
-        {text: "Enjecter", link: "/docs/developethlsd/enjecter"},
+        {text: "Ejecter", link: "/docs/developethlsd/ejecter"},
         {text: "Deploy", link: "/docs/developethlsd/deploy"},
       ]
     },
