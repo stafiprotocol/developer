@@ -1,15 +1,13 @@
 # Ejector
 
-## Introduction
-
 Ejector service plays an important role in ETH LSD stack. Every validator should run an ejector service to properly handle the validator exiting process, as users are free to `unstake` and `withdraw`.
 
 ⚠️When use our SSV client service to run validators, you don't need to run an ejector service explicitly, cause it is embedded in the SSV client service.
 
-## Installation
+# Installation
 
 
-### Install Build Tools
+## Install Build Tools
 
 Install `make`, `gcc` and `git`
 
@@ -18,7 +16,7 @@ sudo apt update
 sudo apt install -y make gcc git build-essential
 ```
 
-### Install Go
+## Install Go
 
 Install `go` by following the [official docs](https://golang.org/doc/install). Remember to set your `$PATH` environment variable, for example:
 
@@ -33,7 +31,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bashrc && . $H
 go version
 ```
 
-### Install Ejector service
+## Install Ejector service
 
 ```bash
 git clone https://github.com/stafiprotocol/eth-lsd-ejector.git
@@ -41,9 +39,9 @@ cd eth-lsd-ejector
 make install
 ```
 
-## Start Ejector service
+# Start Ejector service
 
-### Config
+## Config
 
 | config | description | example value |
 | --- | --- | --- |
@@ -53,7 +51,7 @@ make install
 | withdraw_address | Contract address of NetworkWithdraw | 0x_NETWORK_WITHDRAW_CONTRACT_ADDR |
 
 
-### Start
+## Start
 
 ```bash
 eth-lsd-ejector start \

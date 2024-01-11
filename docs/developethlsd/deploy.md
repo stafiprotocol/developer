@@ -2,11 +2,11 @@
 
 This guide provides a step-by-step script to deploy the ETH LSD stack, without knowing details about contracts and services. Read the documentation for comprehensive understandings of these components.
 
-## Step 0: Prerequisites
+# Step 0: Prerequisites
 
 To create your own LSD network you have to obtain the LSDNetworkFactory address. You can pick one of the following genesis address according to the Ethereum network to deploy.
 
-### Genesis Contracts
+## Genesis Contracts
 
 ### Mainnet
 
@@ -20,9 +20,9 @@ To create your own LSD network you have to obtain the LSDNetworkFactory address.
 | --- | --- |
 | LsdNetworkFactory | 0xF9bB59107e293951205cDEEf8B482F48F35E5CC1 |
 
-## Step 1: Deploying Contracts
+# Step 1: Deploying Contracts
 
-### Option 1 (recommended): Deploying contracts by using Etherscan Read/Write Contract Feature
+## Option 1 (recommended): Deploying contracts by using Etherscan Read/Write Contract Feature
 
 Learn this feature at https://info.etherscan.com/how-to-use-read-or-write-contract-features-on-etherscan/
 
@@ -33,10 +33,42 @@ There are 2 account roles in a LSD network, you should prepare the following acc
 
 Navigate to https://holesky.etherscan.io/address/0xF9bB59107e293951205cDEEf8B482F48F35E5CC1#writeProxyContract
 
-- Connect to your web3 wallet as a deployer
-- Submit transaction to create your own LSD network
+1. Connect to your web3 wallet as a deployer
+![](/image/ethlsd/01_connect_to_web3.png)
 
-### Option 2: Deploying contracts from source code
+2. Submit transaction to create your own lsd network
+
+i. Click these buttons sequentially: `Contract`, `Write as Proxy` and `createLsdNetwork`<br>
+ii. Fill in the fields<br>
+iii. submit the transaction<br>
+iv. view the transaction you just submitted
+
+![](/image/ethlsd/02_create_lsd_network_form.png)
+
+3. View the transaction detail
+![](/image/ethlsd/03_transaction_input_data.png)
+
+3. View the addresses of new contracts by reading events
+
+i. Click `Logs` button<br>
+ii. Scroll to the end of the page or search `LsdNetwork`<br>
+iii. Save these addresses as your own lsd network for later use
+
+![](/image/ethlsd/04_read_new_network_contracts_addr.png)
+
+4. View the address of new contracts by reading the contract
+
+Click these buttons sequentially: `Contract`, `Read as Proxy` and `lsdTokensOfCreater`
+
+`_creater` is the deployer account address
+
+![](/image/ethlsd/05_read_contracts_created.png)
+
+5. Twist the contract parameters
+
+[Click here to learn the most notable parameters you may want to change](contract.html#notable-parameters)
+
+## Option 2: Deploying contracts from source code
 
 There are 2 account roles in a lsd network, you should prepare the following accounts before advancing:
 
@@ -80,9 +112,9 @@ UserDepositAddress address:      0x6E4Ca40069d3497dfd1E2fAB0862476002409cc9
 NetworkWithdrawAddress address:  0xF4536d886f722AB8894d3A7F830ec2Bd9d950aA4
 ```
 
-## Step 2: Installing Relay Service
+# Step 2: Installing Relay Service
 
-### Install Build Tools
+## Install Build Tools
 
 Install `make`, `gcc` and `git`
 
@@ -104,7 +136,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bashrc && . $H
 go version
 ```
 
-### Install relay service
+## Install relay service
 
 ```bash
 $ git clone https://github.com/stafiprotocol/eth-lsd-relay.git
@@ -112,14 +144,14 @@ $ cd eth-lsd-relay
 $ make install
 ```
 
-### Create relay working directory and config file
+## Create relay working directory and config file
 
 ```bash
 $ mkdir -p ~/eth-stack
 $ cp conf.template.toml ~/eth-stack/config.toml
 ```
 
-### Config eth relay service
+## Config eth relay service
 
 Update config (config.toml) by your favorite editor according to [Relay Config](https://github.com/stafiprotocol/stack-docs/blob/main/eth/relay.md#config)
 
@@ -137,7 +169,7 @@ lsdTokenAddress = "0x549aF761C1c72f3cd2Be966e76B778339Bf746DD"
 lsdFactoryAddress = "0xe2CF966b041904eFfb8Fe83E317CAF4dd27d8CBc"
 ```
 
-### Import voter accounts
+## Import voter accounts
 
 Let's import your 3 voter accounts so that it can be used by relay service
 
@@ -153,7 +185,7 @@ file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
 ```
 
 
-### Start relay services
+## Start relay services
 
 ```bash
 $ eth-lsd-relay start --base-path ~/eth-stack

@@ -1,10 +1,11 @@
 # New to LSD Stack
+&nbsp;
 
-## Idea
+# Idea
 
 LSD Stack is an open-source software suite designed to promote the public good in the realm of staking and to fully unleash the power of decentralization. It is dedicated to mainstream chains, such as Ethereum, EVM-compatible chains, Cosmos, Solana, and others. The aim of the stack is to simplify the process of running staking projects, thereby making it effortless for users.
 
-## Landscape
+# Landscape
 
 The LSD Stack's ETH stack includes the following key elements:
 
@@ -16,7 +17,7 @@ The LSD Stack's ETH stack includes the following key elements:
 
 LSD Stack follows the U3SE principle, which emphasizes Usability, Simplicity, Scalability, Security, and Extensibility.
 
-## Challenges
+# Challenges
 
 In the design and development of LSD Stack, we have overcome many challenges, some of the most common ones include:
 
@@ -34,7 +35,7 @@ In developing the LSD Stack's ETH stack, we also faced the following challenges:
 - Node validation: LSD Stack uses the SSV client to simplify node validation. The SSV client can automatically complete all necessary steps for node validation.
 - Unified relay service: LSD Stack uses a unified relay service to improve performance. The unified relay service caches commonly used data, thereby reducing the number of communications with the execution chain and consensus layer.
 
-## On the way to LSAAS
+# On the way to LSAAS
 
 LSD Stack aims to be a benchmark in the liquid staking space. We will continue to work hard to improve LSD Stack and develop new features.
 

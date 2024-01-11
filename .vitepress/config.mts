@@ -18,8 +18,8 @@ export default defineConfig({
     },
 
     outline: {
-      level: 'deep',
-      label: 'Contents',
+      level: [1,3],
+      // label: 'Contents',
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/stafiprotocol/developer' }

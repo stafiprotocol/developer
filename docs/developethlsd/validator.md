@@ -1,12 +1,13 @@
 # Validator
+&nbsp;
 
-## Run validator manually
+# Run validator manually
 
 Please configure the fee recipient as the `FeePool` contract. You can find the `FeePool` contract address through `Factory` contract. For example:
 
-![Aquire network contract address by lsd token](/image/ethlsd/aquire_network_contracts_addr_by_lsd_token.png)
+![Aquire network contract address by lsd token](/image/ethlsd/05_read_contracts_created.png)
 
-### Option 1. Prysm
+## Option 1. Prysm
 
 Details about the configuration of Prysm, you can check [here](https://docs.prylabs.network/docs/execution-node/fee-recipient).
 
@@ -21,7 +22,7 @@ To check on the status of your validator, we recommend checking out the popular 
 <br/>⚠️You MUST run ejector service, otherwise you may be slashed.
 <br/> Follow [our ejector doc](/docs/developethlsd/ejecter.html) to run ejector service for the validator.
 
-### Option 2. SSV
+## Option 2. SSV
 
 ssv.network is a fully decentralized, open-source ETH staking network, based on Secret Shared Validator (SSV) technology, which enables the distributed operation of an Ethereum validator. The SSV protocol splits a validator key into multiple KeyShares and distributes them to non-trusting nodes run by operators. The nodes execute the validator's duties under a consensus mechanism providing fault tolerance, increased security, and decentralized risk for stakers.
 
@@ -34,11 +35,11 @@ More details on SSV portal: https://ssv.network/
 <br/>⚠️You MUST run ejector service, otherwise you may be slashed.
 <br/>Follow [our ejector doc](/docs/developethlsd/ejecter.html) to run ejector service for the validator.
 
-## Run validator by SSV client for trust validator
+# Run validator by SSV client for trust validator
 
 ssv.network is a fully decentralized, open-source ETH staking network, based on Secret Shared Validator (SSV) technology, which enables the distributed operation of an Ethereum validator. The SSV protocol splits a validator key into multiple KeyShares and distributes them to non-trusting nodes run by operators. The nodes execute the validator's duties under a consensus mechanism providing fault tolerance, increased security, and decentralized risk for stakers.
 
-### SSV Client
+## SSV Client
 - Listen to whether there is enough ETH in the user pool. If so, automatically generate a new validator key, signature, deposit data, etc., based on the mnemonic, and interact with the node contract to stake ETH and become a validator.
 - Monitor SSV-related events and calculate the cluster's latest state.
 - Based on the configured operator, along with the validator key from step 1 and the cluster state from step 2, generate parameters such as signature, pubkeys, keyshare, etc., using SSV's related algorithms, and interact with the SSV contract to trigger RegisterValidator.
@@ -55,7 +56,7 @@ ssv.network is a fully decentralized, open-source ETH staking network, based on 
 - Monitor the cluster balance. If it approaches the liquidation value, interact with the SSV contract to trigger Deposit to avoid liquidation. If it has already been liquidated, trigger Reactivate to recover the cluster.
 - Monitor the validator Ejected status. If an eject is needed, trigger ExitValidator on the beacon.
 
-### Install Build Tools
+## Install Build Tools
 
 Install `make`, `gcc` and `git`
 
@@ -77,7 +78,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bashrc && . $H
 go version
 ```
 
-### Install SSV Client service
+## Install SSV Client service
 
 ```bash
 git clone https://github.com/stafiprotocol/eth-lsd-ssv.git
@@ -85,7 +86,7 @@ cd eth-lsd-ssv
 make install
 ```
 
-### Import trust node account
+## Import trust node account
 
 ```bash
 $ lsd-ssv-client import-account
@@ -97,7 +98,7 @@ password for key:
 INFO[0007] key imported                                  address=0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
 ```
 
-### Import your SSV account
+## Import your SSV account
 
 ```bash
 $ lsd-ssv-client import-account
@@ -109,13 +110,13 @@ password for key:
 INFO[0007] key imported                                  address=0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 file=CWD/keys/0x68146ebA486CE6F8D22731c8ECB4d013F34E7114.key
 ```
 
-### Import validator mnemonic for creating new validators
+## Import validator mnemonic for creating new validators
 
 ```bash
 $ lsd-ssv-client import-val-mnemonic
 ```
 
-### Config eth lsd ssv client service
+## Config eth lsd ssv client service
 
 Update config (config.toml) by your favorite editor
 
@@ -145,7 +146,7 @@ contracts section
 |  *lsdFactoryAddress* | lsd factory address   |   |    |
 
 
-### Start ssv services
+## Start ssv services
 
 ```bash
 $ lsd-ssv-client start --config config.toml

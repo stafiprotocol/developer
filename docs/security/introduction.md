@@ -1,26 +1,27 @@
 # Security
+&nbsp;
 
-## Accumulated Security
+# Accumulated Security
 
 Listake LSD framework is accumulated security from the Staking industry for the past 5 years, the tech is abstracted from the experiences that 61 Lab learned, and the technology in the cutting edge. There are applications that adopts Listake Stack that proves by the market, StaFi protocol is a great example. With the development of custom features,  the Stack is updated to cover more and more cases,  EVM LSD Stack and Cosmos LSD Stack are the representatives of the framework. We prefer to call it as the accumulated security or replicated security that comes from the mature framework.
 
-## Native Security
+# Native Security
 
 The Listake usually deploys LSTs in the target chain, natively inheriting security from the chain. There are advantages on security aspect if compare native LST issuance to the appchain LST issuance, decoupling LST security from appchains eliminate the TVL concern of the appchain.  
 
-## Asset security
+# Asset security
 
 Asset security is one of the key security that Listake take it more seriously. There are general security and specific security which are all designed in the Stack.
 
-### **Blockchain security**
+## **Blockchain security**
 
 Blockchain security is the most important, otherwise all assets on the chain will be insecure. A secure chain must prevent at least 51% attacks, Sybil attacks, Governance attacks, etc.
 
 In the design of LSD Stacks, contracts are deployed on the target chain, relying on the security of the target chain. For example, the contracts of ETH LSD and MATIC LSD are deployed on Ethereum, and the contracts of BNB LSD are deployed on the BSC chain, we believe that both Ethereum and BSC are sufficiently secure, so there is no need to worry about the blockchain security.
 
-### **Smart contract security**
+## **Smart contract security**
 
-### Access control
+## Access control
 
 To prevent unauthorized use of smart contract functions, it is necessary to implement secure access controls. Access control mechanisms restrict the ability to use certain functions in a smart contract to approved entities, such as accounts responsible for managing the contract. The **Ownable pattern** and **role-based control** are two patterns useful for implementing access control in smart contracts:
 
@@ -42,17 +43,17 @@ Using a multisig for access control introduces an extra layer of security since 
 
 In the design of Listake, the owner of the contract only manages some basic parameters, fee commission, minimum pledge amount, etc., and do not involve any user assets. On the other hand, the owner of the contract is a multi-signature contract, controlled by multiple parties(Stack DAO), and there will be no single account missing problem.
 
-## Code Vulnerabilities
+# Code Vulnerabilities
 
 If the contract code has security vulnerabilities, it will also lead to hacking and loss of assets. So it is very necessary to audit the contract.
 
 We strongly recommend all the projects that develops based on Listake LSD Stack to do the audit, and make sure the security. The framework of the Stack will be subjected to the brand auditor accordingly but not all feature will be, please keep it in mind.
 
-### User asset lock
+## User asset lock
 
 For LSD projects, the users will transfer the assets to the LSD protocol, and the protocol delegates the assets to the target chain. Usually, these locked assets on the target chain are safe. However, if there are some problems with the protocol and the undelegation operation of the target chain is not triggered, the assets may be locked all that time and users cannot redeem their assets. In the design of the Listake, the undelegation operation of the target chain can be directly triggered at any time by anyone, which will ensure that the user can eventually withdraw his assets.
 
-### Abnormal exchange rate
+## Abnormal exchange rate
 
 For the LSD project, the exchange rate is very important, which represents how much assets users can redeem with LST. If the exchange rate is abnormal, the amount of assets redeemed by the user will also be abnormal, so accurate exchange rate calculation is very important.
 
@@ -62,11 +63,11 @@ An great example is ETH, the reward needs to be synchronized from the Consensus 
 
 In MATIC, it completely relies on contract data, including LST supply, real staked amount on the chain, reward amount, etc. Therefore, the calculation of the exchange rate is usually very accurate. Of course, in order to prevent data anomalies in the MATIC staking contract, LSD Stack introduced a rateChangeLimit parameter protection mechanism to prevent sudden large fluctuations in the exchange rate.
 
-## Off-chain service security
+# Off-chain service security
 
 As mentioned above, LSTs like ETH, BNB need off-chain services, and some important data needs to be collected off-chain and then uploaded to the contract. Therefore, in order to ensure data security, off-chain services of Listake are designed to be decentralized. Whenever contract data needs to be updated, it is voted on by multiple off-chain services, usually running by different parties, similiar to decentralized oracle. At the same time, it can also avoid single points of failure and ensure the stability of the overall protocol.
 
-## Decentralization manner
+# Decentralization manner
 
 Staking is always related to the governance, no matter it is from PoS module or veToken module. Distributing the voting power from staking is related to the decentralization of the chain and community. This Stack integrate advanced technology to make the whole process more decentralized.
 

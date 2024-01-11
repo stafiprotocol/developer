@@ -2,7 +2,7 @@
 
 ETH LSD Stack is the simple, scalable and open-source development stack that powers ETH LST providers.  Developers can launch an ETH LST based on Listake ETH LSD Stack.
 
-## Smart Contracts
+# Smart Contracts
 
 The core part of ETH LSD Stack is a set of smart contracts, which are divided into two parts: the PlatformContract, a platform contract managed by 61 Lab, and the ProjectContracts, which belong to different projects. Platform contracts are common dependencies for all projects. Via platform contracts, developers or start-up projects can easily deploy and initialize their contract groups, distribute staking rewards.
 
@@ -19,7 +19,7 @@ Core roles:
 - Voter: privileged to propose changes to the on-chain status
 - Node: an account manages its validators and receives rewards
 
-## User Deposit Flow
+# User Deposit Flow
 
 UserDeposit contract manages all users deposit ETH and return LsdToken. When users deposit, it would speed up others who stuck at withdrawal stage.
 
@@ -27,7 +27,7 @@ UserDeposit contract manages all users deposit ETH and return LsdToken. When use
 
 ![An image](/image/userdepositflow.png)
 
-## User Unstake Flow
+# User Unstake Flow
 
 Any LsdToken holder is a valid user, and can call NetworkWithdraw to change ETH with LsdToken. 
 
@@ -39,7 +39,7 @@ If it does not have enough ETH for user, voters will select a batch of validator
 
 ![An image](/image/userdepositflow.png)
 
-## Node Deposit Flow
+# Node Deposit Flow
 
 Node providers will be served by individuals or single entities who are responsible for the consistency, security, availability and activity of the validator. They will be slashed if the validator is not working as expected.
 
@@ -47,23 +47,23 @@ NodeDeposit contract provides interfaces for node providers to deposit and stake
 
 The NetworkWithdraw contract will be used as `Withdrawal Credentials` when depositing in ETH official stake contract. This can ensure ETH LSD Stack maintains full custody over staking rewards.
 
-### Solo Node
+## Solo Node
 
 Unlike normal stakers which are required to put 32 ETH up for deposit to create a new validator, for each validator solo nodes only need to deposit far less amount of ETH — the amount is specified by the project: 8, 12 or 16 ETH is common case. This will be coupled with ETH borrowed from the user deposit pool to create a new validator. 
 
-### Trust Node
+## Trust Node
 
 Node providers don't need to deposit any ETH and still can run a validator. All the required 32ETH deposit requirement is provided by user deposit pool.
 
 ![An image](/image/trustnode.png)
 
-## Node Stake Flow
+# Node Stake Flow
 
 When a node calls *stake* method in NodeDeposit, the reset amount of 32 ETH will be deposited to official deposit contract, node operator should run a validator and an ejector service. After the validator being activated on the Beacon chain, rewards will distribute to NetworkWithdraw automatically.
 
 ![An image](/image/nodestakeflow.png)
 
-## Node Claim Flow
+# Node Claim Flow
 
 At regular intervals, voters will flag a checkpoint on the network. Currently, checkpoints occur every 24 hours(225 epoch).
 
@@ -73,23 +73,23 @@ Once the tree is submitted, voters will submit the merkle root of this checkpoin
 
 ![An image](/image/userdepositflow.png)
 
-## Voters
+# Voters
 
 Voters, the essential offchain service component, are responsible for administrative duties required by the protocol that cannot be achieved by smart contracts due to technical limitations. They will update crucial network parameters in ETH LSD Stack smart contracts.
 
-### Calculate network balances
+## Calculate network balances
 
 At a certain interval, currently 24 hours(225 epoch), the voters will update the validator's balance to calculate network staking and fee(tip) reward, distribute it to platform, node providers, and users. Rate between LsdToken and ETH will be updated as well.
 
-### Slash mechanism
+## Slash mechanism
 
 Voter will provide a validator slash detective mechanism to measure a validator running status to decide which solo node or trust node in bad situations and carry out appropriate penalties. This part of penalties will be recycled to UserDeposit contract.
 
-### Withdrawal Credential Match Check
+## Withdrawal Credential Match Check
 
 There is another responsibility for voters to check node provider's *withdrawal_credentials* to ensure ETH LSD stack will successfully receive the validators' rewards so that it can distribute.
 
-### Manage Voters
+## Manage Voters
 
 Considering voters' significant role in the whole system, the correctness and availability of voters must be guaranteed by protocol design. So we introduced voter manager role to add and remove voters when it presents dishonesty.
 
@@ -97,13 +97,13 @@ After initialization of the system, there will be a group of voters designated a
 
 ![An image](/image/managevote.png)
 
-## Node Ejector
+# Node Ejector
 
 This component is required for node providers to run with validators. Voters will select a batch of validators to enter the exit process, when user pool does not satisfy the user unstake amount.
 
 ![An image](/image/nodeenjector.png)
 
-## DV Adapter
+# DV Adapter
 
 DV Adapter is a layer for Listake Stack to integrate with DVT(distributed validator technology). Thanks to DVT providers, developers don't need to run their own validator clients. DV Adaptor can not only speed up deployment of LSD Stack but also simplify the complexity of the entire system. Currently the Stack supports SSV network, more will be supported in the future. Here we introduce the structure of SSV adapter.
 
@@ -116,6 +116,6 @@ There are four parts:
 
 ![An image](/image/dvadapter.png)
 
-## Alert
+# Alert
 
 The LSD Alert is an off-chain program which monitors the flow of large amounts of ETH and Derivatives on the chain with notifications via Email, SMS, phone, etc.

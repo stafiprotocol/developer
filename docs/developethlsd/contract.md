@@ -1,12 +1,12 @@
 # Contract
+&nbsp;
 
-## LsdNetworkFactory.sol
+# LsdNetworkFactory.sol
 
 An utility contract for launching new LSD networks with ease. Instead of deploying multiple contracts manually, you can just call `createLsdNetwork()` or `createLsdNetworkWithTimelock()` to deploy your own LSD network.
 
-### LsdNetworkFactory Methods
-
-`createLsdNetwork()`: create a new LSD network with admin and voters
+## `createLsdNetwork()`
+create a new LSD network with admin and voters
 
 It is a straightforward setup, full control over the network with a specified admin address, but lacks the security layer of timelock mechanism.
 
@@ -92,11 +92,11 @@ function createLsdNetworkWithTimelock(
 lsdTokensOfCreater(address _creater) public view returns (address[] memory)
 ```
 
-## LsdToken.sol
+# LsdToken.sol
 
 An ERC20-compatible token used to store and manage LSD Tokens. When users deposit ETH they will receive equivalent LSD tokens(rToken) in return.
 
-## NetworkBalances.sol
+# NetworkBalances.sol
 
 Manages deposits for nodes and users.
 
@@ -114,7 +114,7 @@ Real-time tracking of critical balances in the network, related to actions such 
 - default 225 (roughly 24 hours)
 - Call function `setUpdateBalancesEpochs(uint256)` to update
 
-## NetworkProposal.sol
+# NetworkProposal.sol
 
 Allows specific participants or contracts to submit network-related proposals.
 
@@ -132,7 +132,7 @@ Provides a complete proposal voting mechanism, allowing specific network partici
 - `threshold`
   - the minimum number of votes required to authorize a transaction. it must greater or equal to `(voters.length() + 1) / 2`
 
-## NodeDeposit.sol
+# NodeDeposit.sol
 
 Manages deposit logic related to Eth2.0 validators.
 
@@ -152,13 +152,13 @@ addTrustNode(address _trustNodeAddress) external onlyAdmin
 
 The trust node wallet address you add will also be the one configured in the SSV client later on. To locate the `NodeDeposit` contract address, refer to the `LsdNetwork` event from the `createLsdNetwork` transaction. This event logs the following data:
 
-## UserDeposit.sol
+# UserDeposit.sol
 
 Allows ordinary users to deposit ETH and receive corresponding LSD Tokens.
 
 `minDeposit` - The minimum amount user can deposit into, admin is able to change the value by calling function `setMinDeposit(uint256)`.
 
-## NetworkWithdraw.sol
+# NetworkWithdraw.sol
 
 Manages all logic related to network withdrawals.
 
@@ -171,11 +171,11 @@ Allows users and nodes to withdraw their LSD Tokens or ETH from the system.
 
 These parameters are set during the initialization phase (in the `init` function) of the contract and may be modified during its subsequent operation. They primarily serve to control and limit the withdrawal behavior within the contract, ensuring that both users and the entire system do not exceed predefined limits during each cycle. Additionally, commission rates are set so that the appropriate amounts can be deducted as commissions during withdrawals.
 
-## FeePool.sol
+# FeePool.sol
 
 A contract to receive `priority fee`(tip) when your validators pack new blocks. Contract `NetworkWithdraw` will distribute the balance to the parties: the factory and the platform.
 
-## Timelock.sol
+# Timelock.sol
 
 It acts as a time-locked controller. When set as the owner of the ownable smart contract, it enforces a time lock on all `onlyOwner` maintenance operations. This provides users of the controlled contract with time to exit before potentially dangerous maintenance operations are applied.
 
@@ -195,3 +195,28 @@ The `Timelock` contract inherits from the `TimelockController` contract and 
 - **`admin`**:
     - Type: `address`
     - Purpose: This is an optional address that will be granted the admin (`TIMELOCK_ADMIN_ROLE`) role. The admin can change role permissions and other advanced settings. If set to a non-zero address, this address will have admin privileges. However, for security reasons, it's recommended to renounce this role after contract deployment, ensuring all administrative tasks must go through the timelock process
+
+# Notable Parameters
+
+Platforms inevitably have their own parameters. We've compiled a list of the most significant ones that you might consider adjusting.
+
+|  config | description  | recommended value |
+|---|---|---|
+| <br>**NetworkProposal contract**<br><br> | | |
+| address admin    | an account who administrate the whole network | we suggest platform use multi-sig account for security reason |
+| <br>**NetworkBalances contract**<br><br> | | |
+| uint256 updateBalancesEpochs             | a period of time in epoch determins how frequent voters calculate and submit new balances | 225 (equivalent to 24 hours), min value is 75(not recommended as its worthless)  |
+| uint256 rateChangeLimit      | a number represents the numerator in rate and the denominator is 1e18.<br>the exchange rate between ETH and LsdToken is vital for the system, to prevent accidental or violent changes, we introduce `rateChangeLimit` to keep the system safe | default is 11e14 (=0.11%) |
+| <br>**NetworkWithdraw contract**<br><br> |  |   |
+| uint256 withdrawCycleSeconds     | a period of time in second determins how long a cycle last  | 86400 (equivalent to 24 hours), min value is 28800(not recommended as its worthless)  |
+| uint256<br>nodeCommissionRate       | a number represents the numerator in rate and the denominator is 1e18.<br>this value configures the propotion of the node rewards | 5e16 (denotes 5e16/1e18=5%)<br>(node commission = <br>total rewards * 5%)  |
+| uint256<br>platformCommissionRate   | a number represents the numerator in rate and the denominator is 1e18.<br>this value configures the propotion of the platform rewards | 5e16 (denotes 5e16/1e18=5%)<br>(platform commission = <br>total rewards * 5%)  |
+| uint256<br>factoryCommissionRate    | a number represents the numerator in rate and the denominator is 1e18.<br>*it is a proportion of factoryCommission to platofromCommision*<br>the value of paramether should be determined after consulting with ETH LSD Stack team | 10e16 (denotes 10e16/1e18=10%)<br>(factory commission = <br>platform commission * 10%)   |
+| <br>**NodeDeposit contract**<br><br> | | |
+| bool soloNodeDepositEnabled         | a switch allows/disallows solo node participation | true |
+| bool trustNodeDepositEnabled        | a switch allows/disallows trust node participation  | true |
+| uint256 soloNodeDepositAmount         | an amount of node participation threshold in ETH as a validator<br>Solo validator will be enabled only if this parameter has been set   |  8, 12 or 16 ETH is an reasonable amount   |
+| uint256 trustNodePubkeyNumberLimit    | a number which limits how many validators could a trust node run, the lower the number, the more decentralized system you got  | default is 100 |
+| <br>**UserDeposit contract**<br><br> | | |
+| uint256 minDeposit    | an amount of user participation threshold in ETH |   |
+| bool depositEnabled   | a switch turns on/off deposit feature for users | true  |
