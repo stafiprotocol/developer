@@ -75,7 +75,7 @@ $ make install
 
 ## Run validator by SSV client for trust validator
 
-‼️**When use our SSV client service to run validators, you don't need to run the ejector service, cause it is embedded in the SSV client service.**
+⚠️When use our SSV client service to run validators, you don't need to run an ejector service explicitly, cause it is embedded in the SSV client service.
 
 ### Install Build Tools
 

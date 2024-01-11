@@ -12,7 +12,7 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 - **Distribute Withdrawals** (`distribute_withdrawals`): Handles withdrawal requests from users or nodes and distributes funds.
 - **Notify Validator Exit** (`notify_validator_exit`): Sends notifications when validators exit or are kicked out.
 
-## Config
+### Config
 
 | config | description | example value | recommended value |
 | --- | --- | --- | --- |
@@ -23,6 +23,7 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 | gasLimit |  |  | 3000000 |
 | maxGasPrice |  |  | 60000000000 (in wei) |
 | batchRequestBlocksNumber | a number which limits concurrent requests on Beacon chain, due to the design of Beacon chain RPC |  | 32 |
+| runForEntrustedLsdNetwork | set this config to true only if you are one of the entrusted voters who are resiponsible to relay data for entrusted LSD networks | false | false |
 
 ### Contracts section
 
@@ -30,15 +31,3 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 | --- | --- | --- | --- |
 | lsdTokenAddress | lsd token address |  |  |
 | lsdFactoryAddress | lsd factory address |  |  |
-- Ejector
-    
-Ejector service plays an important role in ETH LSD stack. Every validator should run an ejector service to properly handle the validator exiting process, as users are free to `unstake` and `withdraw`.
-    
-‼️**When use our SSV client service to run validators, you don't need to run the ejector service, cause it is embedded in the SSV client service.**
-    
-| config | description | example value |
-| --- | --- | --- |
-| consensus_endpoint | Execution RPC endpoint | http://127.0.0.1:8545  |
-| execution_endpoint | Consensus (Beacon chain) RPC endpoint | https://holesky-beacon.stafi.io |
-| keys_dir | keystore path created by https://github.com/ethereum/staking-deposit-cli | ./validator_keys |
-| withdraw_address | Contract address of NetworkWithdraw | 0x_NETWORK_WITHDRAW_CONTRACT_ADDR |

@@ -1,10 +1,10 @@
 # Contract
 
-## LsdNetworkFactory.sol:
+## LsdNetworkFactory.sol
 
-An utility contract for launching a new LSD network with ease. Instead of deploying multiple contracts manually, you can just call `createLsdNetwork()` or `createLsdNetworkWithTimelock()` to deploy your own LSD network.
+An utility contract for launching new LSD networks with ease. Instead of deploying multiple contracts manually, you can just call `createLsdNetwork()` or `createLsdNetworkWithTimelock()` to deploy your own LSD network.
 
-## LsdNetworkFactory Methods
+### LsdNetworkFactory Methods
 
 `createLsdNetwork()`: create a new LSD network with admin and voters
 
@@ -19,7 +19,7 @@ It is a straightforward setup, full control over the network with a specified ad
 - List the addresses of the voters.
 - Set the voting threshold, i.e., the minimum number of votes required to approve a proposal.
 
-```
+```solidity
 function createLsdNetwork(
     string memory _lsdTokenName,
     string memory _lsdTokenSymbol,
@@ -40,6 +40,23 @@ struct NetworkContracts {
 }
 ```
 
+`createLsdNetworkWithEntrustedVoters()`: create a new LSD network with admin and entrusted voters
+
+All functionality is as same as `createLsdNetwork`, but no voters is needed. Stack provides entrusted voters who are creditable for every LSD network to choose. It's a good start point for startup project parties, and they are free to set their own voters.
+
+**Parameters**:
+
+- Provide the desired name and symbol for your LSD token.
+- Specify the network administrator's address.
+
+```solidity
+function createLsdNetworkWithEntrustedVoters(
+    string memory _lsdTokenName,
+    string memory _lsdTokenSymbol,
+    address _networkAdmin
+)
+```
+
 `createLsdNetworkWithTimelock()`: create a new LSD network with `Timelock` admin
 
 All functionality is as same as `createLsdNetwork` with TimeLock enabled. Changes and proposals will have a delay before they can be executed, preventing malicious activities, moreover it allows for a more decentralized setup with multiple proposers.
@@ -58,7 +75,7 @@ This function gives platforms more flexibility to create their preferred flavor 
 - Define the minimum delay for the timelock.
 - Specify the proposer addresses.
 
-```
+```solidity
 function createLsdNetworkWithTimelock(
     string memory _lsdTokenName,
     string memory _lsdTokenSymbol,
@@ -71,7 +88,7 @@ function createLsdNetworkWithTimelock(
 
 `lsdTokensOfCreater()`: retrieve all LSD tokens created by the creator
 
-```
+```solidity
 lsdTokensOfCreater(address _creater) public view returns (address[] memory)
 ```
 
@@ -115,7 +132,7 @@ Provides a complete proposal voting mechanism, allowing specific network partici
 - `threshold`
   - the minimum number of votes required to authorize a transaction. it must greater or equal to `(voters.length() + 1) / 2`
 
-## NodeDeposit.sol:
+## NodeDeposit.sol
 
 Manages deposit logic related to Eth2.0 validators.
 
@@ -129,7 +146,7 @@ These parameters help govern the behavior of the contract regarding depositing a
 
 We need to add a trust node. This is done by invoking the `addTrustNode` method in the `NodeDeposit` contract.
 
-```
+```solidity
 addTrustNode(address _trustNodeAddress) external onlyAdmin
 ```
 
@@ -154,11 +171,11 @@ Allows users and nodes to withdraw their LSD Tokens or ETH from the system.
 
 These parameters are set during the initialization phase (in the `init` function) of the contract and may be modified during its subsequent operation. They primarily serve to control and limit the withdrawal behavior within the contract, ensuring that both users and the entire system do not exceed predefined limits during each cycle. Additionally, commission rates are set so that the appropriate amounts can be deducted as commissions during withdrawals.
 
-## FeePool.sol:
+## FeePool.sol
 
 A contract to receive `priority fee`(tip) when your validators pack new blocks. Contract `NetworkWithdraw` will distribute the balance to the parties: the factory and the platform.
 
-## Timelock.sol:
+## Timelock.sol
 
 It acts as a time-locked controller. When set as the owner of the ownable smart contract, it enforces a time lock on all `onlyOwner` maintenance operations. This provides users of the controlled contract with time to exit before potentially dangerous maintenance operations are applied.
 
