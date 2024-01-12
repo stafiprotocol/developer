@@ -13,13 +13,13 @@ The Listake usually deploys LSTs in the target chain, natively inheriting securi
 
 Asset security is one of the key security that Listake take it more seriously. There are general security and specific security which are all designed in the Stack.
 
-## **Blockchain security**
+## Blockchain security
 
 Blockchain security is the most important, otherwise all assets on the chain will be insecure. A secure chain must prevent at least 51% attacks, Sybil attacks, Governance attacks, etc.
 
 In the design of LSD Stacks, contracts are deployed on the target chain, relying on the security of the target chain. For example, the contracts of ETH LSD and MATIC LSD are deployed on Ethereum, and the contracts of BNB LSD are deployed on the BSC chain, we believe that both Ethereum and BSC are sufficiently secure, so there is no need to worry about the blockchain security.
 
-## **Smart contract security**
+## Smart contract security
 
 ## Access control
 
