@@ -11,7 +11,7 @@ The LSD Stack's ETH stack includes the following key elements:
 
 - Smart contracts: responsible for handling staking logic, including validator registration, reward distribution, and withdrawals.
 - Off-chain relay service: responsible for relaying data from the execution chain and consensus layer to the smart contracts.
-- Web3 storage: used to store staking data, such as validator information, reward information, etc.
+- Decentralized storage: used to store staking data, such as validator information, reward information, etc.
 - Validator operation tools: used to help validators manage their staking businesses.
 - User interface application: used to make it easy for users to participate in staking.
 

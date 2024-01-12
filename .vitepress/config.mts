@@ -83,7 +83,7 @@ function docs(){
       items: [
         {text: "Ethereum Staking", link: "/docs/concepts/ethstaking"},
         {text: "LSD & LST", link: "/docs/concepts/lstlsd"},
-        {text: "LLAAS", link: "/docs/concepts/llaas"},
+        {text: "LSAAS", link: "/docs/concepts/lsaas"},
       ]
     }
   ]

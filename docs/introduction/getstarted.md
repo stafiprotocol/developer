@@ -21,7 +21,7 @@ Moreover, LSD is more like a public infrastructure as it is growing, as a intere
 
 # Who need it?
 
-This Stack's vision is to build a fast deployed, easily used, technologically trended **LLAAS**(Liquid Staking as a Service) platform, the users will include but not limited to:
+This Stack's vision is to build a fast deployed, easily used, technologically trended **LSAAS**(Liquid Staking as a Service) platform, the users will include but not limited to:
 
 - Layer1 Team: project developers who want to build an 'official' LSD protocol.
 - Community Builder: builders who want to build a community LSD protocol.
