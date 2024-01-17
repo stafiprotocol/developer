@@ -21,7 +21,7 @@ Standard:
 Custom:
 - Server required
 - Both Execution & Beacon chain RPC required
-- At leat run 3 relay instances
+- At least run 3 relay instances
 - Maintained by your own
 
 ## How to switch to custom relay service?
@@ -77,6 +77,16 @@ Threshold:
 ## Why LSD Token could not be changed?
 
 As being the heart of the LSD network, LSD token must be stable, reliable and trustable. Users hold LSD Token as a receipt of staking so it could not be changed.
+
+## Rewards Distribution
+
+Rewards distribution is crucial to project parties. Commission fee of users is set default as 10% and StaFi Stack fee is 10% of project income. for example, if `100ETH` rewards received from Ethereum, the distribution will be:
+
+| Role | Amount | Formula |
+|---------------|--------|-------|
+|  Users        |  90ETH | 100ETH*(1-0.1)  |
+|  Project      |  9ETH  | (100ETH-90ETH)*(1-0.1)  |
+|  StaFi Stack  |  1ETH  | 100ETH-90ETH-9ETH  |
 
 # Step2. Run relay service
 
