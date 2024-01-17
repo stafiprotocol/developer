@@ -5,3 +5,10 @@
 .medium-zoom-image {
   z-index: 21;
 }
+
+figcaption {
+  text-align: center;
+  color: gray;
+  font-size: small;
+  margin: 0.25rem 0 1.25rem;
+}

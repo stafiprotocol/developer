@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import imageFigures from 'markdown-it-image-figures';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -24,7 +25,15 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/stafiprotocol/developer' }
     ],
-  }
+  },
+  markdown: {
+    config: (md) => {
+      md.use(imageFigures, {
+        figcaption: 'title',
+        copyAttrs: '^class$',
+      });
+    },
+  },
 })
 
 
@@ -58,6 +67,7 @@ function docs(){
         {text: "Relay", link: "/docs/developethlsd/relay"},
         {text: "Validator", link: "/docs/developethlsd/validator"},
         {text: "Ejecter", link: "/docs/developethlsd/ejecter"},
+        {text: "App", link: "/docs/developethlsd/ethlsdapp"},
         {text: "Deploy", link: "/docs/developethlsd/deploy"},
       ]
     },
