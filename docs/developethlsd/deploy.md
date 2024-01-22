@@ -88,6 +88,21 @@ Rewards distribution is crucial to project parties. Commission fee of users is s
 |  Project      |  9ETH  | (100ETH-90ETH)*(1-0.1)  |
 |  StaFi Stack  |  1ETH  | 100ETH-90ETH-9ETH  |
 
+## Save all the information generated
+
+The lsd network has a set of smart contracts, so you should save all the information which you will interact frequently with, such as ETH LSD App, Validator App and Relay service.
+
+- LSD Network Factory address
+- LSD Token address
+- Admin address
+- Fee Pool address
+- Network Balances address
+- Network Proposal address
+- Network Withdraw address
+- Node Deposit address
+- User Deposit address
+- Voters Address
+
 # Step2. Run relay service
 
 ## Install Build Tools
