@@ -27,4 +27,4 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
 
 ## Build and deploy
 
-Run `npm run build or build:dev` to build your app, the static files will be placed in `out` folder. Upload those files to any static web hosting services you like.
+Run `yarn build` or `yarn build:dev` to build your app, the static files will be placed in `out` folder. Upload those files to any static web hosting services you like.

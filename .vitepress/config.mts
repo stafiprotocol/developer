@@ -68,6 +68,7 @@ function docs(){
         {text: "Validator", link: "/docs/developethlsd/validator"},
         {text: "Ejecter", link: "/docs/developethlsd/ejecter"},
         {text: "App", link: "/docs/developethlsd/ethlsdapp"},
+        {text: "Validator App", link: "/docs/developethlsd/ethlsd_validator_app"},
         {text: "Deploy", link: "/docs/developethlsd/deploy"},
       ]
     },
