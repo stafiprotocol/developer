@@ -10,7 +10,7 @@ ETH LSD Validator App is a user interface where node operaters can participate i
 
 ## Setup Node.js env
 1. Fork [code on GitHub](https://github.com/stafiprotocol/eth-lsd-validator-app)
-1. Install [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+1. Install [Node.js >=v16](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
 1. Install yarn via npm: `npm install --global yarn`
 1. Open code in VSCode
 1. Install all dependencies via terminal: `yarn`
@@ -23,6 +23,13 @@ ETH LSD Validator App is a user interface where node operaters can participate i
 - Change branding links and text here: `config/appConf/app.json`
 - Set your network contract address on Holesky here: `config/appConf/dev.json`
 - Set your network contract address on Mainnet here: `config/appConf/prod.json`
+
+## Customize Theme
+
+You can change color config in `tailwind.config.js`, each color has light & dark versions(i.e text1 & text1Dark).
+
+![Customize Theme](/image/ethlsd/customize_theme.png "Customize Theme")
+
 
 
 ## Build and deploy
