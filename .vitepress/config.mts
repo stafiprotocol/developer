@@ -60,7 +60,7 @@ function docs(){
     },
     {
       text: "Develop(ETH LST)",
-      collapsed: false,
+      collapsed: true,
       items: [
         {text: "Get Started", link: "/docs/developethlsd/getstarted"},
         {text: "Contract", link: "/docs/developethlsd/contract"},
@@ -73,15 +73,26 @@ function docs(){
       ]
     },
     {
+      text: "Develop(COSMOS LST)",
+      collapsed: true,
+      items: [
+        {text: "Get Started", link: "/docs/develop_cosmos_lsd/getstarted"},
+        {text: "Contract", link: "/docs/develop_cosmos_lsd/contract"},
+        {text: "Relay", link: "/docs/develop_cosmos_lsd/relay"},
+        {text: "App", link: "/docs/develop_cosmos_lsd/app"},
+        {text: "Deploy", link: "/docs/develop_cosmos_lsd/deploy"},
+      ]
+    },
+    {
       text: "DAO",
-      collapsed: false,
+      collapsed: true,
       items: [
         {text: "Introduction", link: "/docs/dao/introduction"},
       ]
     },
     {
       text: "Security",
-      collapsed: false,
+      collapsed: true,
       items: [
         {text: "Introduction", link: "/docs/security/introduction"},
         {text: "Audit", link: "/docs/security/audit"},
@@ -90,7 +101,7 @@ function docs(){
     },
     {
       text: "Concepts",
-      collapsed: false,
+      collapsed: true,
       items: [
         {text: "Ethereum Staking", link: "/docs/concepts/ethstaking"},
         {text: "LSD & LST", link: "/docs/concepts/lstlsd"},
