@@ -51,20 +51,39 @@ Update config (config.toml) by your favorite editor according to [Relay Config]
 
 ```toml
 endpointList = ["http://127.0.0.1:26657"]
-gasPrice="0.005untrn"
+gasPrice = "0.005untrn"
 taskTicker = 60  # seconds
-poolAddr="cosmos1hvuhdvwnsuj487xdcsv4yntn3hlxsmlmp602z4jkq95c20fsp3cshuzjhg"
-stakeManager="neutron1rjr282qjnaeamsps4aspw8gmz4nynjpq6zurxfnppdcknpwdnxgs8rqm8y"
-runForEntrustedPool=false
+poolAddr = "cosmos1hvuhdvwnsuj487xdcsv4yntn3hlxsmlmp602z4jkq95c20fsp3cshuzjhg"
+stakeManager = "neutron1rjr282qjnaeamsps4aspw8gmz4nynjpq6zurxfnppdcknpwdnxgs8rqm8y"
+runForEntrustedPool = false
 
 keyringDir = "/home/<your_user_name>/cosmos-neutron-stack/keyring"
-keyringBackend="file"
-keyName="demowallet1"
+keyringBackend = "file"
+keyName = "demowallet1"
 ```
 
-### Import your account
+### Add or Import account
 
-Let's say you just export an account from `neutrond` via `neutrond keys --home=$HOME_1 --keyring-backend=test export demowallet1  > demowallet1.privatekey`, you can import it to relay:
+You can simply create a new account to submit transactions on neutron
+
+```bash
+$ neutron-lsd-relay keys add stafi-relay-1 \
+    --keyring-backend=file --keyring-dir=~/cosmos-neutron-stack/keyring 
+Enter keyring passphrase (attempt 1/3):
+
+- address: neutron1c4ceejzxucas3sp5nvum4f8kr7pdun6wdw3y06
+  name: stafi-relay-1
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Au3RxMxljL7CagnKcN/4j63KPRJjuCYhseeimwLVK9/3"}'
+  type: local
+
+
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+youth stairs bronze tree melt coast grass table help lock road gospel quote explain usage retreat present now tragic course balance easy curtain this
+```
+
+Or you can import an exist account, let's say you have just exported from `neutrond` via `neutrond keys --home=$HOME_1 --keyring-backend=test export demowallet1  > demowallet1.privatekey`, you can import it to relay:
 
 ```bash
 $ neutron-lsd-relay keys import demowallet1 demowallet1.privatekey \
@@ -81,6 +100,8 @@ Enter keyring passphrase (attempt 1/3):
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A/MdHVpitzHNSdD1Zw3kY+L5PEIPyd9l6sD5i4aIfXp9"}'
   type: local
 ```
+
+⚠️Please make sure the account have enough NEUTRON funds, since relay will send transaction to StakeManager contract.
 
 ### Start relay services
 

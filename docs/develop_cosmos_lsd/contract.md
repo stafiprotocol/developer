@@ -26,10 +26,10 @@ StakeManager contract holds all LSD functionalities, it consists with many pools
 
 ### Stack
 
-StaFi Team or DAO can config stack parameters:
+StaFi DAO can config stack parameters:
 - default LSD token code id
 - administrator address of stack
-- entrusted pools: It is a great feature for project party who can rapidly run a LSD token without running its own relay service, StaFi Team will run it instead. It is fully secure as all functions a relay needs to execute are permissionless.
+- entrusted pools: It is a great feature for project party who can rapidly run a LSD token without running its own relay service, StaFi DAO will run it instead. It is fully secure as all functions a relay needs to execute are permissionless.
 
 ### Token Redemption 
 
