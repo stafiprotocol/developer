@@ -1,10 +1,10 @@
-# How to deploy ETH LSD stack
+# How to deploy Cosmos LSD stack
 
 This guide provides a step-by-step script to deploy the Cosmos LSD stack, without knowing details about contracts and services. Read the documentation for comprehensive understandings of these components.
 
 # Neutron(ICS-27) LSD Stack
 
-## Step1. Deploy your LSD network conracts
+## Step1. Deploy your LSD network contracts
 
 ## Step2. Run relay service
 

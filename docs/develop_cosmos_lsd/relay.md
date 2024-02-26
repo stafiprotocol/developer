@@ -36,7 +36,7 @@ The delegations are not transfered to pool ica account immediately when user sta
 | keyringDir | keyring dir | ./keys  |  |
 | keyringBackend | keyring backend | file  |  |
 | keyName | key name |  |  |
-| runForEntrustedPool | set this config to true only if you are one of the entrusted voters who are resiponsible to relay data for entrusted LSD pools | false | false |
+| runForEntrustedPool | set this config to true only if you are one of the entrusted voters who are responsible to relay data for entrusted LSD pools | false | false |
 
 # Native CosmWasm LSD Relay
 

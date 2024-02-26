@@ -3,7 +3,7 @@
 This guide provides a step-by-step script to deploy the ETH LSD stack, without knowing details about contracts and services. Read the documentation for comprehensive understandings of these components.
 
 
-# Step1. Deploy your LSD network conracts
+# Step1. Deploy your LSD network contracts
 
 StaFi LSD Stack Team have made [the launchpad](https://TBD.link) for project parties to deploy their LSD network contracts.
 
@@ -16,7 +16,7 @@ We provide two relay types, Standard and Custom. Standard is operated by StaFi S
 Standard:
 - No Server Needed
 - Able to change to custom at anytime
-- Operateed by StaFi Stack DAO
+- Operated by StaFi Stack DAO
 
 Custom:
 - Server required
@@ -45,7 +45,7 @@ Standard LSD Token:
 - ERC-20 compatible
 - Ready to use
 
-Several Precedures required before using Custom LSD Token:
+Several Procedures required before using Custom LSD Token:
 1. Implement your own LST logic which comply with [Stack's standards](TBD: definition of LSD Token Standards).
 2. Deploy your contract
 3. Request StaFi Stack Team for whitelisting your token for security reason

@@ -5,7 +5,7 @@
 
 Please configure the fee recipient as the `FeePool` contract. You can find the `FeePool` contract address through `Factory` contract. For example:
 
-![Aquire network contract address by lsd token](/image/ethlsd/05_read_contracts_created.png)
+![Acquire network contract address by lsd token](/image/ethlsd/05_read_contracts_created.png)
 
 ## Option 1. Prysm
 

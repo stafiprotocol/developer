@@ -23,7 +23,7 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 | gasLimit |  |  | 3000000 |
 | maxGasPrice |  |  | 60000000000 (in wei) |
 | batchRequestBlocksNumber | a number which limits concurrent requests on Beacon chain, due to the design of Beacon chain RPC |  | 32 |
-| runForEntrustedLsdNetwork | set this config to true only if you are one of the entrusted voters who are resiponsible to relay data for entrusted LSD networks | false | false |
+| runForEntrustedLsdNetwork | set this config to true only if you are one of the entrusted voters who are responsible to relay data for entrusted LSD networks | false | false |
 
 ### Contracts section
 

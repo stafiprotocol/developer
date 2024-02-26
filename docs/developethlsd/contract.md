@@ -10,7 +10,7 @@ create a new LSD network with admin and voters
 
 It is a straightforward setup, full control over the network with a specified admin address, but lacks the security layer of timelock mechanism.
 
-`event LsdNetwork()` will be emmitted with the following struct, `NetworkContracts`.
+`event LsdNetwork()` will be emitted with the following struct, `NetworkContracts`.
 
 **Parameters**:
 
@@ -205,13 +205,13 @@ Platforms inevitably have their own parameters. We've compiled a list of the mos
 | <br>**NetworkProposal contract**<br><br> | | |
 | address admin    | an account who administrate the whole network | we suggest platform use multi-sig account for security reason |
 | <br>**NetworkBalances contract**<br><br> | | |
-| uint256 updateBalancesEpochs             | a period of time in epoch determins how frequent voters calculate and submit new balances | 225 (equivalent to 24 hours), min value is 75(not recommended as its worthless)  |
+| uint256 updateBalancesEpochs             | a period of time in epoch determines how frequent voters calculate and submit new balances | 225 (equivalent to 24 hours), min value is 75(not recommended as its worthless)  |
 | uint256 rateChangeLimit      | a number represents the numerator in rate and the denominator is 1e18.<br>the exchange rate between ETH and LsdToken is vital for the system, to prevent accidental or violent changes, we introduce `rateChangeLimit` to keep the system safe | default is 11e14 (=0.11%) |
 | <br>**NetworkWithdraw contract**<br><br> |  |   |
-| uint256 withdrawCycleSeconds     | a period of time in second determins how long a cycle last  | 86400 (equivalent to 24 hours), min value is 28800(not recommended as its worthless)  |
-| uint256<br>nodeCommissionRate       | a number represents the numerator in rate and the denominator is 1e18.<br>this value configures the propotion of the node rewards | 5e16 (denotes 5e16/1e18=5%)<br>(node commission = <br>total rewards * 5%)  |
-| uint256<br>platformCommissionRate   | a number represents the numerator in rate and the denominator is 1e18.<br>this value configures the propotion of the platform rewards | 5e16 (denotes 5e16/1e18=5%)<br>(platform commission = <br>total rewards * 5%)  |
-| uint256<br>factoryCommissionRate    | a number represents the numerator in rate and the denominator is 1e18.<br>*it is a proportion of factoryCommission to platofromCommision*<br>the value of paramether should be determined after consulting with ETH LSD Stack team | 10e16 (denotes 10e16/1e18=10%)<br>(factory commission = <br>platform commission * 10%)   |
+| uint256 withdrawCycleSeconds     | a period of time in second determines how long a cycle last  | 86400 (equivalent to 24 hours), min value is 28800(not recommended as its worthless)  |
+| uint256<br>nodeCommissionRate       | a number represents the numerator in rate and the denominator is 1e18.<br>this value configures the proportion of the node rewards | 5e16 (denotes 5e16/1e18=5%)<br>(node commission = <br>total rewards * 5%)  |
+| uint256<br>platformCommissionRate   | a number represents the numerator in rate and the denominator is 1e18.<br>this value configures the proportion of the platform rewards | 5e16 (denotes 5e16/1e18=5%)<br>(platform commission = <br>total rewards * 5%)  |
+| uint256<br>factoryCommissionRate    | a number represents the numerator in rate and the denominator is 1e18.<br>*it is a proportion of factoryCommission to platformCommission*<br>the value of parameter should be determined after consulting with ETH LSD Stack team | 10e16 (denotes 10e16/1e18=10%)<br>(factory commission = <br>platform commission * 10%)   |
 | <br>**NodeDeposit contract**<br><br> | | |
 | bool soloNodeDepositEnabled         | a switch allows/disallows solo node participation | true |
 | bool trustNodeDepositEnabled        | a switch allows/disallows trust node participation  | true |

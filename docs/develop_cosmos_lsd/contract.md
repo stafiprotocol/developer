@@ -10,8 +10,8 @@ StakeManager contract holds all LSD functionalities, it consists with many pools
 
 ### Project party
 - `register_pool`: Create pool ICA and withdraw ICA, and bind interchain routes e.g. channel, port
-- `init_pool`: Pool should be initiated with validator set, fee reciver, commission rate and lsd token info
-- `config_pool`: Update pool configs such as lsm_support, era_seconds, commission fee, fee reciver etc.
+- `init_pool`: Pool should be initiated with validator set, fee receiver, commission rate and lsd token info
+- `config_pool`: Update pool configs such as lsm_support, era_seconds, commission fee, fee receiver etc.
 - `add_pool_validators`: Adds validators to the pool
 - `rm_pool_validator`: Removes validator from the pool.
 - `pool_update_validator`: Updates validator information for the pool.
@@ -20,8 +20,8 @@ StakeManager contract holds all LSD functionalities, it consists with many pools
 - `stake`:
   - Attached with wasm invocation, users can stake token and get LSD token from source chain by ibc transfer function 
   - Users can call smart contract directly in neutron chain to stake
-- `stake_lsm`: Users can stake their LSM to get LSD token avoiding 21 days unboding period
-- `unstake`: Anyone who owns LSD token can call this function, LSD token will be burnt and users have to wait unboding period of time to withdraw their assets
+- `stake_lsm`: Users can stake their LSM to get LSD token avoiding 21 days unbonding period
+- `unstake`: Anyone who owns LSD token can call this function, LSD token will be burnt and users have to wait unbonding period of time to withdraw their assets
 - `withdraw`: When unstake become mature, users can withdraw
 
 ### Stack

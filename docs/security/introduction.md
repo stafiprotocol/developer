@@ -65,7 +65,7 @@ In MATIC, it completely relies on contract data, including LST supply, real stak
 
 # Off-chain service security
 
-As mentioned above, LSTs like ETH, BNB need off-chain services, and some important data needs to be collected off-chain and then uploaded to the contract. Therefore, in order to ensure data security, off-chain services of Listake are designed to be decentralized. Whenever contract data needs to be updated, it is voted on by multiple off-chain services, usually running by different parties, similiar to decentralized oracle. At the same time, it can also avoid single points of failure and ensure the stability of the overall protocol.
+As mentioned above, LSTs like ETH, BNB need off-chain services, and some important data needs to be collected off-chain and then uploaded to the contract. Therefore, in order to ensure data security, off-chain services of Listake are designed to be decentralized. Whenever contract data needs to be updated, it is voted on by multiple off-chain services, usually running by different parties, similar to decentralized oracle. At the same time, it can also avoid single points of failure and ensure the stability of the overall protocol.
 
 # Decentralization manner
 
@@ -77,5 +77,5 @@ Staking is always related to the governance, no matter it is from PoS module or 
     - Upgrade the contract by a governance paras vote
 - Decentralized voting power, in customization, Listake integrates technology that distributed stake smartly
     - Integrating DVT(Distributed validator technology), such as SSV and Obol to provide ETH LST providers a distributed LST product.
-    - Smart delegation algorithm is another method, mainly built for the layer1 except for Etheruem. There will be custom setting in the algorithm.
+    - Smart delegation algorithm is another method, mainly built for the layer1 except for Ethereum. There will be custom setting in the algorithm.
 - Governance right -  There is a built in module in the Stack, which enables the distribution of the voting power, there are custom setting in the distribution and varied in different layer1s.
