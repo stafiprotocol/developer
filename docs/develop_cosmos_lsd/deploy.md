@@ -18,6 +18,10 @@ tbd
 
 tbd
 
+### Pool initialization fee
+
+tbd
+
 ## Rewards Distribution
 
 Rewards distribution is crucial to project parties. Commission fee of users is set default as 10% and StaFi Stack fee is 10% of project income. for example, if `100ATOM` rewards received from Cosmos, the distribution will be:
