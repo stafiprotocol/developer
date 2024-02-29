@@ -6,6 +6,28 @@ This guide provides a step-by-step script to deploy the Cosmos LSD stack, withou
 
 ## Step1. Deploy your LSD network contracts
 
+### Neutron Risks Awareness
+
+tbd
+
+### Parameter Tips
+
+tbd
+
+### Pool registration fee
+
+tbd
+
+## Rewards Distribution
+
+Rewards distribution is crucial to project parties. Commission fee of users is set default as 10% and StaFi Stack fee is 10% of project income. for example, if `100ATOM` rewards received from Cosmos, the distribution will be:
+
+| Role | Amount | Formula |
+|---------------|--------|-------|
+|  Users        |  90ATOM | 100ATOM*(1-0.1)  |
+|  Project      |  9ATOM  | (100ATOM-90ATOM)*(1-0.1)  |
+|  StaFi Stack  |  1ATOM  | 100ATOM-90ATOM-9ATOM  |
+
 ## Step2. Run relay service
 
 ### Install Build Tools

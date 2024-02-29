@@ -81,6 +81,7 @@ function docs(){
         {text: "Relay", link: "/docs/develop_cosmos_lsd/relay"},
         {text: "App", link: "/docs/develop_cosmos_lsd/app"},
         {text: "Deploy", link: "/docs/develop_cosmos_lsd/deploy"},
+        {text: "ICQ Relay", link: "/docs/develop_cosmos_lsd/icq_relay"},
       ]
     },
     {
