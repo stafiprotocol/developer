@@ -79,9 +79,9 @@ function docs(){
         {text: "Get Started", link: "/docs/develop_cosmos_lsd/getstarted"},
         {text: "Contract", link: "/docs/develop_cosmos_lsd/contract"},
         {text: "Relay", link: "/docs/develop_cosmos_lsd/relay"},
-        {text: "App", link: "/docs/develop_cosmos_lsd/app"},
         {text: "Deploy", link: "/docs/develop_cosmos_lsd/deploy"},
         {text: "ICQ Relay", link: "/docs/develop_cosmos_lsd/icq_relay"},
+        {text: "App", link: "/docs/develop_cosmos_lsd/app"},
       ]
     },
     {
