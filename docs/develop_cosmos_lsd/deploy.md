@@ -6,21 +6,58 @@ This guide provides a step-by-step script to deploy the Cosmos LSD stack, withou
 
 ## Step1. Deploy your LSD network contracts
 
+StaFi LSD Stack Team have made [StaFi LSAAS](https://stack-test-app.stafi.io/) for project parties to deploy their LSD network contracts.
+
+![](/image/cosmos_lsd/choose-lsd-token-page.png "Launchpad Homepage")
+
 ### Neutron Risks Awareness
 
-tbd
+Our Stack, designed for the ICS-27 protocol, utilizes Neutron—first Cosmos chain adopting [Replicated Security](https://cosmos.github.io/interchain-security/). As a smart contract platform, like Ethereum which still encounters security issues, Neutron may also face potential security risks. We advise every project party to conduct thorough research and assess these risks before participation.
 
 ### Parameter Tips
 
-tbd
+Connection ID:
+- Connection identifier of target chain and Neutron
+
+Interchain Account ID:
+- An identifier of your pool
+- Must be unique
+- Max 16 characters
+- Not contains Hyphen(-) or Dot(.) 
+
+Owner Address:
+- Adjust commission fee
+- Adjust duration of era
+- Manage validator set
+- Pause or unpause pool
+- Turn on or off LSM feature
+
+Fee Receiver
+- A neutron address to receive LSD commission fee
+
+Fee commission:
+- 10% is an reasonable price for most stakers
+
+Minimum Stake:
+- The smallest amount of assets accept in staking procedure
+
+LSD Token Code ID:
+- A cw20-base compatible smart contract
+- Recommend to keep default
+- Able to use your own Code ID
+
+Validators:
+- Pool will delegate assets evenly to every validator
+- Target chain validator address
+
 
 ### Pool registration fee
 
-tbd
+Registration fee is required by Neutron to register an interchain account.
 
 ### Pool initialization fee
 
-tbd
+To prevent malicious or buggy contracts from draining relayer's funds or spamming of the network, Neutron introduces FeeRefunder module similar to [ICS-29](https://github.com/cosmos/ibc/tree/main/spec/app/ics-029-fee-payment) but supports wider range of chains. Get a comprehensive view here: [Neutron Fee Refunder Module Documentation](https://docs.neutron.org/neutron/modules/feerefunder/overview).
 
 ## Rewards Distribution
 

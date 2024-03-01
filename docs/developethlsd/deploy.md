@@ -5,7 +5,7 @@ This guide provides a step-by-step script to deploy the ETH LSD stack, without k
 
 # Step1. Deploy your LSD network contracts
 
-StaFi LSD Stack Team have made [the launchpad](https://TBD.link) for project parties to deploy their LSD network contracts.
+StaFi LSD Stack Team have made [StaFi LSAAS](https://stack-test-app.stafi.io/) for project parties to deploy their LSD network contracts.
 
 ![](/image/ethlsd/onboarding_homepage.png "Launchpad Homepage")
 
