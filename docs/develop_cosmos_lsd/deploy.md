@@ -59,7 +59,7 @@ Registration fee is required by Neutron to register an interchain account.
 
 To prevent malicious or buggy contracts from draining relayer's funds or spamming of the network, Neutron introduces FeeRefunder module similar to [ICS-29](https://github.com/cosmos/ibc/tree/main/spec/app/ics-029-fee-payment) but supports wider range of chains. Get a comprehensive view here: [Neutron Fee Refunder Module Documentation](https://docs.neutron.org/neutron/modules/feerefunder/overview).
 
-## Rewards Distribution
+### Rewards Distribution
 
 Rewards distribution is crucial to project parties. Commission fee of users is set default as 10% and StaFi Stack fee is 10% of project income. for example, if `100ATOM` rewards received from Cosmos, the distribution will be:
 
@@ -68,6 +68,25 @@ Rewards distribution is crucial to project parties. Commission fee of users is s
 |  Users        |  90ATOM | 100ATOM*(1-0.1)  |
 |  Project      |  9ATOM  | (100ATOM-90ATOM)*(1-0.1)  |
 |  StaFi Stack  |  1ATOM  | 100ATOM-90ATOM-9ATOM  |
+
+### Re-edit parameters
+
+Project parties can use admin account to update parameters by sending transactions to `StakeManager.config_pool` method with below message:
+
+| Fields | Description |
+|---------------|--------|
+| pool_addr        |  your pool address<br>**required** |
+| platform_fee_receiver | a Neutron address to receive commission fee<br>optional|
+| minimal_stake | minimum amount of token to stake<br>optional |
+| unstake_times_limit | how many times a staker can unstake<br>optional|
+| unbond_commission | commission fee of unbonding<br>optional|
+| platform_fee_commission | commission fee of rewards<br>optional|
+| era_seconds | how long an era last<br>optional|
+| paused | is pool active or paused<br>optional|
+| lsm_support | does pool support LSM stake<br>optional|
+| lsm_pending_limit | how man LSM stake support in pending status<br>optional|
+| rate_change_limit | the limit for exchange rate changes from Token to rToken<br>optional|
+| new_admin | transfer admin role to new address<br>optional|
 
 ## Step2. Run relay service
 
