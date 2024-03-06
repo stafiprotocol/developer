@@ -16,8 +16,6 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 
 | config | description | example value | recommended value |
 | --- | --- | --- | --- |
-| eth1Endpoint | Execution RPC endpoint | http://127.0.0.1:8545 |  |
-| eth2Endpoint | Consensus (Beacon chain) RPC endpoint | https://holesky-beacon.stafi.io |  |
 | storageApiToken | get an api token from https://nft.storage/ |  |  |
 | account | voter account addressMake sure you imported it before using |  |  |
 | gasLimit |  |  | 3000000 |
@@ -31,3 +29,12 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 | --- | --- | --- | --- |
 | lsdTokenAddress | lsd token address |  |  |
 | lsdFactoryAddress | lsd factory address |  |  |
+
+### Endpoints section
+
+Groups of eth1 and eth2 endpoints. It will be used only if previous ones are not available.
+
+| config | description | example value | recommended value |
+| --- | --- | --- | --- |
+| eth1 | Execution RPC endpoint | http://127.0.0.1:8545 |  |
+| eth2 | Consensus (Beacon chain) RPC endpoint | https://holesky-beacon.stafi.io |  |

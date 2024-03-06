@@ -147,17 +147,24 @@ $ cp conf.template.toml ~/eth-stack/config.toml
 Update config (config.toml) by your favorite editor according to [Relay Config](./relay.html#config)
 
 ```toml
-eth1Endpoint = "http://127.0.0.1:8545"
-eth2Endpoint = "https://holesky-beacon.stafi.io"
 storageApiToken = "000000000000000000000000000000000000.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.22222222222222222222222-333333--44444444444"
 account = "0x68146ebA486CE6F8D22731c8ECB4d013F34E7114"
 gasLimit = "3000000"
 maxGasPrice = "60000000000"                            #wei
 batchRequestBlocksNumber = 32
+runForEntrustedLsdNetwork = false
 
 [contracts]
 lsdTokenAddress = "0x549aF761C1c72f3cd2Be966e76B778339Bf746DD"
 lsdFactoryAddress = "0xe2CF966b041904eFfb8Fe83E317CAF4dd27d8CBc"
+
+[[endpoints]]
+eth1 = "https://holesky.stafi.io"
+eth2 = "https://holesky-beacon.stafi.io"
+
+[[endpoints]]
+eth1 = "https://holesky2.stafi.io"
+eth2 = "https://holesky-beacon2.stafi.io"
 ```
 
 ## Import voter accounts
