@@ -5,7 +5,7 @@ This guide provides a step-by-step script to deploy the ETH LSD stack, without k
 
 # Step1. Deploy your LSD network contracts
 
-StaFi LSD Stack Team have made [StaFi LSAAS](https://stack-test-app.stafi.io/) for project parties to deploy their LSD network contracts.
+61 Lab have made [StaFi LSAAS](https://stack-test-app.stafi.io/) for project parties to deploy their LSD network contracts.
 
 ![](/image/ethlsd/onboarding_homepage.png "Launchpad Homepage")
 
@@ -48,7 +48,7 @@ Standard LSD Token:
 Several Procedures required before using Custom LSD Token:
 1. Implement your own LST logic which comply with [Stack's standards](TBD: definition of LSD Token Standards).
 2. Deploy your contract
-3. Request StaFi Stack Team for whitelisting your token for security reason
+3. Request 61Lab for whitelisting your token for security reason
 
 ## Parameter Tips
 

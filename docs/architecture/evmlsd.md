@@ -4,7 +4,7 @@
 
 # Smart contracts
 
-The core part of StaFi EVM LSD Stack is a set of smart contracts, which are divided into two parts: PlatformContract, a platform contract managed by StaFi Team, and ProjectContracts, which belong to different projects. Platform contracts are common dependencies for all projects. Via platform contracts, developers or start-up projects can easily deploy and initialize their contract groups，distribute staking rewards.
+The core part of StaFi EVM LSD Stack is a set of smart contracts, which are divided into two parts: PlatformContract, a platform contract managed by 61 Lab, and ProjectContracts, which belong to different projects. Platform contracts are common dependencies for all projects. Via platform contracts, developers or start-up projects can easily deploy and initialize their contract groups，distribute staking rewards.
 
 Core contracts:
 
@@ -59,7 +59,7 @@ As we know BNB chain is differ from Polygon, it requires data from Beacon chain.
 
 # Validator Selector
 
-Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service ValidatorSelector, which selects the optimal validator according to the validator selection algorithm developed by StaFi Team.
+Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service ValidatorSelector, which selects the optimal validator according to the validator selection algorithm developed by 61 Lab.
 
 According to the validator's status, performance and commission fee, voters select validators to bind to the StakePool or update current validators.
 
@@ -77,4 +77,4 @@ The LSD Monitor off-chain program monitors the flow of large amounts of governan
 
 # Circuit Break & Blacklist
 
-Add a global settings contract. When emergencies occur, the administrator or a multiple signature account with administrative authority  can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. StaFi technical team strongly recommended not to customize this function.
+Add a global settings contract. When emergencies occur, the administrator or a multiple signature account with administrative authority  can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. 61 Lab strongly recommended not to customize this function.

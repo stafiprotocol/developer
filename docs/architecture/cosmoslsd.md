@@ -39,7 +39,7 @@ cw20-ics20 is an IBC-enabled contract that allows us to send rATOM tokens from o
 
 ### Validator Selector
 
-Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service Validator Selector, which selects the optimal validator according to the validator selection algorithm developed by StaFi team.
+Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service Validator Selector, which selects the optimal validator according to the validator selection algorithm developed by 61 Lab.
 
 One solution is to implement an on-chain contract to run the validator's select strategy. The relay is to initiate the update after a certain interval. This solution will be more convenient for AppChains which has a few validators.
 
@@ -137,4 +137,4 @@ Considering the contract needs a fee to send interchain transactions, we should 
 
 ## Circuit Break & Blacklist
 
-Add a global settings contract. When emergencies occur, the administrator or a multiple-signature account with administrative authority can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. The StaFi technical team strongly recommended not to customize this function.
+Add a global settings contract. When emergencies occur, the administrator or a multiple-signature account with administrative authority can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. 61 Lab strongly recommended not to customize this function.

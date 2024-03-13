@@ -1,6 +1,6 @@
 # ETH LSD Validator App
 
-ETH LSD Validator App is a user interface where node operaters can participate in as validators. As a convention in web3 all API users interact with are directly from the RPC configured in wallet, so the app is a static web app.
+ETH LSD Validator App is a user interface where node operators can participate in as validators. As a convention in web3 all API users interact with are directly from the RPC configured in wallet, so the app is a pure DApp.
 
 ![ETH LSD Validator App Homepage](/image/ethlsd/eth_lsd_validator_app_homepage.png 'ETH LSD Validator App Homepage')
 
