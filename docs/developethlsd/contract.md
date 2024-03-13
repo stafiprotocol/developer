@@ -5,7 +5,7 @@
 
 An utility contract for launching new LSD networks with ease. Instead of deploying multiple contracts manually, you can just call `createLsdNetwork()` or `createLsdNetworkWithTimelock()` to deploy your own LSD network.
 
-## `createLsdNetwork()`
+`createLsdNetwork()`
 create a new LSD network with admin and voters
 
 It is a straightforward setup, full control over the network with a specified admin address, but lacks the security layer of timelock mechanism.
