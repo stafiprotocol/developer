@@ -4,7 +4,7 @@
 
 # Smart contracts
 
-The core part of Stafi EVM LSD Stack is a set of smart contracts, which are divided into two parts: PlatformContract, a platform contract managed by Listake, and ProjectContracts, which belong to different projects. Platform contracts are common dependencies for all projects. Via platform contracts, developers or start-up projects can easily deploy and initialize their contract groups，distribute staking rewards.
+The core part of StaFi EVM LSD Stack is a set of smart contracts, which are divided into two parts: PlatformContract, a platform contract managed by Listake, and ProjectContracts, which belong to different projects. Platform contracts are common dependencies for all projects. Via platform contracts, developers or start-up projects can easily deploy and initialize their contract groups，distribute staking rewards.
 
 Core contracts:
 

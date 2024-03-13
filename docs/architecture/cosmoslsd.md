@@ -19,7 +19,7 @@ The core part of Listake Cosmos LSD Stack is a set of CosmWasm smart contracts, 
 
 ### StakeManager
 
-StakeManager is a smart contract, that can create and initialize StakePool which is an ICA on the cosmos hub. When initializing, StakeManager will create an account via *register_interchain_account* on the cosmos hub. We call this account StakePool.
+StakeManager is a smart contract, that can create and initialize StakePool which is an ICA on the Cosmos Hub. When initializing, StakeManager will create an account via *register_interchain_account* on the Cosmos Hub. We call this account StakePool.
 
 StakeManager contract is responsible for processing user IBC transactions and interacting with rATOM contracts. Mint corresponds to rATOM and is the entry point for other functions such as unstake/withdraw.
 
@@ -137,4 +137,4 @@ Considering the contract needs a fee to send interchain transactions, we should 
 
 ## Circuit Break & Blacklist
 
-Add a global settings contract. When emergencies occur, the administrator or a multiple-signature account with administrative authority can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. The Stafi technical team strongly recommended not to customize this function.
+Add a global settings contract. When emergencies occur, the administrator or a multiple-signature account with administrative authority can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. The StaFi technical team strongly recommended not to customize this function.
