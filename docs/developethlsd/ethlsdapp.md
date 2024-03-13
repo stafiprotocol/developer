@@ -14,7 +14,7 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
 1. Install yarn via npm: `npm install --global yarn`
 1. Open code in VSCode
 1. Install all dependencies via terminal: `yarn`
-1. Develop app by: `yarn dev`
+1. Start app by: `yarn dev`
 
 ## Config your app
 
