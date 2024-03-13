@@ -13,7 +13,7 @@ ETH LSD Validator App is a user interface where node operators can participate i
 1. Install [Node.js >=v16](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
 1. Install yarn via npm: `npm install --global yarn`
 1. Open code in VSCode
-1. Install all dependencies via terminal: `yarn`
+1. Enter project root directory then install all dependencies via terminal: `yarn`
 1. Start app by: `yarn dev`
 
 ## Config your app
