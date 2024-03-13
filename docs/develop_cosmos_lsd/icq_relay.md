@@ -17,8 +17,8 @@ Install `go` by following the [official docs](https://golang.org/doc/install)
 
 ```bash
 cd $HOME
-wget -O go1.20.0.linux-amd64.tar.gz https://go.dev/dl/go1.20.0.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.0.linux-amd64.tar.gz && rm go1.20.0.linux-amd64.tar.gz
+wget -O go1.21.8.linux-amd64.tar.gz https://go.dev/dl/go1.21.8.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.8.linux-amd64.tar.gz && rm go1.21.8.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> $HOME/.bashrc
 echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc
 echo 'export GO111MODULE=on' >> $HOME/.bashrc
@@ -58,11 +58,11 @@ make build-docker
 # Build `neutrond`
 
 ```bash
-git clone -b v2.0.1 --depth=1 https://github.com/neutron-org/neutron.git
+git clone -b v3.0.0 --depth=1 https://github.com/neutron-org/neutron.git
 cd neutron
 make install
 neutrond version
-2.0.0
+3.0.0
 ```
 
 # Add account
