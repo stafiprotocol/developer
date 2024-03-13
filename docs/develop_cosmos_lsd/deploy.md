@@ -88,7 +88,11 @@ Project parties can use admin account to update parameters by sending transactio
 | rate_change_limit | the limit for exchange rate changes from Token to rToken<br>optional|
 | new_admin | transfer admin role to new address<br>optional|
 
-## Step2. Run relay service
+
+## Step2. Run ICQ relay service
+<a href="icq_relay.html" target="_blank">Follow our doc to run ICQ relay service</a>
+
+## Step3. Run relay service
 
 ### Install Build Tools
 
@@ -200,11 +204,8 @@ INFO[2024-02-23T12:02:36+08:00] start handlers
 INFO[2024-02-23T12:02:36+08:00] success                                       action=NewEraUpdate newEra=84 pool=cosmos1hvuhdvwnsuj487xdcsv4yntn3hlxsmlmp602z4jkq95c20fsp3cshuzjhg targetEra=4647 txHash=010C675FFB313F7FD8B986D1A49688D510C61E9F3D804F4D2D5FF94AFCD13447
 ```
 
-## Step3. Run ICQ relay service
-<a href="icq_relay" target="_blank">Follow Our Doc to run ICQ relay service</a>
-
 ## Step4. Deploy your own LSD App
-<a href="app" target="_blank">Follow Our Doc to deploy your own LSD App</a>
+<a href="app.html" target="_blank">Follow our doc to deploy your own LSD App</a>
 
 # Native CosmWasm LSD Stack
 
