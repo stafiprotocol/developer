@@ -47,8 +47,10 @@ sudo docker run hello-world
 
 # Build docker image
 
+By default Relayer handles all queries in a smart contract. That's not LSD project party intent as the more queries relayer handles to more gas fee they pay. StaFi protocol extend the relayer to specify which query ids they would like to relay. So that they just pay gas fee for their pool query ids. This is a very useful feature, we have planed to submit changes to Neutron.
+
 ```bash
-git clone -b v0.2.0 --depth=1 https://github.com/neutron-org/neutron-query-relayer
+git clone https://github.com/stafiprotocol/neutron-query-relayer
 cd neutron-query-relayer
 make build-docker
 ```
@@ -86,6 +88,15 @@ It is the only way to recover your account if you ever forget your password.
 
 [Read full documentation of configuration](https://github.com/neutron-org/neutron-query-relayer/blob/main/README.md#configuration)
 
+Additional environments provided by StaFi protocol:
+- `RELAYER_REGISTRY_QUERY_IDS`: A list of query ids separated by comma.
+Go <a href="https://neutron.celat.one/pion-1/query?contract=neutron1humx752uqvxn2jfenh5524md0ta23usm8m2lesaxw47fps28yx5syztnk5" target="_blank">Neutron Explorer</a> to get pool query ids.
+![Get Pool Query IDs](/public/image/cosmos_lsd/get_pool_query_ids.png)
+
+| Key                                              | type              | description                                                                                                                                                                | Example |
+|--------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `RELAYER_REGISTRY_QUERY_IDS`        | `string`    | Query ids  | 91,92,93,94 |
+
 ```bash
 cp .env.example .env-test
 vim .env-test
@@ -113,7 +124,8 @@ RELAYER_TARGET_CHAIN_TIMEOUT=10s
 RELAYER_TARGET_CHAIN_DEBUG=true
 RELAYER_TARGET_CHAIN_OUTPUT_FORMAT=json
 
-RELAYER_REGISTRY_ADDRESSES=
+RELAYER_REGISTRY_ADDRESSES=neutron1humx752uqvxn2jfenh5524md0ta23usm8m2lesaxw47fps28yx5syztnk5
+RELAYER_REGISTRY_QUERY_IDS=91,92,93,94
 
 RELAYER_ALLOW_TX_QUERIES=true
 RELAYER_ALLOW_KV_CALLBACKS=true
@@ -124,6 +136,10 @@ RELAYER_CHECK_SUBMITTED_TX_STATUS_DELAY=10s
 RELAYER_INITIAL_TX_SEARCH_OFFSET=0
 RELAYER_WEBSERVER_PORT=127.0.0.1:9999
 RELAYER_IGNORE_ERRORS_REGEX=(execute wasm contract failed|failed to build tx query string)
+
+#LOGGER_LEVEL=debug
+#LOGGER_OUTPUTPATHS=stdout, /tmp/logs
+#LOGGER_ERROROUTPUTPATHS=stderr
 ```
 
 # Run
