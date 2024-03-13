@@ -1,10 +1,10 @@
 # Introduction
 
-A DAO is introduced to govern the management of the LSD project that based on Listake, it is not mandatory, this option is used to guide how to decentralize the project. The Listake DAO has responsibility to deploy, manage, upgrade, maintain contracts and services, the more transparence of the DAO, the more of the decentralize of the Listake based projects.
+A DAO is introduced to govern the management of the LSD project that based on StaFi LSD Stack, it is not mandatory, this option is used to guide how to decentralize the project. The StaFi LSD Stack DAO has responsibility to deploy, manage, upgrade, maintain contracts and services, the more transparence of the DAO, the more of the decentralize of the StaFi LSD Stack based projects.
 
 ## An example to explain details
 
-ETH LSD Stack DAO( a subDAO of the Listake DAO, or share the same members of the Listake DAO ) is a Decentralized Autonomous Organization that determines the key parameters of ETH LSD Stack based protocols through the voting power of governance token. There are numerous day-to-day decisions required for maintaining the ETH LSD Stack protocol. It is crucial for the community to not only understand these decisions but also participate in the decision-making process. The community will benefit from the DAO due to its transparency, security, and participatory management approach.
+ETH LSD Stack DAO( a subDAO of the StaFi LSD Stack DAO, or share the same members of the Stack DAO ) is a Decentralized Autonomous Organization that determines the key parameters of ETH LSD Stack based protocols through the voting power of governance token. There are numerous day-to-day decisions required for maintaining the ETH LSD Stack protocol. It is crucial for the community to not only understand these decisions but also participate in the decision-making process. The community will benefit from the DAO due to its transparency, security, and participatory management approach.
 
 ## Responsibility
 
@@ -18,7 +18,7 @@ ETH LSD Stack DAO( a subDAO of the Listake DAO, or share the same members of the
 
 > One man's meat is another man's poison
 
-The Listake DAO empowers community members to participate the decision-making process through their voting power. In reality, it's challenging to find decisions that satisfy everyone's needs. We're thrilled to announce the implementation of Timelock logic into our system. This feature reduces the impact of the minorities. Rather than simply accepting a proposal, members who disagree now have options to act before the proposal takes effect.
+StaFi LSD Stack DAO empowers community members to participate the decision-making process through their voting power. In reality, it's challenging to find decisions that satisfy everyone's needs. We're thrilled to announce the implementation of Timelock logic into our system. This feature reduces the impact of the minorities. Rather than simply accepting a proposal, members who disagree now have options to act before the proposal takes effect.
 
 ## Data Availability Guarantee
 

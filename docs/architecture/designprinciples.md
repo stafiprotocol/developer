@@ -2,7 +2,7 @@
 
 ## Simplicity
 
-Complex logic and procedures will lead to a high technical threshold for LSD. Listake adopts a simple design and deployment process. Any developer with certain skills can quickly deploy a set of LSDs, thus saving more time and focusing more on specific businesses and application development, shorten the development cycle and save time
+Complex logic and procedures will lead to a high technical threshold for LSD. StaFi LSD Stack adopts a simple design and deployment process. Any developer with certain skills can quickly deploy a set of LSDs, thus saving more time and focusing more on specific businesses and application development, shorten the development cycle and save time
 
 ## Scalability
 

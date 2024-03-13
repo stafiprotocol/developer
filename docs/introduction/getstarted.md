@@ -3,7 +3,7 @@
 
 # What is it?
 
-Listake is a LSD(Liquid Staking Derivative) stack, developed and maintained by [61 LAB](https://61lab.io/#), mainly built for developers who want to create LSTs(Liquid Staking Token). With Listake, you can build a new LST by simply clicking, while gaining LST's composability and programability. This stack will save your workload, your resource, your budget on development and maintenance, you can review the stack if you are seeking for a development framework to launch a new LST.
+StaFi LSD Stack is a LSD(Liquid Staking Derivative) stack, developed and maintained by [61 LAB](https://61lab.io/#), mainly built for developers who want to create LSTs(Liquid Staking Token). With StaFi LSD Stack, you can build a new LST by simply clicking, while gaining LST's composability and programability. This stack will save your workload, your resource, your budget on development and maintenance, you can review the stack if you are seeking for a development framework to launch a new LST.
 
 # How it works?
 
@@ -17,7 +17,7 @@ The main target of this Stack is to achieve *staking and getting a LST* and *uns
 
 There are many PoS consensus layer1s in Web3, and Liquid staking is the main solution to unleash the staked TVL, thus increase the capital efficiency. As one of the best use cases in DeFi (except for DEX and Lending), the industry needs a fast and secure LSD deployment.
 
-Moreover, LSD is more like a public infrastructure as it is growing, as a interested bearing asset in DeFi, LSDFi is created to bootstrap its composability, LST based stablecoin, LST based index, we can see many use cases in Ethereum. With the continuous prosperity and growth of LSDFi, the demand for LSD SaaS is becoming more and more urgent. Listake makes it possible for developers and project parties to quickly deploy LSD logic and build DeFi applications on it. 
+Moreover, LSD is more like a public infrastructure as it is growing, as a interested bearing asset in DeFi, LSDFi is created to bootstrap its composability, LST based stablecoin, LST based index, we can see many use cases in Ethereum. With the continuous prosperity and growth of LSDFi, the demand for LSD SaaS is becoming more and more urgent. StaFi LSD Stack makes it possible for developers and project parties to quickly deploy LSD logic and build DeFi applications on it. 
 
 # Who need it?
 

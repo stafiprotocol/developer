@@ -2,7 +2,7 @@
 
 > Reminder: This Stack is updating accordingly in a timely manner.
 
-Listake LSD Stack is a package of Development Kits(DKs) that support the construction of LSD in Layer1s. The DKs consists of Application DK(ADK) and Chain DK(CDK), ADK is mainly built for launching a LST in the contract layer of a chain, and CDK is used to build a chain module that enables a chain to issue a LST natively. Both solutions include a backend and a frontend, the frontend is built for the interactions, the backend includes contracts and services.
+StaFi LSD Stack is a package of Development Kits(DKs) that support the construction of LSD in Layer1s. The DKs consists of Application DK(ADK) and Chain DK(CDK), ADK is mainly built for launching a LST in the contract layer of a chain, and CDK is used to build a chain module that enables a chain to issue a LST natively. Both solutions include a backend and a frontend, the frontend is built for the interactions, the backend includes contracts and services.
 
 # Application Development Kit(ADK)
 
@@ -14,9 +14,9 @@ The CDK is a builtin module that enables a chain to release its own LST natively
 
 # Architecture
 
-In general, the architecture is vary and depends on the PoS mechanisms of the target chain, Listake keeps abstracting the mutual features to generalize the expression of ADK and CDK. Some abstracted features form module to facilitate the upgradability of the LSTs, the below shows some key modules of the ADKs.
+In general, the architecture is vary and depends on the PoS mechanisms of the target chain, StaFi LSD Stack keeps abstracting the mutual features to generalize the expression of ADK and CDK. Some abstracted features form module to facilitate the upgradability of the LSTs, the below shows some key modules of the ADKs.
 
-> Not all the modules a good fit for all ADKs and CDKs, further details can reviewed in the specifics and note that Listake now more focuses on the development of ADKs, feel free to reach out and discuss your thought about CDKs.
+> Not all the modules a good fit for all ADKs and CDKs, further details can reviewed in the specifics and note that the Stack now more focuses on the development of ADKs, feel free to reach out and discuss your thought about CDKs.
 
 ## Staking Contracts Framework
 

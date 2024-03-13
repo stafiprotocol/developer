@@ -15,7 +15,7 @@ Interchain Security is a technology that allows Neutron to be secured by the val
 
 ## CosmWasm Contract
 
-The core part of Listake Cosmos LSD Stack is a set of CosmWasm smart contracts, CosmWasm is a smart contracting platform built for the Cosmos ecosystem. It's the Cosmos (Cosm) way of using WebAssembly (Wasm) hence the name. With platform contracts, developers or start-up projects can easily deploy and initialize their contracts and distribute staking rewards.
+The core part of StaFi Cosmos LSD Stack is a set of CosmWasm smart contracts, CosmWasm is a smart contracting platform built for the Cosmos ecosystem. It's the Cosmos (Cosm) way of using WebAssembly (Wasm) hence the name. With platform contracts, developers or start-up projects can easily deploy and initialize their contracts and distribute staking rewards.
 
 ### StakeManager
 
@@ -39,7 +39,7 @@ cw20-ics20 is an IBC-enabled contract that allows us to send rATOM tokens from o
 
 ### Validator Selector
 
-Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service Validator Selector, which selects the optimal validator according to the validator selection algorithm developed by Listake.
+Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service Validator Selector, which selects the optimal validator according to the validator selection algorithm developed by StaFi team.
 
 One solution is to implement an on-chain contract to run the validator's select strategy. The relay is to initiate the update after a certain interval. This solution will be more convenient for AppChains which has a few validators.
 
@@ -108,17 +108,17 @@ LSM represents an opinionated design for adding liquid staking to the Cosmos SDK
 
 ### Integration
 
-To let users be able to stake LSM share tokens in Listake Cosmos LSD Stack, Listake Cosmos SDK will pack a series of messages in one transaction on the Cosmos Hub.
+To let users be able to stake LSM share tokens, StaFi Cosmos Stack packs a series of messages in one transaction on the Cosmos Hub.
 
 1. RedeemToken this untokenize user's share token to token.
 2. Redelegate to validator selected by Validator Selector
 3. TokenizeShare re-tokenizes user's delegation
-4. OwnerTransfer transfers owner tokenized share record to Listake Cosmos LSD PoolAccount so that StakeManager can withdraw the user's delegation reward
+4. OwnerTransfer transfers owner tokenized share record to StaFi Cosmos LSD PoolAccount so that StakeManager can withdraw the user's delegation reward
 5. ShareTokenTransfer transfers the user's share token to PoolAccount so that user can receive rATOM in return.
 
 ## Quick Duplicate
 
-For any cosmos AppChain including Cosmos, you can directly deploy the Listake Cosmos LSD contract on Neutron, just modify the connect_id, because the connect_id determines a pair of source chain and target chain, and different projects only have different source chains and target chains.
+For any cosmos AppChain including Cosmos, you can directly deploy the StaFi Cosmos LSD contract on Neutron, just modify the connect_id, because the connect_id determines a pair of source chain and target chain, and different projects only have different source chains and target chains.
 
 But there are basic requirements for an ordinary app chain:
 

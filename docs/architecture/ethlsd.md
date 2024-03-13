@@ -1,6 +1,6 @@
 # ETH LSD Stack
 
-ETH LSD Stack is the simple, scalable and open-source development stack that powers ETH LST providers.  Developers can launch an ETH LST based on Listake ETH LSD Stack.
+StaFi ETH LSD Stack is the simple, scalable and open-source development stack that powers ETH LST providers. Developers can launch an ETH LST based on it.
 
 # Smart Contracts
 
@@ -103,7 +103,7 @@ This component is required for node providers to run with validators. Voters wil
 
 # DV Adapter
 
-DV Adapter is a layer for Listake Stack to integrate with DVT(distributed validator technology). Thanks to DVT providers, developers don't need to run their own validator clients. DV Adaptor can not only speed up deployment of LSD Stack but also simplify the complexity of the entire system. Currently the Stack supports SSV network, more will be supported in the future. Here we introduce the structure of SSV adapter.
+DV Adapter is a layer for StaFi ETH LSD Stack to integrate with DVT(distributed validator technology). Thanks to DVT providers, developers don't need to run their own validator clients. DV Adaptor can not only speed up deployment of LSD Stack but also simplify the complexity of the entire system. Currently the Stack supports SSV network, more will be supported in the future. Here we introduce the structure of SSV adapter.
 
 There are four parts:
 

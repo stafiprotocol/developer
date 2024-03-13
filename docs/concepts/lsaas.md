@@ -1,3 +1,3 @@
 # LSAAS
 
-LSAAS is short for Liquid Staking As a Service, similar to the RAAR -Rollup as a service, both are a SAAS platform that facilitate the development of software. Listake is a LSAAS platform that focus on building a general liquid staking platform for developers. 
+LSAAS is short for Liquid Staking As a Service, similar to the RAAR -Rollup as a service, both are a SAAS platform that facilitate the development of software. StaFi LSD Stack is a LSAAS platform that focus on building a general liquid staking platform for developers. 
