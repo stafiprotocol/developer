@@ -4,6 +4,8 @@ Given the limitation of smart contracts, they are not self-executing, and requir
 
 *Security* is the our first priority when developing Stack, We are thrilled to say that the new era process is permissionless, showcasing the decentralized nature of the Cosmos LSD Stack, allowing anyone to trigger the beginning of a new era. Each step in the process includes sufficient condition checks to prevent the contract from re-processing transactions or prematurely moving to subsequent steps. The new era process will be triggered when a pool meets the conditions for starting a new era (i.e., reaching the time to start the next era).
 
+The relay solution for chains only support ICS-27 protocol differs from those support Native CosmWasm, therefore we provide two proper relay types.
+
 # Neutron(ICS-27) LSD Relay
 
 ### era_update

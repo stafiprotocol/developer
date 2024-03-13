@@ -1,6 +1,6 @@
 # EVM LSD
 
-![An image](/image/evmlsd_0.png)
+![An image](/image/evmlsd_0.png)&nbsp;
 
 # Smart contracts
 
@@ -27,19 +27,19 @@ StakeManager contract provides stake method for users to participate staking. Di
 
 Native token can be sent with method calling, so users can invoke *stake* method accompanied with the amount of token they're willing to stake, and they will receive equivalent LsdToken in return.
 
-![An image](/image/evmlsd_1.png)
+![An image](/image/evmlsd_1.png)&nbsp;
 
 ## Scenario 2: Staking token is an ERC-20 compatible token
 
 As staking token is an ERC-20 compatible token, users should approve StakeManager to spend their tokens, then they can stake it and receive equivalent LsdToken in return.
 
-![An image](/image/evmlsd_2.png)
+![An image](/image/evmlsd_2.png)&nbsp;
 
 # User Unstake Flow
 
 Any LsdToken holder is a valid user, and can unstake tokens. At first, users should approve StakeManager to spend their token, next call *StakeManager.unstake* method to burn their LsdToken, last get their rewards by calling withdraw method.
 
-![An image](/image/evmlsd_3.png)
+![An image](/image/evmlsd_3.png)&nbsp;
 
 # Balance Staking Pools
 
@@ -51,11 +51,11 @@ Due to the limitation of smart contract, it could not launch an execution. So Li
 
 Here is an example of how Polygon relay work, it does not have voter, as no data needed from Oracle:
 
-![An image](/image/evmlsd_4.png)
+![An image](/image/evmlsd_4.png)&nbsp;
 
 As we know BNB chain is differ from Polygon, it requires data from Beacon chain. So we introduce voter role, to keep data correct. Voters submit their proposal through relay service.  below is BNB chain example:
 
-![An image](/image/evmlsd_5.png)
+![An image](/image/evmlsd_5.png)&nbsp;
 
 # Validator Selector
 
@@ -67,7 +67,7 @@ For security, StakeManager has been designed as a multi-sig contract, the propos
 
 # Quick Duplicate
 
-![An image](/image/evmlsd_6.png)
+![An image](/image/evmlsd_6.png)&nbsp;
 
 Listake EVM LSD provides mature LSD solutions including contracts, back-end services for popular blockchains like BSC, Polygon, *etc*.  However, for starting blockchain or layer 2 programs, Listake provides LSD API standards. The limited work developers should do is to wrap only one or two contracts or provide several blockchain RPC APIs according to Listake EVM LSD API Standards.
 

@@ -21,7 +21,7 @@ In the design of LSD Stacks, contracts are deployed on the target chain, relying
 
 ## Smart contract security
 
-## Access control
+### Access control
 
 To prevent unauthorized use of smart contract functions, it is necessary to implement secure access controls. Access control mechanisms restrict the ability to use certain functions in a smart contract to approved entities, such as accounts responsible for managing the contract. The **Ownable pattern** and **role-based control** are two patterns useful for implementing access control in smart contracts:
 
@@ -43,17 +43,17 @@ Using a multisig for access control introduces an extra layer of security since 
 
 In the design of Listake, the owner of the contract only manages some basic parameters, fee commission, minimum pledge amount, etc., and do not involve any user assets. On the other hand, the owner of the contract is a multi-signature contract, controlled by multiple parties(Stack DAO), and there will be no single account missing problem.
 
-# Code Vulnerabilities
+### Code Vulnerabilities
 
 If the contract code has security vulnerabilities, it will also lead to hacking and loss of assets. So it is very necessary to audit the contract.
 
 We strongly recommend all the projects that develops based on Listake LSD Stack to do the audit, and make sure the security. The framework of the Stack will be subjected to the brand auditor accordingly but not all feature will be, please keep it in mind.
 
-## User asset lock
+### User asset lock
 
-For LSD projects, the users will transfer the assets to the LSD protocol, and the protocol delegates the assets to the target chain. Usually, these locked assets on the target chain are safe. However, if there are some problems with the protocol and the undelegation operation of the target chain is not triggered, the assets may be locked all that time and users cannot redeem their assets. In the design of the Listake, the undelegation operation of the target chain can be directly triggered at any time by anyone, which will ensure that the user can eventually withdraw his assets.
+For LSD projects, users will transfer the assets to a LSD protocol, and the protocol delegates the assets to the target chain. Usually, these locked assets on the target chain are safe. However, if there are some problems with the protocol and the undelegation operation of the target chain is not triggered, the assets may be locked all that time and users cannot redeem their assets. In the design of the Listake, the undelegation operation of the target chain can be directly triggered at any time by anyone, which will ensure that the user can eventually withdraw his assets.
 
-## Abnormal exchange rate
+### Abnormal exchange rate
 
 For the LSD project, the exchange rate is very important, which represents how much assets users can redeem with LST. If the exchange rate is abnormal, the amount of assets redeemed by the user will also be abnormal, so accurate exchange rate calculation is very important.
 

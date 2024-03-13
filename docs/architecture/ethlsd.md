@@ -27,6 +27,7 @@ UserDeposit contract manages all users deposit ETH and return LsdToken. When use
 
 ![An image](/image/userdepositflow.png)
 
+&nbsp;
 # User Unstake Flow
 
 Any LsdToken holder is a valid user, and can call NetworkWithdraw to change ETH with LsdToken. 
@@ -39,6 +40,7 @@ If it does not have enough ETH for user, voters will select a batch of validator
 
 ![An image](/image/userdepositflow.png)
 
+&nbsp;
 # Node Deposit Flow
 
 Node providers will be served by individuals or single entities who are responsible for the consistency, security, availability and activity of the validator. They will be slashed if the validator is not working as expected.
@@ -55,13 +57,13 @@ Unlike normal stakers which are required to put 32 ETH up for deposit to create 
 
 Node providers don't need to deposit any ETH and still can run a validator. All the required 32ETH deposit requirement is provided by user deposit pool.
 
-![An image](/image/trustnode.png)
+![An image](/image/trustnode.png)&nbsp;
 
 # Node Stake Flow
 
 When a node calls *stake* method in NodeDeposit, the reset amount of 32 ETH will be deposited to official deposit contract, node operator should run a validator and an ejector service. After the validator being activated on the Beacon chain, rewards will distribute to NetworkWithdraw automatically.
 
-![An image](/image/nodestakeflow.png)
+![An image](/image/nodestakeflow.png)&nbsp;
 
 # Node Claim Flow
 
@@ -71,7 +73,7 @@ At a new checkpoint, the voters will collectively create a true snapshot of the 
 
 Once the tree is submitted, voters will submit the merkle root of this checkpoint in NetworkWithdraw, then node providers are able to claim their rewards in ETH with proof by calling the contract.
 
-![An image](/image/userdepositflow.png)
+![An image](/image/userdepositflow.png)&nbsp;
 
 # Voters
 
@@ -95,13 +97,13 @@ Considering voters' significant role in the whole system, the correctness and av
 
 After initialization of the system, there will be a group of voters designated as standby voters, their accounts are stored in NetworkProposal contract. In each contract method which requires offchain data(Oracle), we will get voters' account from NetworkProposal and check whether the *msg.sender* is a voter or not. The data can be stored on chain requires 2/3 voters agreements. In the meantime, a minority of voters who submit fault data will be marked as suspicious. If they continue submitting fault data, they will be expelled.
 
-![An image](/image/managevote.png)
+![An image](/image/managevote.png)&nbsp;
 
 # Node Ejector
 
 This component is required for node providers to run with validators. Voters will select a batch of validators to enter the exit process, when user pool does not satisfy the user unstake amount.
 
-![An image](/image/nodeenjector.png)
+![An image](/image/nodeenjector.png)&nbsp;
 
 # DV Adapter
 
@@ -114,7 +116,7 @@ There are four parts:
 - Validator Register: register validator in SSV network with operators
 - Embedded ejector service
 
-![An image](/image/dvadapter.png)
+![An image](/image/dvadapter.png)&nbsp;
 
 # Alert
 
