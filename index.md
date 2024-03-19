@@ -26,7 +26,7 @@ features:
     details: Effortlessly deploy your own LSD on EVM Layer1 by implementing the staking contract interface on a foundational development toolkit. Already supported on BSC, Polygon, and more, with no development required.
     link: /docs/architecture/evmlsd/
   - title: Cosmos LSD  
-    details: Leverage the cutting-edge development framework built on CosWasm to effortlessly configure and integrate your own LSD project within the Cosmos ecosystem, requiring just a few simple steps for deployment.
+    details: Leverage the cutting-edge development framework built on CosmWasm to effortlessly configure and integrate your own LSD project within the Cosmos ecosystem, requiring just a few simple steps for deployment.
     link: /docs/architecture/cosmoslsd/
 ---
 
