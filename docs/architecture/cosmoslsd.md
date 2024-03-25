@@ -23,13 +23,13 @@ StakeManager is a smart contract, that can create and initialize StakePool which
 
 StakeManager contract is responsible for processing user IBC transactions and interacting with rATOM contracts. Mint corresponds to rATOM and is the entry point for other functions such as unstake/withdraw.
 
-### Era
+- **Era**
 
 `Era` is a crucial time unit within StakeManager contract, used to manage reward distribution, delegation and undelegation operations, and interest rate adjustments. This helps ensure the contract's operation progresses smoothly according to predefined time cycles and provides users with a clear time framework to understand the status of their investments and rewards.
 
-### rATOM
+- **LSD Token**
 
-rATOM(Example of ATOM LST) is a group implementation of cw20 and cw20-ics20.
+LSD Token is an implementation of cw20 and cw20-ics20.
 
 CW20 is a specification for fungible tokens based on CosmWasm. The name and design are loosely based on Ethereum's ERC20 standard, but many changes have been made.
 
