@@ -33,7 +33,7 @@ LSD Token is an implementation of cw20 and cw20-ics20.
 
 CW20 is a specification for fungible tokens based on CosmWasm. The name and design are loosely based on Ethereum's ERC20 standard, but many changes have been made.
 
-cw20-ics20 is an IBC-enabled contract that allows us to send rATOM tokens from one chain over the standard ICS20 protocol to the bank module of another chain. In short, it lets us send our custom rATOM tokens with IBC and use them just like native tokens on other chains.
+cw20-ics20 is an IBC-enabled contract that allows us to send LSD tokens from one chain over the standard ICS20 protocol to the bank module of another chain. In short, it lets us send our LSD tokens with IBC and use them just like native tokens on other chains.
 
 ## Off-chain service
 
