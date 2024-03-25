@@ -27,7 +27,7 @@ StakeManager contract is responsible for processing user IBC transactions and in
 
 `Era` is a crucial time unit within StakeManager contract, used to manage reward distribution, delegation and undelegation operations, and interest rate adjustments. This helps ensure the contract's operation progresses smoothly according to predefined time cycles and provides users with a clear time framework to understand the status of their investments and rewards.
 
-- **LSD Token**
+### LSD Token
 
 LSD Token is an implementation of cw20 and cw20-ics20.
 
