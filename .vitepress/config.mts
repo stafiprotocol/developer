@@ -19,7 +19,7 @@ export default defineConfig({
     },
 
     outline: {
-      level: [1,3],
+      level: [1,4],
       // label: 'Contents',
     },
     socialLinks: [
@@ -54,6 +54,7 @@ function docs(){
         {text: "Overview", link: "/docs/architecture/overview"},
         {text: "Design Principles", link: "/docs/architecture/designprinciples"},
         {text: "ETH LSD", link: "/docs/architecture/ethlsd"},
+        {text: "LRT(Liquid Restaking Token)", link: "/docs/architecture/el_lrt"},
         {text: "EVM LSD", link: "/docs/architecture/evmlsd"},
         {text: "Cosmos LSD", link: "/docs/architecture/cosmoslsd"},
       ]
@@ -70,6 +71,17 @@ function docs(){
         {text: "App", link: "/docs/developethlsd/ethlsdapp"},
         {text: "Validator App", link: "/docs/developethlsd/ethlsd_validator_app"},
         {text: "Deploy", link: "/docs/developethlsd/deploy"},
+      ]
+    },
+    {
+      text: "Develop(LRT)",
+      collapsed: true,
+      items: [
+        {text: "Get Started", link: "/docs/developlrt/getstarted"},
+        {text: "Contract", link: "/docs/developlrt/contract"},
+        {text: "Relay", link: "/docs/developlrt/relay"},
+        {text: "App", link: "/docs/developlrt/app"},
+        {text: "Deploy", link: "/docs/developlrt/deploy"},
       ]
     },
     {

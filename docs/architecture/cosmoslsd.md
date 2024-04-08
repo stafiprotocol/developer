@@ -1,11 +1,11 @@
-# Cosmos LSD
+# Cosmos LSD Stack
 
 Given the complexity of Cosmos ecosystem, StaFi Cosmos LSD Stack supports most chains that either adhere to the [ICS-27 Interchain Protocol](https://github.com/cosmos/ibc/tree/main/spec/app/ics-027-interchain-accounts) or [CosmWasm](https://cosmwasm.com). However, it is not compatible with a few chains, such as Irisnet(IRIS), which do not support either.
 
-# Native CosmWasm chains
+## Native CosmWasm chains
 The architecture for Native CosmWasm chains will be published soon, stay tuned.
 
-# ICS-27 protocol chains(Neutron)
+## ICS-27 protocol chains(Neutron)
 
 Neutron is a blockchain network that brings Smart Contracts into the Cosmos-family blockchains using CosmWasm. Neutron works with networks using the IBC protocol. Neutron security (block validation) is provided by the Cosmos Hub network using Interchain Security.
 
@@ -13,11 +13,11 @@ Interchain Security is a technology that allows Neutron to be secured by the val
 
 ![ICS-27 Cosmos LSD architecture](/image/cosmoslsd_1.png 'ICS-27 Cosmos LSD architecture')
 
-## CosmWasm Contract
+### CosmWasm Contract
 
 The core part of StaFi Cosmos LSD Stack is a set of CosmWasm smart contracts, CosmWasm is a smart contracting platform built for the Cosmos ecosystem. It's the Cosmos (Cosm) way of using WebAssembly (Wasm) hence the name. With platform contracts, developers or start-up projects can easily deploy and initialize their contracts and distribute staking rewards.
 
-### StakeManager
+#### StakeManager
 
 StakeManager is a smart contract, that can create and initialize StakePool which is an ICA on the Cosmos Hub. When initializing, StakeManager will create an account via *register_interchain_account* on the Cosmos Hub. We call this account StakePool.
 
@@ -27,7 +27,7 @@ StakeManager contract is responsible for processing user IBC transactions and in
 
 `Era` is a crucial time unit within StakeManager contract, used to manage reward distribution, delegation and undelegation operations, and interest rate adjustments. This helps ensure the contract's operation progresses smoothly according to predefined time cycles and provides users with a clear time framework to understand the status of their investments and rewards.
 
-### LSD Token
+#### LSD Token
 
 LSD Token is an implementation of cw20 and cw20-ics20.
 
@@ -35,9 +35,9 @@ CW20 is a specification for fungible tokens based on CosmWasm. The name and desi
 
 cw20-ics20 is an IBC-enabled contract that allows us to send LSD tokens from one chain over the standard ICS20 protocol to the bank module of another chain. In short, it lets us send our LSD tokens with IBC and use them just like native tokens on other chains.
 
-## Off-chain service
+### Off-chain service
 
-### Validator Selector
+#### Validator Selector
 
 Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service Validator Selector, which selects the optimal validator according to the validator selection algorithm developed by 61 Lab.
 
@@ -62,7 +62,7 @@ Monitor the validators list and update the StakePool validator balance the numbe
 
 This contract collects proposals from voters and updates StakeManager if the number of votes satisfies the vote threshold.
 
-### New Era
+#### New Era
 
 - *Marking Time Periods*: The era serves as a marker for time periods within the contract, each era representing a specific time cycle.
 - *Reward and Fee Calculation*: At the beginning of the era, the contract calculates and distributes new rewards by querying the distribution module of the Comsos Hub via ICQ.
@@ -70,13 +70,13 @@ This contract collects proposals from voters and updates StakeManager if the num
 - *Updating Pool States*: In each new era process, the contract updates the status of each pool, including active funds (*active*), delegated funds(*bond*), and undelegated funds(*unbond*), reflecting the latest status of each pool in the new era.
 - *Updating Interest Rates*: The contract calculates new interest rates based on the total amount of active funds and the total supply of LSD tokens in each era.
 
-## Contract Flow
+### Contract Flow
 
-### On Initialize
+#### On Initialize
 
 StakeManger registers the interchain account as StakePool
 
-### Stake Flow
+#### Stake Flow
 
 1. The user calls the Stake method of the Neutron StakeManager contract via the IBC hook on the Cosmos Hub network and sends the corresponding amount of ATOM token
 2. StakeManager receives the token and contract request and sends the user's IBC ATOM via IBC to the ICA account in Neutron.
@@ -85,7 +85,7 @@ StakeManger registers the interchain account as StakePool
 
 ![User Stake Flow](/image/cosmoslsd_3.png 'User Stake Flow')
 
-### Unstake Flow
+#### Unstake Flow
 
 1. The user calls the StakeManager contract unstake method.
 2. StakeManager burns off the corresponding amount of rATOM in the rATOM contract based on the current ATOM/rATOM rate.
@@ -93,20 +93,20 @@ StakeManger registers the interchain account as StakePool
 
 ![User Unstake Flow](/image/cosmoslsd_4.png 'User Unstake Flow')
 
-### Withdraw Flow
+#### Withdraw Flow
 
 1. When the user unstake has elapsed for a period of time (Cosmos Hub defaults to 21 days), the user can withdraw the corresponding token.
 2. The user calls the withdraw method of the StakeManager contract. The contract retrieves the corresponding assets in Cosmos Hub through the ICA account and sends them directly to the user's account in Cosmos Hub.
 
 ![User Withdraw Flow](/image/cosmoslsd_5.png 'User Withdraw Flow')
 
-## LSM Integration
+### LSM Integration
 
-### LSM(Liquidity Staking Module)
+#### LSM(Liquidity Staking Module)
 
 LSM represents an opinionated design for adding liquid staking to the Cosmos SDK. Staked assets should be able to be converted into liquid staked assets without unbonding. Assets are expected to be minimally fungible. Assets have a denom of "cosmosvaloperxxxx[recordId]". Record ID is a pointer to a non-fungible asset that receives the rewards from the tokenized stake.
 
-### Integration
+#### Integration
 
 To let users be able to stake LSM share tokens, StaFi Cosmos Stack packs a series of messages in one transaction on the Cosmos Hub.
 
@@ -116,7 +116,7 @@ To let users be able to stake LSM share tokens, StaFi Cosmos Stack packs a serie
 4. OwnerTransfer transfers owner tokenized share record to StaFi Cosmos LSD PoolAccount so that StakeManager can withdraw the user's delegation reward
 5. ShareTokenTransfer transfers the user's share token to PoolAccount so that user can receive rATOM in return.
 
-## Quick Duplicate
+### Quick Duplicate
 
 For any cosmos AppChain including Cosmos, you can directly deploy the StaFi Cosmos LSD contract on Neutron, just modify the connect_id, because the connect_id determines a pair of source chain and target chain, and different projects only have different source chains and target chains.
 
@@ -129,12 +129,12 @@ How to guarantee the income, the contract makes us basically do not need to chan
 
 Consider adding the method of contract manager, but the change threshold is not much different from direct deployment.
 
-## Monitor
+### Monitor
 
 The LSD Monitor off-chain program monitors the flow of large amounts of governance token receipt and large amounts of LsdToken minting and burning on the chain with notifications via email, SMS, phone, etc.
 
 Considering the contract needs a fee to send interchain transactions, we should monitor the balance unless we use a native token reward as a fee.
 
-## Circuit Break & Blacklist
+### Circuit Break & Blacklist
 
 Add a global settings contract. When emergencies occur, the administrator or a multiple-signature account with administrative authority can add some addresses to the blacklist, restrict or disable certain accounts, or even stop the whole LSD. This part is too sensitive, dangerous, centralized, and increases user concerns. 61 Lab strongly recommended not to customize this function.

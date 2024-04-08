@@ -21,12 +21,15 @@ hero:
 features:
   - title: ETH LSD
     details: Effortlessly generate your own ETH LSD on Ethereum and leverage integration with various third-party protocols to operate your staking pool for growth.
-    link: /docs/architecture/ethlsd/
+    link: /docs/architecture/ethlsd
+  - title: LRT
+    details: Effortlessly deploy your own LRT on EigenLayer.
+    link: /docs/architecture/el_lrt
   - title: EVM LSD
     details: Effortlessly deploy your own LSD on EVM Layer1 by implementing the staking contract interface on a foundational development toolkit. Already supported on BSC, Polygon, and more, with no development required.
-    link: /docs/architecture/evmlsd/
+    link: /docs/architecture/evmlsd
   - title: Cosmos LSD  
     details: Leverage the cutting-edge development framework built on CosmWasm to effortlessly configure and integrate your own LSD project within the Cosmos ecosystem, requiring just a few simple steps for deployment.
-    link: /docs/architecture/cosmoslsd/
+    link: /docs/architecture/cosmoslsd
 ---
 
