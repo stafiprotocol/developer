@@ -28,7 +28,7 @@ Relay typically acts as a trigger role, it invokes smart contracts periodically.
 
 ### Router
 
-Router is customized for Ethereum other chains, it is a comprehensive and decentralized validator management service that seamlessly integrates DVT(Distributed Validator Technology), such as SSV, Obol, and other technology that improve the decentralization of staking. This service empowers developers to effortlessly build and deploy a decentralized validator management system, simplifying and streamlining the validator management process.
+Router is customized for Ethereum, it is a comprehensive and decentralized validator management service that seamlessly integrates DVT(Distributed Validator Technology), such as SSV, Obol, and other technology that improve the decentralization of staking. This service empowers developers to effortlessly build and deploy a decentralized validator management system, simplifying and streamlining the validator management process.
 
 ### Front
 
