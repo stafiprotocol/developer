@@ -6,6 +6,55 @@ This guide provides a step-by-step script to deploy a LRT project through StaFi 
 
 // Todo:
 
+## Parameter Tips
+
+Owner Address: sets the owner of the LRD network being created.
+
+Owner Permissions:
+- Upgrade contracts
+- Adjust commission fee
+- Adjust duration of era
+- Manage supported LSTs
+
+Operator Address:
+- Must be registered operator on EigenLayer
+- Go and find operator on [Holesky Operator list](https://holesky.eigenlayer.xyz/operator) or [Mainnet Operator list](https://app.eigenlayer.xyz/operator) depending on the network you want to deploy to
+
+### Which Token Type should I choose?
+
+Standard LRD Token:
+- Provided by StaFi Stack
+- ERC-20 compatible
+- Ready to use
+
+Several Procedures required before using Custom LRT:
+1. Implement your own LRT logic which comply with Stack's standards.
+2. Deploy your contract
+3. Request StaFi Stack Team for whitelisting your token for security reason
+
+### Why LRD Token could not be changed?
+As being the heart of the LRD network, LRD token must be stable, reliable and trustable. Users hold LRD Token as a receipt of staking so it could not be changed.
+
+### Rewards Distribution
+
+Rewards distribution is crucial to project parties. Commission fee of users is set default as 10% and StaFi Stack fee is 10% of project income. for example, if `100ETH` rewards received from EigenLayer, the distribution will be:
+
+| Role | Amount | Formula |
+|---------------|--------|-------|
+|  Users        |  90ETH | 100ETH*(1-0.1)  |
+|  Project      |  9ETH  | (100ETH-90ETH)*(1-0.1)  |
+|  StaFi Stack  |  1ETH  | 100ETH-90ETH-9ETH  |
+
+## Save all the information generated
+
+The lrd network has a set of smart contracts, so you should save all the information which you will interact frequently with, such as building your staking app, and running relay service.
+
+- LRD Factory address
+- Owner address
+- Operator address
+- LRT address
+- Stake Pool address
+- Stake Manager address
 
 ## Step2. Run relay service
 
