@@ -4,11 +4,13 @@ This guide provides a step-by-step script to deploy a LRT project through StaFi 
 
 ## Step1. Deploy your LRT network contacts
 
-// Todo:
+61 Lab have made [StaFi LSAAS platform](https://stack-test-app.stafi.io/) for project parties to deploy their LRT network contracts.
 
-## Parameter Tips
+![](/image/el_lrt/onboarding_homepage.png "StaFi LSAAS platform")
 
-Owner Address: sets the owner of the LRD network being created.
+### Parameter Tips
+
+Owner Address: sets the owner of the LRT network being created.
 
 Owner Permissions:
 - Upgrade contracts
@@ -33,7 +35,7 @@ Several Procedures required before using Custom LRT:
 3. Request StaFi Stack Team for whitelisting your token for security reason
 
 ### Why LRD Token could not be changed?
-As being the heart of the LRD network, LRD token must be stable, reliable and trustable. Users hold LRD Token as a receipt of staking so it could not be changed.
+As being the heart of the LRT network, LRD token must be stable, reliable and trustable. Users hold LRD Token as a receipt of staking so it could not be changed.
 
 ### Rewards Distribution
 
@@ -45,7 +47,7 @@ Rewards distribution is crucial to project parties. Commission fee of users is s
 |  Project      |  9ETH  | (100ETH-90ETH)*(1-0.1)  |
 |  StaFi Stack  |  1ETH  | 100ETH-90ETH-9ETH  |
 
-## Save all the information generated
+### Save all the information generated
 
 The lrd network has a set of smart contracts, so you should save all the information which you will interact frequently with, such as building your staking app, and running relay service.
 
