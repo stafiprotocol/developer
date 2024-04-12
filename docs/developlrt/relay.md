@@ -71,7 +71,7 @@ lrd-relay start --stake_manager 0x<your_stake_manager_address> \
 | option | description | example value |
 | --- | --- | --- |
 | stake_manager | the address of StakeManager contract of the LRT network | 0xb77BD2bdE07205AE1926F857c4E8c5B90c6050a3 |
-| account | the account that has been imported or generated | 0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 |
+| account | the account that has been added or imported | 0x68146ebA486CE6F8D22731c8ECB4d013F34E7114 |
 | endpoint | RPC endpoint on Ethereum | http://127.0.0.1:8545 |
 | home | Home path (default "$HOME/.stafi/lrd") |  |
 | log_level | The logging level (trace\|debug\|info\|warn\|error\|fatal\|panic) |  info |
