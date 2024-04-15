@@ -59,7 +59,7 @@ The lrd network has a set of smart contracts, so you should save all the informa
 - Stake Manager address
 
 ## Step2. Run relay service
-[Follow this the doc to run relay service](relay.html)
+[Follow this doc to run relay service](relay.html)
 
 ## Step3. Build your own LRT app
-[Follow this the doc to build your own LRT app](app.html)
+[Follow this doc to build your own LRT app](app.html)
