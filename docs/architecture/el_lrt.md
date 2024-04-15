@@ -16,7 +16,13 @@ StaFi LRT Stack is a simple, scalable and open-source development stack that pow
 
 Users can stake ETH directly or any LSTs. For ETH stakers, they should call StakeManager.`stakeETH` with the amount of ETH they are willing to stake. For LST stakers, they should call StakeManager.`stake` with LST token and the amount of the token. They will receive LRT in return no matter which LST or ETH they deposited.
 
-// Todo: add an illustration //
+- Scenario 1: Staking LST
+
+![Scenario 1: Staking LST](/image/el_lrt/stake_lst.png 'Scenario 1: Staking LST')
+
+- Scenario 2: Staking ETH
+
+![Scenario 2: Staking ETH](/image/el_lrt/stake_eth.png 'Scenario 2: Staking ETH')
 
 ### Unstake & Withdraw Flow
 Any LRT holders are valid users, and can unstake their tokens in exchange for LSTs. 
@@ -25,10 +31,11 @@ Any LRT holders are valid users, and can unstake their tokens in exchange for LS
 - Thirdly, call StakeManager.unstake method with selected LSTs.
 - Lastly, call StakeManager.withdraw to claim their LSTs after unbonding period.
 
-// Todo: add an illustration //
+![Unstake & Withdraw Flow](/image/el_lrt/user_unstake_flow.png 'Unstake & Withdraw Flow')
 
 ## Relay Service
 
 Due to the limitation of smart contract, it could not launch an execution. So StaFi LRT Stack introduces Relay service. It will trigger StakeManager, at a certain interval, to collect and calculate users' reward, distribute it to the project and users.
 
-// Todo: add an illustration //
+
+![Relay Service](/image/el_lrt/relay_service_new_era_flow.png 'Relay Service')
