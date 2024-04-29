@@ -26,3 +26,18 @@ This Stack's vision is to build a fast deployed, easily used, technologically tr
 - Community Builder: builders who want to build a community LSD protocol.
 - Startup: teams who want to create something innovative in the LSD industry.
 - Institution: institutions who want to create a LSD protocol with customize functions.
+
+## Cooperation
+
+If you're a Layer1 project team, an LST/LRT project team, or an LST/LRT operator, we welcome you to get in touch with us and consider adoption. For Layer1 projects, StaFi can integrate LSaaS to reduce the development workload and enhance the acceptance of LST. For LST and LRT projects, you can directly utilize LSaaS to build LST without extensive development efforts. If you're interested in the above ideas, the current collaboration process is as follows:
+
+- Understand LSaaS:
+  - GitHub: https://github.com/stafiprotocol
+  - Web App: https://stack-test-app.stafi.io/
+- Contact us:
+  - Discord: https://discord.com/invite/QZhn66NacA
+  - Email: liam@stafi.io
+- Technical assessment: The development team will evaluate whether the current framework can be directly adapted. If direct adaptation is possible without additional development, integration can proceed. If not, new development needs to be assessed.
+- Deployment
+- Integration
+- Co-marketing

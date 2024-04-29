@@ -12,6 +12,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guides', link: '/docs/introduction/getstarted' },
       { text: 'Website', link: 'https://stafi.io' },
+      { text: 'Launch App', link: 'https://stack-test-app.stafi.io/' },
     ],
 
     sidebar: {
