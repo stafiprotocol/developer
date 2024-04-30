@@ -31,13 +31,21 @@ This Stack's vision is to build a fast deployed, easily used, technologically tr
 
 If you're a Layer1 project team, an LST/LRT project team, or an LST/LRT operator, we welcome you to get in touch with us and consider adoption. For Layer1 projects, StaFi can integrate LSaaS to reduce the development workload and enhance the acceptance of LST. For LST and LRT projects, you can directly utilize LSaaS to build LST without extensive development efforts. If you're interested in the above ideas, the current collaboration process is as follows:
 
-- Understand LSaaS:
+### Understanding LSaaS
+
   - GitHub: https://github.com/stafiprotocol
   - Web App: https://stack-test-app.stafi.io/
-- Contact us:
+  - New to start: https://lsaas-docs.stafi.io/docs/introduction/newtostack.html
+
+### Contact us
+
   - Discord: https://discord.com/invite/QZhn66NacA
-  - Email: liam@stafi.io
-- Technical assessment: The development team will evaluate whether the current framework can be directly adapted. If direct adaptation is possible without additional development, integration can proceed. If not, new development needs to be assessed.
-- Deployment
-- Integration
-- Co-marketing
+  - Forms: https://forms.gle/4riMrqk2ErESg1cm9
+
+### Technical assessment
+
+The development team will evaluate whether the current framework can be directly adapted. If direct adaptation is possible without additional development, integration can proceed. If not, new development needs to be assessed.
+
+### Integration and marketing
+
+After the technical assessment, if new development is required, we will arrange for our development team to work on the integration. Once the development is completed, we will deploy the solution to the testnet for thorough testing. After ensuring smooth operation on the testnet, the solution will be deployed to the mainnet. Additionally, StaFi will collaborate on joint marketing efforts to assist project teams in achieving a successful launch.
