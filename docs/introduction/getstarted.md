@@ -34,7 +34,7 @@ If you're a Layer1 project team, an LST/LRT project team, or an LST/LRT operator
 ### Understanding LSaaS
 
   - GitHub: https://github.com/stafiprotocol
-  - Web App: https://stack-test-app.stafi.io/
+  - Web App: https://stack-app.stafi.io/
   - New to start: https://lsaas-docs.stafi.io/docs/introduction/newtostack.html
 
 ### Contact us
