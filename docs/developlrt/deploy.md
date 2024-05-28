@@ -4,7 +4,7 @@ This guide provides a step-by-step script to deploy a LRT project through StaFi 
 
 ## Step1. Deploy your LRT network contacts
 
-61 Lab have made [StaFi LSAAS platform](https://stack-test-app.stafi.io/) for project parties to deploy their LRT network contracts.
+61 Lab have made [StaFi LSAAS platform](https://stack-app.stafi.io/) for project parties to deploy their LRT network contracts.
 
 ![](/image/el_lrt/onboarding_homepage.png "StaFi LSAAS platform")
 

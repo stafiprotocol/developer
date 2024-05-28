@@ -6,7 +6,7 @@ This guide provides a step-by-step script to deploy the Cosmos LSD stack, withou
 
 ## Step1. Deploy your LSD network contracts
 
-61 Lab have made [StaFi LSAAS](https://stack-test-app.stafi.io/) for project parties to deploy their LSD network contracts.
+61 Lab have made [StaFi LSAAS](https://stack-app.stafi.io/) for project parties to deploy their LSD network contracts.
 
 ![](/image/cosmos_lsd/choose-lsd-token-page.png "Launchpad Homepage")
 
