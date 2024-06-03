@@ -12,14 +12,13 @@ Core contracts:
 
 Core roles:
 
-- Voter: privileged to propose changes to the on-chain status
 - Owner: manages the whole network
 
 ![StaFi EVM LSD Architecture](/image/evmlsd_0.png 'StaFi EVM LSD Architecture')
 
 ## User Stake Flow
 
-StakeManager contract provides stake method for users to participate staking. Different staking system has different ways to stake, such as BNB use native token as a staking token; MATIC use ERC-20 compatible token. We'll explore them one by one. Here is the formula for calculating the amount of LsdToken they will get.
+StakeManager contract provides stake method for users to participate in staking. Different staking system has different ways to stake, such as BNB use native token as a staking token; MATIC use ERC-20 compatible token. We'll explore them one by one. Here is the formula for calculating the amount of LsdToken they will get.
 
 `amountLsdToken = LsdTokenTotalSupply / TotalNetworkBalanceOfUsers * amountStakingToken`
 
@@ -47,27 +46,19 @@ The default balancer is the project administrator, it is able to transfer to ano
 
 ## Relay Service
 
-Due to the limitation of smart contract, it could not launch an execution. So StaFi LSD Stack introduces Relay service, at a certain interval, it will trigger StakeManager to collect and calculate users' staking reward, distribute it to the project and users. The reward information could come from the target chain staking contract or provided by off-chain, and voters are responsible to submit these on chain.
+Due to the limitation of smart contract, it could not launch an execution. So StaFi LSD Stack introduces Relay service, at a certain interval, it triggers StakeManager to collect, calculate users' staking reward, and distribute it to the project and users.
 
-Here is an example of how Polygon relay work, it does not have voter, as no data needed from Oracle:
+Here is an illustration of how Polygon relay works:
 
 ![EVM LSD Relay Service](/image/evmlsd_4.png 'EVM LSD Relay Service')
 
-As we know BNB chain is differ from Polygon, it requires data from Beacon chain. So we introduce voter role, to keep data correct. Voters submit their proposal through relay service.  below is BNB chain example:
-
-![BNB chain Relay](/image/evmlsd_5.png 'BNB chain Relay')
-
 ## Validator Selector
 
-Under normal circumstances, the validator is determined by the project administrator, and the project or developer can also choose the advanced service ValidatorSelector, which selects the optimal validator according to the validator selection algorithm developed by 61 Lab.
-
-According to the validator's status, performance and commission fee, voters select validators to bind to the StakePool or update current validators.
-
-For security, StakeManager has been designed as a multi-sig contract, the proposal will be carried out, only the number of voters over the threshold agreed on the same, such as change validator from A to B.
+Under normal circumstances, the validator is determined by the project administrator, but the project owner can also choose the advanced service, ValidatorSelector, which selects the optimal validator according to the validator selection algorithm developed by 61 Lab.
 
 ## Quick Duplicate
 
-StaFi EVM LSD Stack provides mature LSD solutions including contracts, back-end services for popular blockchains like BSC, Polygon, etc.  However, for starting blockchain or layer 2 programs, the Stack also provides LSD API standards. A limited work developers should do is to wrap only one or two contracts or provide several blockchain RPC APIs according to the Stack API Standards.
+StaFi EVM LSD Stack provides mature LSD solutions including contracts, back-end services for popular blockchains like BSC, Polygon, etc.  However, for starting blockchain or layer 2 programs, the Stack also provides LSD interfaces. A limited work developers should do is to wrap only one or two contracts or provide several blockchain RPC APIs according to the Stack interfaces.
 
 ![Quick Duplicate](/image/evmlsd_6.png 'Quick Duplicate')
 
