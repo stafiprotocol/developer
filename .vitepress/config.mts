@@ -75,6 +75,17 @@ function docs(){
       ]
     },
     {
+      text: "Develop(BTC LSD)",
+      collapsed: true,
+      items: [
+        {text: "Get Started", link: "/docs/develop_btc_lsd/getstarted"},
+        {text: "Contract", link: "/docs/develop_btc_lsd/contract"},
+        {text: "Relay", link: "/docs/develop_btc_lsd/relay"},
+        {text: "App", link: "/docs/develop_btc_lsd/btc_lsd_app"},
+        {text: "Deploy", link: "/docs/develop_btc_lsd/deploy"},
+      ]
+    },
+    {
       text: "Develop(LRT)",
       collapsed: true,
       items: [
@@ -83,6 +94,17 @@ function docs(){
         {text: "Relay", link: "/docs/developlrt/relay"},
         {text: "App", link: "/docs/developlrt/app"},
         {text: "Deploy", link: "/docs/developlrt/deploy"},
+      ]
+    },
+    {
+      text: "Develop(EVM LSD)",
+      collapsed: true,
+      items: [
+        {text: "Get Started", link: "/docs/develop_evm_lsd/getstarted"},
+        {text: "Contract", link: "/docs/develop_evm_lsd/contract"},
+        {text: "Relay", link: "/docs/develop_evm_lsd/relay"},
+        {text: "App", link: "/docs/develop_evm_lsd/evm_lsd_app"},
+        {text: "Deploy", link: "/docs/develop_evm_lsd/deploy"},
       ]
     },
     {
