@@ -6,7 +6,9 @@ This guide provides a step-by-step script to deploy a Sei LSD project, without d
 
 61 Lab have made [StaFi LSaaS](https://stack-app.stafi.io/) for project parties to deploy their LSD network contracts.
 
+```fixme
 ![](/image/evm_lsd/choose-network-page.png "Choose Sei Network")
+```
 
 ### Parameter Tips
 
