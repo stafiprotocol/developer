@@ -6,7 +6,7 @@ StaFi LSD Stack is a package of Development Kits(DKs) that support the construct
 
 ## Application Development Kit(ADK)
 
-The ADK module enables developers to launch a LST upon in the contract layer of a chain, it is contract based, now it can support to issue [ETH LST](/docs/developethlsd/getstarted.html), [EVM LST](/docs/developevmlsd/getstarted.html) and [Cosmos LST](/docs/develop_cosmos_lsd/getstarted.html) and other VM LSTs in the chain. In the ecosystem, LSTs have more abundant interoperability and composability with the projects that also built upon the chain. These solutions are different based on the chain structure, developers can review details in the following parts.
+The ADK module enables developers to launch a LST upon in the contract layer of a chain, it is contract based, now it can support to issue [ETH LST](/docs/developethlsd/getstarted.html), [EVM LST](/docs/develop_evm_lsd/getstarted.html) and [Cosmos LST](/docs/develop_cosmos_lsd/getstarted.html) and other VM LSTs in the chain. In the ecosystem, LSTs have more abundant interoperability and composability with the projects that also built upon the chain. These solutions are different based on the chain structure, developers can review details in the following parts.
 
 ## Chain Development Kit(CDK)
 
