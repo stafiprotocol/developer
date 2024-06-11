@@ -36,9 +36,15 @@ As staking token is an ERC-20 compatible token, users should approve StakeManage
 
 ## User Unstake Flow
 
-Any LsdToken holder is a valid user, and can unstake tokens. At first, users should approve StakeManager to spend their token, next call *StakeManager.unstake* method to burn their LsdToken, last get their rewards by calling withdraw method.
+Any LsdToken holder is a valid user, and can unstake tokens. At first, users should approve StakeManager to spend their token, then call *StakeManager.unstake* method to burn their LsdToken.
 
 ![User Unstake Flow](/image/evmlsd_3.png 'User Unstake Flow')
+
+## User Withdraw Flow
+
+After unbonding period, users can get their rewards by calling *StakeManager.withdraw* method.
+
+![User Withdraw Flow](/image/evm_lsd/users_withdraw_flow.png 'User Withdraw Flow')
 
 ## Balance Staking Pools
 
