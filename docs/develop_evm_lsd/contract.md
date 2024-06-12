@@ -229,13 +229,127 @@ function withdrawForStaker(
 
 ## StakeManager.sol
 
-TBD
+StakeManager contract holds all LSD functionalities:
+1. Stakers staking, unstaking and withdrawal methods
+2. Administrative methods, such as: validator management; parameters management
+3. Era advancing method
+
+### Stakers methods
+
+`stake`: stakers stake an amount of Token to the LSD project and receive LST in return.
+
+If the token is an ERC20 compatible token, stakers should approve *StakeManager* to spend their tokens.
+
+```solidity
+// Sei and BSC
+function stake() external payable {}
+
+// Polygon
+// IERC20(token).approve(AddressOfStakeManager, _stakeAmount)
+function stake(uint256 _stakeAmount) external {}
+```
+
+`unstake`: users who own LST tokens are unstakers, they can unstake an amount of LST to retrieve staked tokens.
+
+```solidity
+function unstake(uint256 _lsdTokenAmount) external {}
+```
+
+`withdraw`: stakers can withdraw their staked tokens after unbonding period
+
+```solidity
+function withdraw() external {}
+```
+
+### Administrative methods
+
+`add validator`: add a validator to the pool
+
+```solidity
+// Sei
+function addValidator(address _poolAddress, string calldata _validator) external onlyOwner {}
+
+// BSC
+function addValidator(address _poolAddress, address _validator) external onlyOwner {}
+
+// Polygon
+function addValidator(address _poolAddress, uint256 _validatorId) external onlyOwner {}
+```
+
+`remove validator`: remove a validator from the pool
+
+```solidity
+// Sei
+function rmValidator(address _poolAddress, string calldata _validator) external onlyOwner {}
+
+// BSC
+function rmValidator(address _poolAddress, address _validator) external onlyOwner {}
+
+// Polygon
+function rmValidator(address _poolAddress, uint256 _validatorId) external onlyOwner {}
+```
+
+`redelegate`: redelegate the amount of staked token from srcValidator to dstValidator
+
+```solidity
+// Sei
+function redelegate(
+    address _poolAddress,
+    string memory _srcValidator,
+    string memory _dstValidator,
+    uint256 _amount
+) external onlyDelegationBalancer {}
+
+// BSC
+function redelegate(
+    address _poolAddress,
+    address _srcValidator,
+    address _dstValidator,
+    uint256 _amount
+) external payable onlyDelegationBalancer {}
+
+// Polygon
+function redelegate(
+    address _poolAddress,
+    uint256 _srcValidatorId,
+    uint256 _dstValidatorId,
+    uint256 _amount
+) external onlyDelegationBalancer {}
+```
+
+- `transferDelegationBalancer`: transfer delegation balancer role to another account
+- `addStakePool`: add stake pool
+- `rmStakePool`: remove stake pool
+
+### Parameters adjustment methods
+
+- `setProtocolFeeCommission`
+- `setFactoryFeeCommission`
+- `setEraParams`
+- `setRateChangeLimit`
+- `setMinStakeAmount`
+- `setUnbondingDuration`
+
+### Era method
+
+The new era process is permissionless, it is secured by the EVM chain. By invoking this method, the rewards of the pool will be collected; delegation or undelegation on the chain called according to the difference between the amount to be delegated and the amount to be undelegated; the distribution sent to the project party and the Stack; and the rate recalculated.
+
+```solidity
+function newEra() external {}
+```
 
 # Notable Parameters
+
+- `setEraParams`
 
 Platforms inevitably have their own parameters. We've compiled a list of the most significant ones that you might consider adjusting.
 
 |  config | description  | recommended value |
 |---|---|---|
-| address admin    | an account who administrate the whole network | we suggest platform use multi-sig account for security reason |
-TBD
+| address<br/>owner    | an account who owners the whole network | we suggest platform use multi-sig account for security reason |
+| uint256<br/>rateChangeLimit | a number represents the numerator in rate and the denominator is 1e18.<br/>the exchange rate between StakingToken and LsdToken is vital for the system, to prevent accidental or violent changes, we introduce rateChangeLimit to keep the system safe | 11e14 (=0.11%) |
+| uint256<br/>minStakeAmount    | an amount of user participation threshold in NativeToken	 | |
+| uint256<br/>unbondingDuration    | a period of time in eras, this must be longer than the EVM chain | |
+| uint256<br/>protocolFeeCommission    | a number represents the numerator in rate and the denominator is 1e18.<br/>this value configures the proportion of the protocol rewards | 10e16 (denotes 10e16/1e18=10%) (protocol commission = total rewards * 10%) |
+| uint256<br/>factoryFeeCommission    | a number represents the numerator in rate and the denominator is 1e18.<br/>it is a proportion of factoryCommission to protocolCommission<br/>the value of parameter should be determined after consulting with 61 Lab | 10e16 (denotes 10e16/1e18=10%)<br/>(factory commission = protocol commission * 10%) |
+| uint256<br/>eraSeconds    | a period of time in second determines how long an era last	 | 86400 |
