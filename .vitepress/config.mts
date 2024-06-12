@@ -18,6 +18,9 @@ export default defineConfig({
     sidebar: {
       "/docs/": docs(),
     },
+    search: {
+      provider: 'local'
+    },
 
     outline: {
       level: [1,4],
