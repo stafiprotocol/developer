@@ -4,7 +4,7 @@ StaFi BTC LSD Stack is devoted to help developers building Bitcoin liquid stakin
 
 ## Contracts
 
-Contracts plays a vital role in a LSD project. It stores the ratio between LST and BTC, as well as the user receipts of staking and other managerial states. Begin by deploying the contracts because other services, such as relay service, rely on these contract addresses and logic. The Stack consists of three contracts: Factory, LsdToken and StakeManager.
+Contracts plays a vital role in a LSD project. It stores the ratio between LST and BTC, as well as the user receipts of staking and other managerial states. The Stack consists of three contracts: Factory, LsdToken and StakeManager.
 
 - StakeManager: a manager contract which contains users staking/unstaking, rate updating and parameters management etc
 - LsdToken: an ERC-20 compatible derived token. Users receive this token(LST) after staking and burn it after unstaking
