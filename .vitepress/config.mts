@@ -58,6 +58,7 @@ function docs(){
         {text: "Overview", link: "/docs/architecture/overview"},
         {text: "Design Principles", link: "/docs/architecture/designprinciples"},
         {text: "ETH LSD", link: "/docs/architecture/ethlsd"},
+        {text: "BTC LSD", link: "/docs/architecture/babylon_btc_lsd"},
         {text: "LRT(Liquid Restaking Token)", link: "/docs/architecture/el_lrt"},
         {text: "EVM LSD", link: "/docs/architecture/evmlsd"},
         {text: "Cosmos LSD", link: "/docs/architecture/cosmoslsd"},
