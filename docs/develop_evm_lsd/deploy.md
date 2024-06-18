@@ -1,6 +1,6 @@
-# How to deploy Sei LSD stack
+# How to deploy an EVM LSD stack
 
-This guide provides a step-by-step script to deploy a Sei LSD project, without deep understanding of contracts and services. Read the documentation for comprehensive understandings of these components.
+This guide provides a step-by-step script to deploy an EVM LSD project, without deep understanding of contracts and services. Read the documentation for comprehensive understandings of these components.
 
 ## Step1. Deploy your LSD network contracts
 
@@ -39,7 +39,9 @@ Validator Number:
 - How many validators you intend to set
 - Highly recommend to set more than 1
 - The more validators you set the more decentralized advantages the network gets
-- Browse all active validators on [Testnet](https://seitrace.com/validators?chain=atlantic-2) or [Mainnet](https://seitrace.com/validators?chain=pacific-1)
+- Browse all Sei active validators on [Testnet](https://seitrace.com/validators?chain=atlantic-2) or [Mainnet](https://seitrace.com/validators?chain=pacific-1)
+- Browse all BNB Smart Chain active validators on [Testnet](https://testnet-staking.bnbchain.org/en/bnb-staking) or [Mainnet](https://www.bnbchain.org/en/bnb-staking)
+- Browse all Polygon active validators on [Validator list](https://staking.polygon.technology/validators), make sure you select the correct network: mainnet or testnet
 
 ## Rewards Distribution
 
