@@ -2,6 +2,84 @@
 
 Btc-lsd-relay service is an off-chain service, it mainly acts as a pool. It receives BTCs from stakers and delegate them to Babylon. In the meantime it operates StakeManager contract to store states, mint LSTs, burn LST and update rate etc.
 
+## Install Build Tools
+
+Install `make`, `gcc` and `git`
+
+```bash
+sudo apt update
+sudo apt install -y make gcc git build-essential
+```
+
+Install `go` by following the [official docs](https://golang.org/doc/install). Remember to set your `$PATH` environment variable, for example:
+
+```bash
+cd $HOME
+wget -O go1.22.0.linux-amd64.tar.gz https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz && rm go1.22.0.linux-amd64.tar.gz
+echo 'export GOROOT=/usr/local/go' >> $HOME/.bashrc
+echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc
+echo 'export GO111MODULE=on' >> $HOME/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bashrc && . $HOME/.bashrc
+go version
+```
+
+## Install relay service
+
+```bash
+$ git clone https://github.com/stafiprotocol/babylon-lsd-relay.git
+$ cd babylon-lsd-relay
+$ make install
+```
+
+## Create config file
+
+```bash
+$ cp config.example.toml config.toml
+```
+
+## Config btc relay service
+
+Update config (config.toml) by your favorite editor according to [Relay Config](./relay.html#config)
+
+```toml
+bbnEndpoint = "https://rpc-falcron.pion-1.ntrn.tech:443"
+bbnKeyName = "key1"
+bbnGasPrice = "0.05untrn"
+bbnKeyringPath = "/home/ubuntu/.stafi/btc-lsd-relay/keys"
+
+btcEndpoint = "http://127.0.0.1:38332"
+btcRpcUser = "btcstaking"
+btcRpcPass = "btcstaking"
+btcWalletName = "btcstaking"
+btcWalletPass = "btcstaking"
+btcNetwork = "signet"
+btcStartBlock = 198617
+btcMinFeeRate = 1
+btcMaxFeeRate = 20
+
+stakingApiEndpoint = "https://staking-api.testnet.babylonchain.io"
+
+stakeMangerAddress = "neutron1g4crwpzr5z8qhgl40cdjlq83nkeazvhgv7zr9vs5nfy4kk0ep0cssskfjq"
+```
+
+## Add or Import account
+
+You can import an exist account
+**TBD**
+
+or you can create a new account
+**TBD**
+
+## Start relay services
+
+```bash
+$ babylon-lsd-relay start \
+    --home /home/ubuntu/.stafi/btc-lsd-relay \
+    --config ./config.toml \
+    --log_level info
+```
+
 ## Config
 
 | config | description | example value |
