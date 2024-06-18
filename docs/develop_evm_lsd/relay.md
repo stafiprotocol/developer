@@ -67,13 +67,13 @@ INFO[2024-06-03T16:07:06+08:00] key added                                     ad
 ```bash
 $ evm-lsd-relay start \
   --account 0xa9b8af5C53E6282fB469297091A33B08B5AC40B7 \
-  --endpoint 'https://evm-rpc-testnet.sei-apis.com' \
+  --endpoint 'http://127.0.0.1:8545' \
   --stake_manager 0x64C2E857d478882B2A39eDc447b652438E96bCB8
 
 config home: /home/ubuntu/.stafi/evm/lsd
 log level: info
 all logs are output in the /home/ubuntu/.stafi/evm/lsd/log_data directory
-INFO[2024-06-07T09:58:38+08:00] cfg {RpcEndpoint:https://evm-rpc-testnet.sei-apis.com Account:0xa9b8af5C53E6282fB469297091A33B08B5AC40B7 GasLimit:2000000 MaxGasPrice:150000000000 StakeMangerAddress:0x64C2E857d478882B2A39eDc447b652438E96bCB8 FactoryAddress: LogFilePath:/home/ubuntu/.stafi/evm/lsd/log_data KeystorePath:/home/ubuntu/.stafi/evm/lsd/keystore} 
+INFO[2024-06-07T09:58:38+08:00] cfg {RpcEndpoint:http://127.0.0.1:8545 Account:0xa9b8af5C53E6282fB469297091A33B08B5AC40B7 GasLimit:2000000 MaxGasPrice:150000000000 StakeMangerAddress:0x64C2E857d478882B2A39eDc447b652438E96bCB8 FactoryAddress: LogFilePath:/home/ubuntu/.stafi/evm/lsd/log_data KeystorePath:/home/ubuntu/.stafi/evm/lsd/keystore} 
 Enter password for key /home/ubuntu/.stafi/evm/lsd/keystore/0xa9b8af5C53E6282fB469297091A33B08B5AC40B7.key:
 > 
 INFO[2024-06-07T09:58:43+08:00] task starting...                             
