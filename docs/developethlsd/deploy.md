@@ -147,12 +147,15 @@ $ cp conf.template.toml ~/eth-stack/config.toml
 Update config (config.toml) by your favorite editor according to [Relay Config](./relay.html#config)
 
 ```toml
-storageApiToken = "000000000000000000000000000000000000.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.22222222222222222222222-333333--44444444444"
 account = "0x68146ebA486CE6F8D22731c8ECB4d013F34E7114"
 gasLimit = "3000000"
 maxGasPrice = "60000000000"                            #wei
 batchRequestBlocksNumber = 32
 runForEntrustedLsdNetwork = false
+
+[pinata]
+apikey  = "AAAAA.BBBBB.CCCCC"
+pinDays = 180
 
 [contracts]
 lsdTokenAddress = "0x549aF761C1c72f3cd2Be966e76B778339Bf746DD"

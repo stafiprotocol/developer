@@ -8,7 +8,7 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 - **Vote Withdraw Credentials** (`vote_withdraw_credentials`): When validators wish to withdraw from the network, their withdrawal credentials need to be voted on and validated. ETH Lsd Relay provides a mechanism to automate this process, ensuring that only valid withdrawal requests are approved.
 - **Sync Block Data** (`sync_blocks`): Involves fetching the latest block data from the Ethereum blockchain and synchronizing it to the cache.
 - **Distribute Priority Fee** (`distribute_priority_fee`): Distributes the priority fee. This is done through interactions with the Eth Lsd contract and related calculations. This service also ensures distribution only occurs under specific conditions.
-- **Set Merkle Tree Root** (`set_merkle_root`): Calculates the final node rewards list based on node reward lists and new node reward lists. Constructs a Merkle tree for the final node rewards list. Serializes the final node rewards list to JSON and uploads it to Web3 storage. Sends a transaction to set the Merkle tree root.
+- **Set Merkle Tree Root** (`set_merkle_root`): Calculates the final node rewards list based on node reward lists and new node reward lists. Constructs a Merkle tree for the final node rewards list. Serializes the final node rewards list to JSON and uploads it to decentralized storage. Sends a transaction to set the Merkle tree root.
 - **Distribute Withdrawals** (`distribute_withdrawals`): Handles withdrawal requests from users or nodes and distributes funds.
 - **Notify Validator Exit** (`notify_validator_exit`): Sends notifications when validators exit or are kicked out.
 
@@ -16,12 +16,18 @@ Eth-lsd-relay is an off-chain relay service responsible for interacting with Eth
 
 | config | description | example value | recommended value |
 | --- | --- | --- | --- |
-| storageApiToken | get an api token from https://nft.storage/ |  |  |
 | account | voter account addressMake sure you imported it before using |  |  |
 | gasLimit |  |  | 3000000 |
 | maxGasPrice |  |  | 60000000000 (in wei) |
 | batchRequestBlocksNumber | a number which limits concurrent requests on Beacon chain, due to the design of Beacon chain RPC |  | 32 |
 | runForEntrustedLsdNetwork | set this config to true only if you are one of the entrusted voters who are responsible to relay data for entrusted LSD networks | false | false |
+
+### Pinata section
+
+| config | description | recommended value |
+| --- | --- | --- |
+| apikey  | apikey of your pinata account |   |
+| pinDays | how many days the data retained on IPFS  | 180 |
 
 ### Contracts section
 
