@@ -148,6 +148,9 @@ Update config (config.toml) by your favorite editor according to [Relay Config]
 
 ```toml
 account = "0x68146ebA486CE6F8D22731c8ECB4d013F34E7114"
+trustNodeDepositAmount     = 1  # ether
+eth2EffectiveBalance       = 32 # ether
+maxPartialWithdrawalAmount = 8  # ether
 gasLimit = "3000000"
 maxGasPrice = "60000000000"                            #wei
 batchRequestBlocksNumber = 32
