@@ -1,5 +1,6 @@
 # Validator
-&nbsp;
+
+We need create validator keys with our forked version of [Ethereum Staking Deposit cli](https://github.com/stafiprotocol/eth2.0-deposit-cli), then run your validators manually or with SSV.
 
 # Run validator manually
 
