@@ -5,9 +5,11 @@ This guide provides a step-by-step script to deploy the ETH LSD stack, without k
 
 # Step1. Deploy your LSD network contracts
 
-61 Lab have made [StaFi LSAAS](https://stack-app.stafi.io/) for project parties to deploy their LSD network contracts.
+61 Lab have made [Stack App](https://stack-app.stafi.io/) for project parties to deploy their LSD network contracts.
 
 ![](/image/ethlsd/onboarding_homepage.png "Launchpad Homepage")
+
+In addition to *Stack App*, you can deploy contracts through explorer or source code: [See this doc](./deploy_lsd_network_contracts)
 
 ## Which relay type should I choose?
 
