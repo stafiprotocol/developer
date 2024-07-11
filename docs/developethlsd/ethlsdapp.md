@@ -26,14 +26,15 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
 // here are some config examples in app.json
 {
   "appTitle": "ETH LSD App", // title of this app
+  "chainIcon": "/images/chain/ethereum.png",
   "token": {
     // token infos
     "tokenName": "ETH", // name of the original token
     "lsdTokenName": "rETH", // name of the lsd token
-    "supportChains": ["Ethereum"], // chains which lsd token can be supported
+    "supportChains": ["Ethereum", "Arbitrum", "Optimism", "Polygon"], // chains which lsd token can be supported
     "lsdTokenIconUri": "https://cdn.stafi.io/rtoken/logo/rETH.png", // icon link of lsd token
-    "ETHImg": "/images/token/ETH_green.svg", // icon of ETH token
-    "lsdETHImg": "/images/token/lsdETH.svg" // icon of lsd token
+    "tokenIcon": "/images/token/ETH.svg", // icon of  the stake token
+    "lsdTokenIcon": "/images/token/rETH.svg" // icon of lsd token
   },
   "unstake": {
     // lock tip info shown in unstake page
@@ -51,6 +52,10 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
       {
         "name": "Coingecko",
         "link": "https://www.coingecko.com/en/coins/stafi-staked-eth"
+      },
+      {
+        "name": "Defilama",
+        "link": "https://defillama.com/yields/pool/b2fe5b13-eca4-47cc-b3fd-1de24a296018"
       }
     ]
   },
@@ -60,6 +65,11 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
       "name": "PeckShield", // name and icon are shown on the top of the app
       "icon": "/images/audit/peck_shield.svg",
       "iconDark": "/images/audit/peck_shield_dark.svg"
+    },
+    {
+      "name": "BlockSec",
+      "icon": "/images/audit/block_sec.svg",
+      "iconDark": "/images/audit/block_sec_dark.svg"
     }
   ],
   "faqList": [
@@ -70,7 +80,38 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
         // answer of the question, it's comprised of a list of pure texts and links
         {
           "type": "text",
+          "content": "Staking rewards in the StaFi protocol are influenced by various factors including the total amount of native tokens staked and redeemed, the staking rewards earned, slash occurrences, penalties, and the commission ratio. Slashing events, caused by disconnection or malicious behavior of validator nodes, could potentially reduce rewards; however, StaFi mitigates this risk by diversifying the staking funds across multiple validators with clean records and requiring them to provide additional deposits as collaterals. The staking reward claim status and the timing of claims on the original chain can also affect staking rewards.\n"
+        },
+        {
+          "type": "text",
           "content": "To learn more about how staking rewards are calculated, please read:\n"
+        },
+        {
+          "type": "link",
+          "content": "https://docs.stafi.io/rtoken/#rtoken-exchange-rate\n",
+          "link": "https://docs.stafi.io/rtoken/#rtoken-exchange-rate"
+        }
+      ]
+    },
+    {
+      "title": "How much time is needed for ETH withdrawals?",
+      "contents": [
+        {
+          "type": "text",
+          "content": "If the unstaking pool's ETH balance exceeds your withdrawal amount, you will instantly receive your ETH upon transaction approval.\n"
+        },
+        {
+          "type": "text",
+          "content": "However, if the unstaking pool's ETH balance is less than your withdrawal amount, the withdrawal process will take 1-5 days. After this period, you can claim your ETH using the withdraw function.\n"
+        }
+      ]
+    },
+    {
+      "title": "What's the exchange rate of rETH?",
+      "contents": [
+        {
+          "type": "text",
+          "content": "To learn more about the exchange rate of rTokens and how they are calculated, please read:\n"
         },
         {
           "type": "link",
@@ -85,6 +126,22 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
     {
       "name": "Docs",
       "link": "https://docs.stafi.io/"
+    },
+    {
+      "name": "Website",
+      "link": "https://www.stafi.io/"
+    },
+    {
+      "name": "DAO Forum",
+      "link": "https://dao.stafi.io/"
+    },
+    {
+      "name": "Dune Dashboard",
+      "link": "https://dune.com/stafi-analysis/stafi"
+    },
+    {
+      "name": "rETH Listing",
+      "link": "https://docs.stafi.io/"
     }
   ],
   "contactList": [
@@ -92,9 +149,21 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
     {
       "type": "Twitter",
       "link": "https://twitter.com/Stafi_Protocol"
+    },
+    {
+      "type": "Medium",
+      "link": "https://stafi-protocol.medium.com/"
+    },
+    {
+      "type": "Discord",
+      "link": "https://discord.com/invite/jB77etn"
+    },
+    {
+      "type": "Telegram",
+      "link": "https://t.me/stafi_protocol"
     }
   ],
-  "gasPriceUrl": "https://beaconcha.in/api/v1/execution/gasnow" // api to query gas price
+  "tokenPriceUrl": "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
 }
 ```
 
@@ -112,23 +181,24 @@ ETH LSD App is a user interface where users can stake, unstake and get latest in
     "name": "Holesky"
   },
   "rpc": "https://ethereum-holesky.publicnode.com", // rpc link of the chain
+  "explorer": "https://holesky.etherscan.io", // explorer link of the chain
   "contracts": {
     // lsd contract addresses
     "lsdTokenContract": {
       // address of lsd token contract
-      "address": "0xe1A2391f4902f8bc1fd447192c4a165A7a05189b"
+      "address": "0x85F7c01009B1bf540699C4FDDf3589DDE60BCb14"
     },
     "depositContract": {
       // address of lsd deposit contract
-      "address": "0xF077Af44C0EE18d7b960C6C527a249820706a317"
+      "address": "0x044E54D0Fd299917eC9f5cb27B35Ce252D546A2b"
     },
     "withdrawContract": {
       // address of lsd withdraw contract
-      "address": "0x0f25a7400EB9a6225F669B99a9aCa46442213632"
+      "address": "0x3CB60643B531632A243dA103f3d0A860eB49EEFC"
     },
     "networkBalanceContract": {
       // address of lsd network balance contract
-      "address": "0x5bEB668968a931b961a7D9a4da6150b7A03a0093"
+      "address": "0xbfa824c78AC83c09dBF33Fcf6bf8116496189F28"
     }
   }
 }
