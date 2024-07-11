@@ -25,18 +25,20 @@ ETH LSD Validator App is a user interface where node operators can participate i
 ```json
 // here are some config examples in app.json
 {
-  "appTitle": "ETH LSD App", // title of this app
+  "appTitle": "ETH Validator App", // title of this app
+  "chainIcon": "/images/chain/ethereum.png",
   "token": {
     // token infos
     "tokenName": "ETH", // name of the original token
     "lsdTokenName": "rETH", // name of the lsd token
-    "supportChains": ["Ethereum"], // chains which lsd token can be supported
     "lsdTokenIconUri": "https://cdn.stafi.io/rtoken/logo/rETH.png", // icon link of lsd token
-    "ETHImg": "/images/token/ETH_green.svg", // icon of ETH token
-    "lsdETHImg": "/images/token/lsdETH.svg" // icon of lsd token
+    "tokenIcon": "/images/token/ETH.svg", // icon of ETH token
+    "lsdTokenIcon": "/images/token/rETH.svg" // icon of lsd token
   },
   "supportRestApi": true, // Node Ejection section will be shown in Pubkeys page if this value is true
   "apr": 3.1, // default apr of lsd token
+  "validatorTotalDepositAmount": 32,
+  "trustValidatorDepositAmount": 1,
   "faqList": [
     // FAQs list
     {
@@ -45,7 +47,38 @@ ETH LSD Validator App is a user interface where node operators can participate i
         // answer of the question, it's comprised of a list of pure texts and links
         {
           "type": "text",
+          "content": "Staking rewards in the StaFi protocol are influenced by various factors including the total amount of native tokens staked and redeemed, the staking rewards earned, slash occurrences, penalties, and the commission ratio. Slashing events, caused by disconnection or malicious behavior of validator nodes, could potentially reduce rewards; however, StaFi mitigates this risk by diversifying the staking funds across multiple validators with clean records and requiring them to provide additional deposits as collaterals. The staking reward claim status and the timing of claims on the original chain can also affect staking rewards.\n"
+        },
+        {
+          "type": "text",
           "content": "To learn more about how staking rewards are calculated, please read:\n"
+        },
+        {
+          "type": "link",
+          "content": "https://docs.stafi.io/rtoken/#rtoken-exchange-rate\n",
+          "link": "https://docs.stafi.io/rtoken/#rtoken-exchange-rate"
+        }
+      ]
+    },
+    {
+      "title": "How much time is needed for ETH withdrawals?",
+      "contents": [
+        {
+          "type": "text",
+          "content": "If the unstaking pool's ETH balance exceeds your withdrawal amount, you will instantly receive your ETH upon transaction approval.\n"
+        },
+        {
+          "type": "text",
+          "content": "However, if the unstaking pool's ETH balance is less than your withdrawal amount, the withdrawal process will take 1-5 days. After this period, you can claim your ETH using the withdraw function.\n"
+        }
+      ]
+    },
+    {
+      "title": "What's the exchange rate of rETH?",
+      "contents": [
+        {
+          "type": "text",
+          "content": "To learn more about the exchange rate of rTokens and how they are calculated, please read:\n"
         },
         {
           "type": "link",
@@ -60,6 +93,22 @@ ETH LSD Validator App is a user interface where node operators can participate i
     {
       "name": "Docs",
       "link": "https://docs.stafi.io/"
+    },
+    {
+      "name": "Website",
+      "link": "https://www.stafi.io/"
+    },
+    {
+      "name": "DAO Forum",
+      "link": "https://dao.stafi.io/"
+    },
+    {
+      "name": "Dune Dashboard",
+      "link": "https://dune.com/stafi-analysis/stafi"
+    },
+    {
+      "name": "rETH Listing",
+      "link": "https://docs.stafi.io/"
     }
   ],
   "contactList": [
@@ -67,13 +116,25 @@ ETH LSD Validator App is a user interface where node operators can participate i
     {
       "type": "Twitter",
       "link": "https://twitter.com/Stafi_Protocol"
+    },
+    {
+      "type": "Medium",
+      "link": "https://stafi-protocol.medium.com/"
+    },
+    {
+      "type": "Discord",
+      "link": "https://discord.com/invite/jB77etn"
+    },
+    {
+      "type": "Telegram",
+      "link": "https://t.me/stafi_protocol"
     }
   ],
-  "gasPriceUrl": "https://beaconcha.in/api/v1/execution/gasnow", // api to query gas price
+  "tokenPriceUrl": "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
   "docLinks": {
     // doc links in Pool page
-    "ejectionMechanism": "", // doc link of Ejection Mechanism
-    "delegationMechanism": "" // doc link of Delegation Mechanism
+    "ejectionMechanism": "https://commonwealth.im/stafi/discussion/10127-withdrawal-design-for-reth-solution-for-upcoming-shanghai-upgrade", // doc link of Ejection Mechanism
+    "delegationMechanism": "https://lsaas-docs.stafi.io/docs/developethlsd/validator.html" // doc link of Delegation Mechanism
   }
 }
 ```
@@ -89,29 +150,37 @@ ETH LSD Validator App is a user interface where node operators can participate i
   "chain": {
     // chain which lsd app runs on
     "id": 17000,
-    "name": "Holesky"
+    "name": "Holesky", // displayed on the web page
+    "networkName": "holesky" // must match the `network_name` field in deposit_data*.json
   },
   "rpc": "https://ethereum-holesky.publicnode.com", // rpc link of the chain
   "beaconHost": "https://holesky-beacon.stafi.io", // url of beacon host
+  "explorer": "https://holesky.etherscan.io",
+  "validatorExplorer": "https://holesky.beaconcha.in",
+  "blockSeconds": 12, // beacon chain slot time
   "contracts": {
     // lsd contract addresses
     "lsdTokenContract": {
       // address of lsd token contract
-      "address": "0xe1A2391f4902f8bc1fd447192c4a165A7a05189b"
+      "address": "0x85F7c01009B1bf540699C4FDDf3589DDE60BCb14"
     },
     "depositContract": {
       // address of lsd deposit contract
-      "address": "0xF077Af44C0EE18d7b960C6C527a249820706a317"
-    },
-    "withdrawContract": {
-      // address of lsd withdraw contract
-      "address": "0x0f25a7400EB9a6225F669B99a9aCa46442213632"
+      "address": "0x044E54D0Fd299917eC9f5cb27B35Ce252D546A2b"
     },
     "networkBalanceContract": {
       // address of lsd network balance contract
-      "address": "0x5bEB668968a931b961a7D9a4da6150b7A03a0093"
+      "address": "0xbfa824c78AC83c09dBF33Fcf6bf8116496189F28"
+    },
+    "networkWithdrawContract": {
+      // address of lsd withdraw contract
+      "address": "0x3CB60643B531632A243dA103f3d0A860eB49EEFC"
+    },
+    "nodeDepositContract": {
+      "address": "0xcF490F4AB5dF7478de350A28cD2741534dD24986"
     }
-  }
+  },
+  "lsdAppUrl": "https://test-eth-lsd.stafi.io"
 }
 ```
 
