@@ -99,6 +99,8 @@ address,points
 
 ## APIs
 
+Swagger Docs: http://localhost:8080/swagger/index.html
+
 ![Point System APIs](/image/point_system/points-swagger.png 'Point System APIs')
 
 ### Get points of an address
