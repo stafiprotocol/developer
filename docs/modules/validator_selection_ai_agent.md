@@ -164,3 +164,15 @@ GEMINI_API_KEY=
     ```bash
     python3 app.py
     ```
+
+#### Request API
+
+```bash
+curl --location --request POST 'http://127.0.0.1:8085/election/api/v1/selectedValidators' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "modelId": "gpt-4o",
+  "resultNum": 5,
+  "prefix": "cosmos"
+}'
+```
