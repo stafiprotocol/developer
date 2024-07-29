@@ -124,6 +124,16 @@ function docs(){
       ]
     },
     {
+      text: "Modules",
+      collapsed: true,
+      items: [
+        {text: "Introduction", link: "/docs/modules/introduction"},
+        {text: "Validator Selection AI Agent", link: "/docs/modules/validator_selection_ai_agent"},
+        {text: "Point System", link: "/docs/modules/point_system"},
+        {text: "Frontend", link: "/docs/modules/frontend"},
+      ]
+    },
+    {
       text: "DAO",
       collapsed: true,
       items: [
