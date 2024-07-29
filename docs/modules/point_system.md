@@ -2,6 +2,10 @@
 
 Point system has become a new paradigm for protocol bootstrapping and growth. Under the hood, it calculates points based on the balance of LST staked by users. Users earn points every period(e.g. a day or an hour) until the LST is no longer held. In this implementation only the LST minter/staker can earn points, users can not if they received LST from others.
 
+## Compatibility
+
+Currently this module is compatible with ETH LSD, EMV LSD and LRT stack.
+
 ## Install Build Tools
 
 Install `make`, `gcc` and `git`
