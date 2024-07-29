@@ -107,8 +107,32 @@ apikey = "" # Pinata API Key
 ```bash
 # start api
 $ ./build/staking-election-cosmos start-api --config ~/staking-election-cosmos/config_api.toml
+
+config path: conf_api.toml
+load config success
+all logs are output in the ./log_data/api directory
+api logLevelStr: info
+api config info: config.APIServer{GinMode:"debug", ListenAddr:"127.0.0.1:8085", AgentEndpoint:"http://127.0.0.1:6000"}
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /election/swagger/*any    --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] POST   /election/api/v1/selectedValidators --> github.com/stafiprotocol/staking-election-cosmos/api/election_handlers.(*Handler).HandleGetSelectedValidators-fm (4 handlers)
+[GIN-debug] POST   /election-internal/api/v1/selectedValidators/ --> github.com/stafiprotocol/staking-election-cosmos/api/election_handlers.(*Handler).HandleInternalGetSelectedValidators-fm (4 handlers)
+INFO[2024-07-29T18:55:04+08:00] Gin server start on 127.0.0.1:8085
+```
+
+```bash
 # start syncer
 $ ./build/staking-election-cosmos start-election-cosmos --config ~/staking-election-cosmos/conf_election_syncer.toml
+
+config path: conf_election_syncer.toml
+load config success
+all logs are output in the ./log_data/task directory
+INFO[2024-07-29T18:56:22+08:00] task CacheValidator start ----------->        prefix=cosmos
 ```
 
 ### LLM Agent (Python)
@@ -165,14 +189,153 @@ GEMINI_API_KEY=
     python3 app.py
     ```
 
-#### Request API
+### Selected Validators API
+
+#### Request
+
+`POST /election/api/v1/selectedValidators`
+
+##### Headers
+
+| Name         | Value            |
+| ------------ | ---------------- |
+| Content-Type | application/json |
+
+##### Body
+
+```json
+{
+  "modelId": "gpt-4o",
+  "prefix": "cosmos",
+  "resultNum": 5,
+  "maxCommissionRate": 0.1,
+  "minCommissionStability": 0.9,
+  "maxMaxCommissionRate": 0.5,
+  "maxCommissionChangeRate": 0.2,
+  "minSignBlockRatio": 0.998
+}
+```
+
+##### Parameters
+
+| Name                    | Type   | Required | Default | Description                                                         |
+| ----------------------- | ------ | -------- | ------- | ------------------------------------------------------------------- |
+| modelId                 | string | Yes      | -       | The ID of the model to use for selection                            |
+| prefix                  | string | Yes      | -       | The prefix to filter validator addresses                            |
+| resultNum               | number | No       | -       | The number of validators to return (1-20)                           |
+| maxCommissionRate       | number | No       | 0.1     | Maximum allowed commission rate (10%)                               |
+| minCommissionStability  | number | No       | 0.9     | Minimum allowed commission stability (90%)                          |
+| maxMaxCommissionRate    | number | No       | 0.5     | Maximum allowed potential commission rate ceiling (50%)             |
+| maxCommissionChangeRate | number | No       | 0.2     | Maximum allowed commission change rate in a single adjustment (20%) |
+| minSignBlockRatio       | number | No       | 0.998   | Minimum allowed historical online percentage (99.8%)                |
+
+#### Response
+
+```json
+{
+  "data": {
+    "modelId": "string",
+    "recommendedValidators": [
+      {
+        "operatorAddress": "string",
+        "moniker": "string",
+        "reasons": ["string"]
+      }
+    ]
+  },
+  "message": "string",
+  "status": "string"
+}
+```
+
+##### Response Fields
+
+| Name                  | Type     | Description                             |
+| --------------------- | -------- | --------------------------------------- |
+| data                  | object   | The main data object                    |
+| modelId               | string   | The ID of the model used for selection  |
+| recommendedValidators | array    | List of recommended validators          |
+| operatorAddress       | string   | The operator address of the validator   |
+| moniker               | string   | The name of the validator               |
+| reasons               | string[] | Reasons for recommending this validator |
+| message               | string   | Response message (e.g., "success")      |
+| status                | string   | Status code of the response             |
+
+#### Example
+
+##### cURL Request
 
 ```bash
 curl --location --request POST 'http://127.0.0.1:8085/election/api/v1/selectedValidators' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "modelId": "gpt-4o",
-  "resultNum": 5,
-  "prefix": "cosmos"
+  "prefix": "cosmos",
+  "resultNum": 5
 }'
+```
+
+##### Sample Response
+
+```json
+{
+    "data": {
+        "modelId": "gpt-4o",
+        "recommendedValidators": [
+            {
+                "operatorAddress": "celestiavaloper1ac4mnwg79gyvd0x5trl2fgjv07lgfas02jf378",
+                "moniker": "P-OPS Team",
+                "reasons": [
+                    "Low and stable commission rate of 5%",
+                    "High uptime of 100%",
+                    "Significant total stake and voting power",
+                    "High commission stability of 84.5%"
+                ]
+            },
+            {
+                "operatorAddress": "celestiavaloper1u825srldhev7t4wnd3hplhrphahjfk7ff3wfdr",
+                "moniker": "PRYZM | StakeDrop",
+                "reasons": [
+                    "Low commission rate of 5%",
+                    "High uptime of 100%",
+                    "Stable commission with no changes",
+                    "Significant total stake and voting power",
+                    "High commission stability of 85.7%"
+                ]
+            },
+            {
+                "operatorAddress": "celestiavaloper107lwx458gy345ag2afx9a7e2kkl7x49y3433gj",
+                "moniker": "Enigma",
+                "reasons": [
+                    "Low commission rate of 5%",
+                    "High uptime of 100%",
+                    "Significant total stake and voting power",
+                    "High commission stability of 83%"
+                ]
+            },
+            {
+                "operatorAddress": "celestiavaloper1sou3hrt4wtlxpj7m29th3flkc9rn7j6p0f378d",
+                "moniker": "Smart Stake 🗂📊",
+                "reasons": [
+                    "Low commission rate of 5%",
+                    "High uptime of 100%",
+                    "High commission stability of 96.2%",
+                    "Very high commission stability"
+                ]
+            },
+            {
+                "operatorAddress": "celestiavaloper19v94c3z7ckarwsum76kaagma0wqsqhh5nl5zqg",
+                "moniker": "Validatus",
+                "reasons": [
+                    "Low commission rate of 5%",
+                    "High uptime of 100%",
+                    "Significant total stake and voting power",
+                    "High commission stability of 91.3%"
+                ]
+            }
+        ]
+    },
+    "message": "success",
+    "status": "80000"
+}
 ```
