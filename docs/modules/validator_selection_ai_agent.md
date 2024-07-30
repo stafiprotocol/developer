@@ -34,11 +34,7 @@ go version
 
 ### Python3
 
-Install Python3 and pip:
-
-### Python3
-
-Install Python3 and pip:
+Install Python3 Recommended>= 3.11:
 
 ```bash
 sudo apt update
