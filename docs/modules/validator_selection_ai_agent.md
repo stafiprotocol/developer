@@ -1,10 +1,12 @@
 # Validator Selection AI Agent
 
+This module positioned as a validator delegation solution that streamlines the process of validator selection and delegation.
+
 ## Compatibility
 
-Currently supports smart election of CosmosHub network validators, other CosmosSdk-based networks are being tested, and plans to expand to other networks, such as EVM networks.
-Currently supports smart election of CosmosHub network validators. Other CosmosSdk-based networks are being tested, with plans to expand to EVM networks in the future.
-
+- CosmosHub *supported*
+- CosmosSdk-based networks on *testing phase*
+- EVM networks *planned*
 
 ## Install Build Tools
 
@@ -36,10 +38,6 @@ go version
 
 Install Python3 and pip:
 
-### Python3
-
-Install Python3 and pip:
-
 ```bash
 sudo apt update
 sudo apt install -y software-properties-common
@@ -49,9 +47,61 @@ sudo apt install python3.12
 python3 --version # Verify Installation
 ```
 
-## Install Validator Selection AI Agent
+## LLM Agent
 
-### API & Syncer Service (Golang)
+```bash
+$ git clone git@github.com:stafiprotocol/llm-agent.git
+$ cd llm-agent
+```
+
+### Create config file
+
+```bash
+$ cp .env.example .env
+```
+
+```env
+OPENAI_API_KEY=
+OPENAI_BASE_URL=
+HUGGINGFACE_API_KEY=
+HUGGINGFACE_BASE_URL=https://api-inference.huggingface.co/models
+CLAUDE_API_KEY=
+CLAUDE_BASE_URL=
+LISTEN_PORT=6000
+LISTEN_HOST="127.0.0.1"
+LOG_LEVEL="DEBUG"
+LOG_FORMAT="JSON"
+LOG_SERVICE_NAME="llm_agent_app"
+GEMINI_API_KEY=
+```
+
+### Start llm-agent service
+
+1. Create a virtual environment:
+
+```bash
+python3 -m venv llm-agent
+```
+
+2. Activate the virtual environment:
+
+```bash
+source llm-agent/bin/activate
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the service:
+
+```bash
+python3 app.py
+```
+
+## API & Syncer Service
 
 API and blockchain data accumulation service used to provide validator election
 
@@ -61,7 +111,7 @@ $ cd staking-election-cosmos
 $ make build
 ```
 
-#### Create working directory and config file
+### Create working directory and config file
 
 Working directory stores config
 
@@ -102,7 +152,7 @@ apikey = "" # Pinata API Key
 ```
 
 
-#### Start staking-election-cosmos service
+### Start staking-election-cosmos service
 
 ```bash
 # start api
@@ -135,88 +185,11 @@ all logs are output in the ./log_data/task directory
 INFO[2024-07-29T18:56:22+08:00] task CacheValidator start ----------->        prefix=cosmos
 ```
 
-### LLM Agent (Python)
-
-```bash
-$ git clone git@github.com:stafiprotocol/llm-agent.git
-$ cd llm-agent
-```
-
-#### Create config file (.env)
-
-```bash
-$ cp .env.example .env
-```
-
-``` env
-OPENAI_API_KEY=
-OPENAI_BASE_URL=
-HUGGINGFACE_API_KEY=
-HUGGINGFACE_BASE_URL=https://api-inference.huggingface.co/models
-CLAUDE_API_KEY=
-CLAUDE_BASE_URL=
-LISTEN_PORT=6000
-LISTEN_HOST="127.0.0.1"
-LOG_LEVEL="DEBUG"
-LOG_FORMAT="JSON"
-LOG_SERVICE_NAME="llm_agent_app"
-GEMINI_API_KEY=
-```
-
-#### Start llm-agent service
-
-1. Create a virtual environment:
-
-    ```bash
-    python3 -m venv llm-agent
-    ```
-
-2. Activate the virtual environment:
-
-    ```bash
-    source llm-agent/bin/activate
-    ```
-
-3. Install the required packages:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Start the service:
-
-    ```bash
-    python3 app.py
-    ```
-
 ### Selected Validators API
 
-#### Request
+URI: `POST /election/api/v1/selectedValidators`
 
-`POST /election/api/v1/selectedValidators`
-
-##### Headers
-
-| Name         | Value            |
-| ------------ | ---------------- |
-| Content-Type | application/json |
-
-##### Body
-
-```json
-{
-  "modelId": "gpt-4o",
-  "prefix": "cosmos",
-  "resultNum": 5,
-  "maxCommissionRate": 0.1,
-  "minCommissionStability": 0.9,
-  "maxMaxCommissionRate": 0.5,
-  "maxCommissionChangeRate": 0.2,
-  "minSignBlockRatio": 0.998
-}
-```
-
-##### Parameters
+Parameters
 
 | Name                    | Type   | Required | Default | Description                                                         |
 | ----------------------- | ------ | -------- | ------- | ------------------------------------------------------------------- |
@@ -229,55 +202,15 @@ GEMINI_API_KEY=
 | maxCommissionChangeRate | number | No       | 0.2     | Maximum allowed commission change rate in a single adjustment (20%) |
 | minSignBlockRatio       | number | No       | 0.998   | Minimum allowed historical online percentage (99.8%)                |
 
-#### Response
-
-```json
-{
-  "data": {
-    "modelId": "string",
-    "recommendedValidators": [
-      {
-        "operatorAddress": "string",
-        "moniker": "string",
-        "reasons": ["string"]
-      }
-    ]
-  },
-  "message": "string",
-  "status": "string"
-}
-```
-
-##### Response Fields
-
-| Name                  | Type     | Description                             |
-| --------------------- | -------- | --------------------------------------- |
-| data                  | object   | The main data object                    |
-| modelId               | string   | The ID of the model used for selection  |
-| recommendedValidators | array    | List of recommended validators          |
-| operatorAddress       | string   | The operator address of the validator   |
-| moniker               | string   | The name of the validator               |
-| reasons               | string[] | Reasons for recommending this validator |
-| message               | string   | Response message (e.g., "success")      |
-| status                | string   | Status code of the response             |
-
-#### Example
-
-##### cURL Request
-
 ```bash
-curl --location --request POST 'http://127.0.0.1:8085/election/api/v1/selectedValidators' \
+$ curl --location --request POST 'http://127.0.0.1:8085/election/api/v1/selectedValidators' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "modelId": "gpt-4o",
   "prefix": "cosmos",
   "resultNum": 5
 }'
-```
 
-##### Sample Response
-
-```json
 {
     "data": {
         "modelId": "gpt-4o",
