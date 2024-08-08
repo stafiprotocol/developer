@@ -9,3 +9,4 @@ Frontend module consists of fully customizable staking apps which stakers and va
 | [EVM LSD App](../develop_evm_lsd/evm_lsd_app.html) | a user interface for EVM LSD users stake, unstake and claim their rewards |
 | [COSMOS LSD App](../develop_cosmos_lsd/app.html) | a user interface for COSMOS Eco LSD users stake, unstake and claim their rewards |
 | [LRT App](../developlrt/app.html) |  a user interface for LRD users stake, unstake and and claim their rewards |
+| [Solana LSD App](../develop_sol_lsd/lsd_app.html) | a user interface for Solana LSD users stake, unstake and claim their rewards |

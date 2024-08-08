@@ -94,6 +94,17 @@ function docs(){
       ]
     },
     {
+      text: "Develop(Solana LSD)",
+      collapsed: true,
+      items: [
+        {text: "Get Started", link: "/docs/develop_sol_lsd/getstarted"},
+        {text: "Contract", link: "/docs/develop_sol_lsd/contract"},
+        {text: "Relay", link: "/docs/develop_sol_lsd/relay"},
+        {text: "App", link: "/docs/develop_sol_lsd/lsd_app"},
+        {text: "Deploy", link: "/docs/develop_sol_lsd/deploy"},
+      ]
+    },
+    {
       text: "Develop(LRT)",
       collapsed: true,
       items: [
