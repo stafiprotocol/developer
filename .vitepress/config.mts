@@ -66,6 +66,7 @@ function docs(){
         {text: "LRT(Liquid Restaking Token)", link: "/docs/architecture/el_lrt"},
         {text: "EVM LSD", link: "/docs/architecture/evmlsd"},
         {text: "Cosmos LSD", link: "/docs/architecture/cosmoslsd"},
+        {text: "Solana LSD", link: "/docs/architecture/solana_lsd"},
       ]
     },
     {
