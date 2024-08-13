@@ -1,27 +1,5 @@
 # CCIP Modules
 
-## Table of Contents
-- [CCIP Modules](#ccip-modules)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Compatibility](#compatibility)
-  - [Introduction](#introduction)
-    - [Rate Cross-Chain](#rate-cross-chain)
-    - [Token Cross-Chain](#token-cross-chain)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-    - [Steps](#steps)
-  - [Deployment](#deployment)
-    - [Rate Cross-Chain Deployment](#rate-cross-chain-deployment)
-      - [Option 1: Deploy contracts individually](#option-1-deploy-contracts-individually)
-      - [Option 2: Deploy all contracts at once](#option-2-deploy-all-contracts-at-once)
-      - [RegisterUpkeep Deployment](#registerupkeep-deployment)
-    - [Token Cross-Chain Deployment](#token-cross-chain-deployment)
-  - [Configuration](#configuration)
-  - [Usage](#usage)
-    - [Token Cross-Chain Transfer](#token-cross-chain-transfer)
-  - [Notes](#notes)
-
 ## Overview
 
 The CCIP Modules are designed to facilitate cross-chain asset transfers of LST tokens between EVM chains and synchronize exchange rates.
