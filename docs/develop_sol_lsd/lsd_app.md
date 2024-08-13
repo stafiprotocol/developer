@@ -2,12 +2,17 @@
 
 Solana LSD App is a user interface where users can stake, unstake and get latest information about the project. As a convention in web3 all API users interact with are directly from the RPC configured in wallet, so the app is a pure DApp.
 
+![Solana LSD App Homepage](/image/sol_lsd/sol-lsd-app-homepage.png 'Solana LSD App Homepage')
+
+![Solana LSD App Notification Page](/image/sol_lsd/sol-lsd-app-notifications.png 'Solana LSD App Notification Page')
+
 ## Setup Node.js env
 
 1. Install Node.js >= v16
 2. Install yarn via npm: `npm install --global yarn`
-3. Enter project root directory then install all dependencies via terminal: `yarn`
-4. Start app by: `yarn dev`
+3. Fork and clone [code on GitHub](https://github.com/stafiprotocol/solana-lsd-app)
+4. Enter project root directory then install all dependencies via terminal: `yarn`
+5. Start app by: `yarn dev`
 
 ## Config your app
 
