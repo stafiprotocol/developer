@@ -114,11 +114,11 @@ Note: Token cross-chain functionality requires whitelisting with Chainlink
 2. Modify `config.json`:
    ```json
    {
-     "routerAddressSource": "0x..",
-     "routerAddressDestination": "0x..",
-     "linkAddressSource": "0x..",
-     "linkAddressDestination": "0x..",
-     "initialRate": "1000000000000000000",
+     "routerAddressSource": "0x..", // Source chain router address
+     "routerAddressDestination": "0x..", // Destination chain router address
+     "linkAddressSource": "0x..", // Source chain LINK address
+     "linkAddressDestination": "0x..", // Destination chain LINK address
+     "initialRate": "1000000000000000000", // Initial rate for the destination chain
      "tokens": [] // Use when testing, leave blank when deploying to a production environment
    }
    ```
@@ -148,6 +148,13 @@ ROUTER_ADDRESS=0x.. npx hardhat run ./scripts/TokenTransfer/deploy.js --network 
 1. Configure `RateSender` contract:
    - Add token information using `addTokenInfo` method:
      ```solidity
+     /// @notice Adds a new token rate and its associated information for a specific chain
+     /// @dev This function combines the functionality of adding a token rate and its chain-specific information
+     /// @param tokenName The name of the token to add
+     /// @param _rateSource The address of the contract providing the rate for this token
+     /// @param _receiver The address of the receiver contract on the destination chain
+     /// @param _dstRateProvider The address of the rate provider contract on the destination chain
+     /// @param _selector The chain selector for the destination chain
      function addTokenInfo(
          string memory tokenName,
          address _rateSource,
@@ -158,6 +165,11 @@ ROUTER_ADDRESS=0x.. npx hardhat run ./scripts/TokenTransfer/deploy.js --network 
      ```
    - Add new destination chains using `addTokenDstInfo` method:
      ```solidity
+      /// @notice Adds destination information for a token
+     /// @param tokenName Name of the token
+     /// @param _receiver Receiver address on the destination chain
+     /// @param _dstRateProvider Rate provider address on the destination chain
+     /// @param _selector Chain selector for the destination chain
      function addTokenDstInfo(
          string memory tokenName,
          address _receiver,
@@ -181,12 +193,12 @@ ROUTER_ADDRESS=0x.. npx hardhat run ./scripts/TokenTransfer/deploy.js --network 
      ) external payable nonReentrant whenNotPaused returns (uint256)
 
      struct Params {
-         string name;
+         string name; // upkeep name
          string email; // optional Chainlink Automation is not currently enabled
-         address upkeepContract;
-         uint32 gasLimit;
-         address adminAddress;
-         uint96 amount;
+         address upkeepContract; // address of the RateSender contract
+         uint32 gasLimit; // gas limit for the upkeep
+         address adminAddress; // address of the admin
+         uint96 amount; // amount of LINK tokens
      }
      ```
      After a successful call to registerAndPredictID, you can see something like this on the web interface
@@ -205,6 +217,15 @@ ROUTER_ADDRESS=0x.. npx hardhat run ./scripts/TokenTransfer/deploy.js --network 
    ```
 3. Call `transferTokens` method on the `TokenTransferor` contract:
    ```solidity
+   /// @notice Calculate the required fee for transferring tokens to another chain.
+   /// @dev This function simulates the token transfer process to calculate the fee,
+   ///      without actually performing the transfer. It uses the same logic as the
+   ///      transferTokens function to ensure fee consistency.
+   /// @param _destinationChainSelector The identifier (selector) for the destination blockchain.
+   /// @param _receiver The address of the recipient on the destination blockchain.
+   /// @param _token The address of the token to be transferred.
+   /// @param _amount The amount of tokens to be transferred.
+   /// @return fees The amount of native currency required as fee for the cross-chain transfer.
    function transferTokens(
        uint64 _destinationChainSelector,
        address _receiver,
