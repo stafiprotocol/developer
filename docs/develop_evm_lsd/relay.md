@@ -73,7 +73,7 @@ $ evm-lsd-relay start \
 config home: /home/ubuntu/.stafi/evm/lsd
 log level: info
 all logs are output in the /home/ubuntu/.stafi/evm/lsd/log_data directory
-INFO[2024-06-07T09:58:38+08:00] cfg {RpcEndpoint:http://127.0.0.1:8545 Account:0xa9b8af5C53E6282fB469297091A33B08B5AC40B7 GasLimit:2000000 MaxGasPrice:150000000000 StakeMangerAddress:0x64C2E857d478882B2A39eDc447b652438E96bCB8 FactoryAddress: LogFilePath:/home/ubuntu/.stafi/evm/lsd/log_data KeystorePath:/home/ubuntu/.stafi/evm/lsd/keystore} 
+INFO[2024-06-07T09:58:38+08:00] cfg {RpcEndpoint:http://127.0.0.1:8545 Account:0xa9b8af5C53E6282fB469297091A33B08B5AC40B7 GasLimit:2000000 MaxGasPrice:600000000000 StakeMangerAddress:0x64C2E857d478882B2A39eDc447b652438E96bCB8 FactoryAddress: LogFilePath:/home/ubuntu/.stafi/evm/lsd/log_data KeystorePath:/home/ubuntu/.stafi/evm/lsd/keystore} 
 Enter password for key /home/ubuntu/.stafi/evm/lsd/keystore/0xa9b8af5C53E6282fB469297091A33B08B5AC40B7.key:
 > 
 INFO[2024-06-07T09:58:43+08:00] task starting...                             
@@ -91,5 +91,5 @@ INFO[2024-06-07T09:59:20+08:00] newEra 1 already executed success, new rate: 100
 | stake_manager | the address of StakeManager contract | 0x64C2E857d478882B2A39eDc447b652438E96bCB8 |
 | home | Home path (default "$HOME/.stafi/evm/lsd") |  |
 | gas_limit | Gas limit (default "2000000") |  |
-| max_gas_price | Max gas price (default "150000000000") |  |
+| max_gas_price | Max gas price (default "600000000000") |  |
 | log_level | The logging level (trace\|debug\|info\|warn\|error\|fatal\|panic) |  info |
