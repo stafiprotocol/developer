@@ -147,6 +147,7 @@ function docs(){
         {text: "Validator Selection AI Agent", link: "/docs/modules/validator_selection_ai_agent"},
         {text: "Point System", link: "/docs/modules/point_system"},
         {text: "CCIP Modules", link: "/docs/modules/ccip_modules"},
+        {text: "Blinks", link: "/docs/modules/blinks_module"},
         {text: "Frontend", link: "/docs/modules/frontend"},
       ]
     },
