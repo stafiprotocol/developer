@@ -16,15 +16,37 @@ As part of our LSD stack, we offer this module to project teams, enabling them t
 1. Enter project root directory then install all dependencies via terminal: `yarn`
 1. Start app by: `yarn dev`
 
+The server's port can be configured in `config/appConf/dev.json`
+
 ## Config program accounts
 
 - Set your network addresses here: `config/appConf/dev.json`
 
-| config | description | example value |
-| ------ | ----------- | --- |
-| lsdProgramId | lsd program ID **provided by 61Lab** | |
-| stakeManagerAccountAddress | stake manager address of the LSD network created by [Stack App](https://stack-app.stafi.io/) | |
-| lsdTokenMint | lsd token mint address of the LSD network created by [Stack App](https://stack-app.stafi.io/) | |
+| config                     | description                                                                                   | example value |
+| -------------------------- | --------------------------------------------------------------------------------------------- | ------------- |
+| lsdProgramId               | lsd program ID **provided by 61Lab**                                                          |               |
+| stakeManagerAccountAddress | stake manager address of the LSD network created by [Stack App](https://stack-app.stafi.io/)  |               |
+| lsdTokenMint               | lsd token mint address of the LSD network created by [Stack App](https://stack-app.stafi.io/) |               |
+
+## Config stake actions
+
+- Set your stake actions here: `config/actions.js`
+
+The actions list will be rendered as interactive buttons, e.g.:
+
+```javascript
+export const StakeActions = [
+	{
+		label: 'Stake 1 SOL', // button label
+		amount: 1, // stake amount
+	},
+	{
+		label: 'Stake SOL',
+		customAmount: true, // set this to `true` if you want user to input amount
+		placeholder: 'Enter the amount of SOL to stake',
+	},
+];
+```
 
 ## Preview the stake function
 
