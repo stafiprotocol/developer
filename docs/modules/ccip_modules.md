@@ -12,9 +12,12 @@ The CCIP Modules are designed to facilitate cross-chain asset transfers of LST t
 
 ## Introduction
 
-The CCIP Module consists of two main components:
+The CCIP Modules comprise two main components:
+
 1. Exchange Rate Cross-Chain Module
 2. Token Cross-Chain Module
+
+These modules are independent and can be deployed and used separately.
 
 Repository: [StaFi CCIP Modules Contracts](https://github.com/stafiprotocol/ccip-contracts)
 
