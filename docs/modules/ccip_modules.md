@@ -19,7 +19,7 @@ The CCIP Modules comprise two main components:
 
 These modules are independent and can be deployed and used separately.
 
-Repository: [StaFi CCIP Modules Contracts](https://github.com/stafiprotocol/ccip-contracts)
+Repository: [StaFi CCIP Modules Contracts](https://github.com/stafiprotocol/evm-module-contracts)
 
 ### Rate Cross-Chain
 
@@ -46,8 +46,8 @@ Note: Token cross-chain functionality requires whitelisting with Chainlink
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/stafiprotocol/ccip-contracts.git
-   cd ccip-contracts
+   git clone https://github.com/stafiprotocol/evm-module-contracts.git
+   cd evm-module-contracts
    ```
 
 2. Install dependencies:
