@@ -19,7 +19,7 @@ The CCIP Modules comprise two main components:
 
 These modules are independent and can be deployed and used separately.
 
-Repository: [StaFi CCIP Modules Contracts](https://github.com/stafiprotocol/evm-module-contracts)
+Repository: [Evm Module Contracts](https://github.com/stafiprotocol/evm-module-contracts)
 
 ### Rate Cross-Chain
 
