@@ -11,6 +11,9 @@ A scoring system which calculates points based on the balance of LST staked by u
 ## CCIP Modules
 Use Chainlink CCIP module and Automation module to complete the asset cross-chain of LST Token between EVM chains, or exchange rate synchronization.
 
+## L2 Native Restaking Module
+This module is designed to provide a seamless experience for users to stake their ETH/WETH on L2 chains.
+
 ## Blinks Modules
 Blinks module provides project parties a ready to use service to fully unleash the potential of the Solana and the entire internet
 
