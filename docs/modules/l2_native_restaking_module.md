@@ -145,11 +145,15 @@ The XERC20 contract is an ERC20 token implementation that allows for:
 
 The Off-Chain Relayer, also known as Connext-Relay, is a key component of the L2 Native Restaking Module. It is used to periodically trigger contract transactions for cross-chain staking from the XDeposit contract on L2 to L1. It facilitates communication between different chains and ensures the smooth execution of cross-chain operations.
 
+Repository: [Connext Relay](https://github.com/stafiprotocol/connext-relay)
+
 ### Installation
 
 To install Connext-Relay:
 
 ```bash
+git clone https://github.com/stafiprotocol/connext-relay.git
+cd connext-relay
 make build
 ```
 
