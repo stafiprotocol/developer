@@ -1,8 +1,8 @@
-# L2 Native Restaking Module
+# L2 Connext Restaking Module
 
 ## Overview
 
-The L2 Native Restake module is designed to facilitate ETH restaking across EVM chains, enabling seamless interactions between different blockchain networks. This project includes contracts for depositing, staking, and bridging assets, specifically focusing on ETH/wETH.
+The L2 Connext Restaking module leverages [Connext's cross-chain technology](https://docs.connext.network/) to facilitate ETH restaking across EVM chains, enabling seamless interactions between different blockchain networks. This project includes contracts for depositing, staking, and bridging assets, specifically focusing on ETH/wETH. By utilizing Connext's cross-chain communication capabilities, it provides users with a smooth experience for staking ETH/WETH on various L2 chains, enhancing interoperability in the blockchain ecosystem.
 
 ## Compatibility
 
@@ -14,7 +14,7 @@ The L2 Native Restake module is designed to facilitate ETH restaking across EVM 
 
 ### Introduction
 
-L2 Native Restaking Module comprise several key components:
+L2 Connext Restaking Module comprise several key components:
 
 1. **XDeposit**: Handles deposits of ETH/WETH, minting of xLrd tokens, and bridging assets across chains.
 2. **XStake**: Manages cross-chain staking operations, converting WETH to Lrd and wrapping it into xLrd.
@@ -143,7 +143,7 @@ The XERC20 contract is an ERC20 token implementation that allows for:
 
 ## Off-Chain Relayer
 
-The Off-Chain Relayer, also known as Connext-Relay, is a key component of the L2 Native Restaking Module. It is used to periodically trigger contract transactions for cross-chain staking from the XDeposit contract on L2 to L1. It facilitates communication between different chains and ensures the smooth execution of cross-chain operations.
+The Off-Chain Relayer, also known as Connext-Relay, is a key component of the L2 Connext Restaking Module. It is used to periodically trigger contract transactions for cross-chain staking from the XDeposit contract on L2 to L1. It facilitates communication between different chains and ensures the smooth execution of cross-chain operations.
 
 Repository: [Connext Relay](https://github.com/stafiprotocol/connext-relay)
 
@@ -216,13 +216,13 @@ Then start the relay service:
 - Private keys are encrypted before storage
 - Key files are created with 0600 permissions
 
-### Integration with L2 Native Restaking Module
+### Integration with L2 Connext Restaking Module
 
 The Connext-Relay works in conjunction with the smart contracts to:
 
 1. Relay messages and asset transfer instructions to destination chains
 2. Facilitate the execution of cross-chain staking and unstaking operations
 
-By running a Connext-Relay alongside the deployed smart contracts, operators can ensure smooth and secure cross-chain asset management within the L2 Native Restaking Module ecosystem.
+By running a Connext-Relay alongside the deployed smart contracts, operators can ensure smooth and secure cross-chain asset management within the L2 Connext Restaking Module ecosystem.
 
 For more detailed information or support, please contact the development team.

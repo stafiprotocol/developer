@@ -147,7 +147,7 @@ function docs(){
         {text: "Validator Selection AI Agent", link: "/docs/modules/validator_selection_ai_agent"},
         {text: "Point System", link: "/docs/modules/point_system"},
         {text: "CCIP Modules", link: "/docs/modules/ccip_modules"},
-        {text: "L2 Native Restaking Module", link: "/docs/modules/l2_native_restaking_module"},
+        {text: "L2 Connext Restaking Module", link: "/docs/modules/l2_connext_restaking_module"},
         {text: "Blinks", link: "/docs/modules/blinks_module"},
         {text: "Frontend", link: "/docs/modules/frontend"},
       ]
