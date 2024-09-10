@@ -2,6 +2,9 @@
 
 Modules are independent, plug-and-play functionalities designed to provide project parties with maximum flexibility. We have developed several common modules to meet the typical needs of most project parties.
 
+## Module contribution
+The community is powerful than a single entity, everyone is encouraged to share your module.
+
 ## Validator Selection AI Agent
 This module positioned as a validator delegation solution that streamlines the process of validator selection and delegation.
 

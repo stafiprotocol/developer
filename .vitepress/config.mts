@@ -144,6 +144,7 @@ function docs(){
       collapsed: true,
       items: [
         {text: "Introduction", link: "/docs/modules/introduction"},
+        {text: "Contribution", link: "/docs/modules/contribution"},
         {text: "Validator Selection AI Agent", link: "/docs/modules/validator_selection_ai_agent"},
         {text: "Point System", link: "/docs/modules/point_system"},
         {text: "CCIP Modules", link: "/docs/modules/ccip_modules"},
