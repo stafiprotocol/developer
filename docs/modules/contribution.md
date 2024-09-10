@@ -7,12 +7,12 @@ This page describes a general approach on how to write a new module and to share
 Follow these steps to implement a new module:
 1. Read the architecture and develop documentation to get a comprehensive understanding
 1. Dive into smart contracts:
-    - [BTC LSD Contracts]()
+    - [BTC LSD Contracts](https://github.com/stafiprotocol/babylon-lsd-contracts)
     - [ETH LSD Contracts](https://github.com/stafiprotocol/eth-lsd-contracts)
-    - [Solana LSD Contracts]()
-    - [ETH LRT Contracts]()
-    - [EVM LSD Contracts]()
-    - [Cosmos LSD Contracts]()
+    - [Solana LSD Contracts](https://github.com/stafiprotocol/solana-lsd-contracts)
+    - [ETH LRT Contracts](https://github.com/stafiprotocol/lrd-contracts)
+    - [EVM LSD Contracts](https://github.com/stafiprotocol/evm-lsd-contracts)
+    - [Cosmos LSD Contracts](https://github.com/stafiprotocol/neutron-lsd-contracts)
 1. Implement the logic
 1. Contact StaFi team if you have any questions 
 1. Write documentation 
