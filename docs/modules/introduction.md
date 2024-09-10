@@ -14,7 +14,7 @@ A scoring system which calculates points based on the balance of LST staked by u
 ## CCIP Modules
 Use Chainlink CCIP module and Automation module to complete the asset cross-chain of LST Token between EVM chains, or exchange rate synchronization.
 
-## L2 Connext Restaking Module
+## L2 Restaking Module
 This module, leveraging the Connext cross-chain interoperability protocol, is designed to provide a seamless experience for users to stake their ETH/WETH on L2 chains. By utilizing Connext's technology, it enables efficient cross-chain interactions and simplifies the staking process across different blockchain networks.
 
 ## Blinks Modules
