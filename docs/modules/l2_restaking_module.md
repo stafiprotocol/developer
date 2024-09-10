@@ -1,4 +1,4 @@
-# L2 Connext Restaking Module
+# L2 Restaking Module
 
 ## Overview
 
